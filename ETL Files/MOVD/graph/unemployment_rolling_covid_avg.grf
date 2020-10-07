@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Graph author="markj" created="Tue Jul 21 22:12:34 EDT 2020" guiVersion="5.6.2.13" id="1595545596413" licenseCode="CLP1DNORTH81057623EX" name="unemployment_rolling_covid_avg" showComponentDetails="true">
+<Global>
+<GraphParameters>
+<GraphParameterFile fileURL="workspace.prm"/>
+</GraphParameters>
+<Dictionary/>
+</Global>
+</Graph>

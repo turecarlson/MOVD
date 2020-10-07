@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Graph author="markj" created="Tue Jul 21 22:12:34 EDT 2020" guiVersion="5.6.2.13" id="1595385678936" licenseCode="CLP1DNORTH81057623EX" name="Approval_Cases" showComponentDetails="true">
+<Global>
+<Metadata id="Metadata2">
+<Record fieldDelimiter="," name="Approval_Covid" previewAttachmentCharset="UTF-8" recordDelimiter="\r\n" type="delimited">
+<Field delimiter="," name="ApprovalRating" trim="true" type="number"/>
+<Field name="CovidCases" trim="true" type="integer"/>
+<Field name="Date" type="date"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata0">
+<Record fieldDelimiter="," name="CovidData" recordDelimiter="\r\n" type="delimited">
+<Field delimiter="," name="USA_Toal_Cases" type="integer"/>
+<Field name="Date" type="date"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata1">
+<Record fieldDelimiter="," name="trump_approval" previewAttachmentCharset="UTF-8" recordDelimiter="\n" type="delimited">
+<Field name="AdjustedApprove" size="12" type="number"/>
+<Field format="yyyy-MM-dd" name="CreateDate" size="10" type="date"/>
+</Record>
+</Metadata>
+<Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/movd?useSSL=False" id="JDBC0" jdbcSpecific="MYSQL" name="NewConnection" password="Mark6912" type="JDBC" user="root"/>
+<GraphParameters>
+<GraphParameterFile fileURL="workspace.prm"/>
+</GraphParameters>
+<Dictionary/>
+</Global>
+<Phase number="0">
+<Node dataPolicy="controlled" dbConnection="JDBC0" guiName="ApprovalReader" guiX="131" guiY="112" id="APPROVAL_READER" printStatements="false" type="DB_INPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[select avg(AdjustedApprove), CreateDate from `movd`.`trump_approval` group by CreateDate order by CreateDate desc;]]></attr>
+</Node>
+<Node dataPolicy="controlled" dbConnection="JDBC0" guiName="Covid Reader" guiX="131" guiY="224" id="COVID_READER" printStatements="false" type="DB_INPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[SELECT sum(jhcovidstat.CumulativeCases), jhcovidstat.Date FROM movd.jhcovidstat group by date;]]></attr>
+</Node>
+<Node guiName="ExtHashJoin" guiX="390" guiY="169" id="EXT_HASH_JOIN" joinKey="$CreateDate=$Date" joinType="inner" type="EXT_HASH_JOIN">
+<attr name="transform"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.ApprovalRating = $in.0.AdjustedApprove;
+	$out.0.CovidCases = $in.1.USA_Toal_Cases;
+	$out.0.Date = $in.1.Date;
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Edge fromNode="APPROVAL_READER:0" guiBendpoints="" guiRouter="Manhattan" id="Edge4" inPort="Port 0 (driver)" metadata="Metadata1" outPort="Port 0 (out)" toNode="EXT_HASH_JOIN:0"/>
+<Edge fromNode="COVID_READER:0" guiBendpoints="" guiRouter="Manhattan" id="Edge5" inPort="Port 1 (slave)" metadata="Metadata0" outPort="Port 0 (out)" toNode="EXT_HASH_JOIN:1"/>
+<Edge fromNode="EXT_HASH_JOIN:0" guiBendpoints="" guiRouter="Manhattan" id="Edge0" inPort="Port 0 (input)" metadata="Metadata2" outPort="Port 0 (out)" toNode="SPREADSHEET_DATA_WRITER:0"/>
+</Phase>
+<Phase number="1">
+<Node existingSheetsActions="DO_NOTHING" fileURL="C:/Users/markj/CloverDX/workspace/approval_vs_covid.xlsx" guiName="SpreadsheetDataWriter" guiX="585" guiY="169" id="SPREADSHEET_DATA_WRITER" type="SPREADSHEET_WRITER" writeMode="OVERWRITE_SHEET_IN_MEMORY">
+<attr name="mapping"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mapping>
+    <globalAttributes>
+        <orientation>VERTICAL</orientation>
+        <step>1</step>
+        <writeHeader>true</writeHeader>
+    </globalAttributes>
+    <defaultSkip>1</defaultSkip>
+    <headerGroups>
+        <headerGroup skip="1">
+            <cloverField>Date</cloverField>
+            <headerRanges>
+                <headerRange begin="A1"/>
+            </headerRanges>
+        </headerGroup>
+        <headerGroup skip="1">
+            <cloverField>ApprovalRating</cloverField>
+            <headerRanges>
+                <headerRange begin="B1"/>
+            </headerRanges>
+        </headerGroup>
+        <headerGroup skip="1">
+            <cloverField>CovidCases</cloverField>
+            <headerRanges>
+                <headerRange begin="C1"/>
+            </headerRanges>
+        </headerGroup>
+    </headerGroups>
+</mapping>
+]]></attr>
+</Node>
+</Phase>
+</Graph>

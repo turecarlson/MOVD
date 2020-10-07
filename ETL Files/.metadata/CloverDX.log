@@ -1,0 +1,1658 @@
+2020-07-23 17:43:30,237 Defaults          INFO  [main] - Loading default properties from: defaultProperties
+2020-07-23 17:43:30,579 Defaults          INFO  [main] - Loading default properties from: defaultProperties
+2020-07-23 17:43:30,714 Plugins           DEBUG [main] - Plugin org.jetel.connection loaded.
+	id - org.jetel.connection
+	version - 5.6.2.13
+	provider-name - CloverDX
+		connection { className = org.jetel.connection.jdbc.DBConnectionImpl; type = JDBC; }
+		connection { className = org.jetel.connection.jms.JmsConnection; type = JMS; }
+
+2020-07-23 17:43:30,714 Plugins           DEBUG [main] - Plugin org.jetel.ctlfunction loaded.
+	id - org.jetel.ctlfunction
+	version - 5.6.2.13
+	provider-name - CloverDX
+		ctlfunction { libraryName = math; className = org.jetel.ctl.extensions.MathLib; }
+		ctlfunction { libraryName = date; className = org.jetel.ctl.extensions.DateLib; }
+		ctlfunction { libraryName = string; className = org.jetel.ctl.extensions.StringLib; }
+		ctlfunction { libraryName = convert; className = org.jetel.ctl.extensions.ConvertLib; }
+		ctlfunction { libraryName = container; className = org.jetel.ctl.extensions.ContainerLib; }
+		ctlfunction { libraryName = random; className = org.jetel.ctl.extensions.RandomLib; }
+		ctlfunction { libraryName = util; className = org.jetel.ctl.extensions.UtilLib; }
+		ctlfunction { libraryName = dynamic; className = org.jetel.ctl.extensions.DynamicLib; }
+		ctlfunction { libraryName = string; className = org.jetel.ctl.extensions.StringLibExt; }
+		ctlfunction { libraryName = mapping; className = org.jetel.ctl.extensions.MappingLib; }
+		ctlfunction { libraryName = dynamic; className = org.jetel.ctl.extensions.DynamicLibExt; }
+
+2020-07-23 17:43:30,715 Plugins           DEBUG [main] - Plugin org.jetel.engine loaded.
+	id - org.jetel.engine
+	version - 5.6.2.13
+	provider-name - CloverDX
+		dictionaryType { className = org.jetel.graph.dictionary.StringDictionaryType; type = string; }
+		dictionaryType { className = org.jetel.graph.dictionary.ObjectDictionaryType; type = object; }
+		dictionaryType { className = org.jetel.graph.dictionary.ReadableChannelDictionaryType; type = readable.channel; }
+		dictionaryType { className = org.jetel.graph.dictionary.WritableChannelDictionaryType; type = writable.channel; }
+		dictionaryType { className = org.jetel.graph.dictionary.IntegerDictionaryType; type = integer; }
+		dictionaryType { className = org.jetel.graph.dictionary.LongDictionaryType; type = long; }
+		dictionaryType { className = org.jetel.graph.dictionary.DecimalDictionaryType; type = decimal; }
+		dictionaryType { className = org.jetel.graph.dictionary.NumberDictionaryType; type = number; }
+		dictionaryType { className = org.jetel.graph.dictionary.DateDictionaryType; type = date; }
+		dictionaryType { className = org.jetel.graph.dictionary.BooleanDictionaryType; type = boolean; }
+		dictionaryType { className = org.jetel.graph.dictionary.ByteDictionaryType; type = byte; }
+		dictionaryType { className = org.jetel.graph.dictionary.ListDictionaryType; type = list; }
+		dictionaryType { className = org.jetel.graph.dictionary.MapDictionaryType; type = map; }
+		tlCompiler { className = org.jetel.ctl.TLCompiler; type = simple.compiler; }
+		ctlfunction { libraryName = record; className = org.jetel.ctl.extensions.IntegralLib; }
+		urlResolver { className = org.jetel.util.file.SMBPathResolver; type = SMB; }
+		urlResolver { className = org.jetel.util.protocols.amazon.S3PathResolver; type = S3; }
+		authorityProxy { className = org.jetel.graph.runtime.PrimitiveAuthorityProxy; type = PrimitiveAuthorityProxy; priority = 0; }
+
+2020-07-23 17:43:30,715 Plugins           DEBUG [main] - Plugin org.jetel.jdbc loaded.
+	id - org.jetel.jdbc
+	version - 5.6.2.13
+	provider-name - CloverDX
+		jdbcSpecific { database = GENERIC; name = Generic; class = org.jetel.connection.jdbc.specific.impl.DefaultJdbcSpecific; }
+		jdbcSpecific { database = REDSHIFT; name = Amazon Redshift; class = org.jetel.connection.jdbc.specific.impl.RedshiftSpecific; }
+		jdbcSpecific { database = DB2; name = DB2; class = org.jetel.connection.jdbc.specific.impl.DB2Specific; }
+		jdbcSpecific { database = DERBY; name = Derby; class = org.jetel.connection.jdbc.specific.impl.DerbySpecific; productName = Apache Derby; }
+		jdbcSpecific { database = EXASOLUTION; name = EXASolution; class = org.jetel.connection.jdbc.specific.impl.ExasolSpecific; }
+		jdbcSpecific { database = FIREBIRD; name = Firebird; class = org.jetel.connection.jdbc.specific.impl.FirebirdSpecific; }
+		jdbcSpecific { database = HIVE; name = Hive; class = org.jetel.connection.jdbc.specific.impl.HiveSpecific; }
+		jdbcSpecific { database = INFORMIX; name = Informix; class = org.jetel.connection.jdbc.specific.impl.InformixSpecific; }
+		jdbcSpecific { database = MSACCESSJAVA; name = Microsoft Access; class = org.jetel.connection.jdbc.specific.impl.MSAccessPureJavaSpecific; }
+		jdbcSpecific { database = MSSQL; name = MS SQL Server 2008-2012; class = org.jetel.connection.jdbc.specific.impl.MSSQLSpecific; productName = Microsoft SQL Server; }
+		jdbcSpecific { database = MSSQL2005; name = MS SQL Server 2000-2005; class = org.jetel.connection.jdbc.specific.impl.MSSQLSpecific2005; }
+		jdbcSpecific { database = MYSQL; name = MySQL; class = org.jetel.connection.jdbc.specific.impl.MySQLSpecific; productName = MySQL; }
+		jdbcSpecific { database = ORACLE; name = Oracle; class = org.jetel.connection.jdbc.specific.impl.OracleSpecific; productName = Oracle; }
+		jdbcSpecific { database = PERVASIVE; name = Pervasive; class = org.jetel.connection.jdbc.specific.impl.PervasiveSpecific; }
+		jdbcSpecific { database = POSTGRE; name = PostgreSQL; class = org.jetel.connection.jdbc.specific.impl.PostgreSpecific; }
+		jdbcSpecific { database = SYBASE; name = Sybase; class = org.jetel.connection.jdbc.specific.impl.SybaseSpecific; }
+		jdbcSpecific { database = SQLITE; name = SQLite; class = org.jetel.connection.jdbc.specific.impl.SQLiteSpecific; }
+		jdbcSpecific { database = VERTICA; name = Vertica; class = org.jetel.connection.jdbc.specific.impl.VerticaSpecific; }
+		jdbcDriver { database = MYSQL; urlHint = jdbc:mysql://hostname:3306/database; jdbc.zeroDateTimeBehavior = convertToNull; name = MySQL; driverLibrary = lib/mysql/mysql-connector-java-5.1.47.jar; jdbcSpecific = MYSQL; dbDriver = org.gjt.mm.mysql.Driver; }
+		jdbcDriver { database = ORACLE; urlHint = jdbc:oracle:thin:@host:1521:SID,jdbc:oracle:thin:@cluster-alias:1521/service_name,jdbc:oracle:thin:@(DESCRIPTION=(LOAD_BALANCE=on)(ADDRESS=(PROTOCOL=TCP)(HOST=host1)(PORT=1521))(ADDRESS=(PROTOCOL=TCP)(HOST=host2)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=service_name))),jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=cluster_alias)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=service_name))),jdbc:oracle:thin:@host:1521/service_name; name = Oracle; driverLibrary = lib/oracle/ojdbc6-11.2.0.3.jar; jdbcSpecific = ORACLE; dbDriver = oracle.jdbc.OracleDriver; }
+		jdbcDriver { database = POSTGRE; urlHint = jdbc:postgresql://hostname/database; name = PostgreSQL; driverLibrary = lib/postgre/postgresql-42.2.2.jre7.jar; jdbcSpecific = POSTGRE; dbDriver = org.postgresql.Driver; }
+		jdbcDriver { database = REDSHIFT; urlHint = jdbc:redshift://cluster_id.redshift.amazonaws.com:5439/database; name = Amazon Redshift; driverLibrary = lib/redshift/RedshiftJDBC41-1.1.17.1017.jar; jdbcSpecific = REDSHIFT; dbDriver = com.amazon.redshift.jdbc41.Driver; }
+		jdbcDriver { database = MSSQL; urlHint = jdbc:jtds:sqlserver://hostname:1433/database;instance=instanceName,jdbc:jtds:sqlserver://hostname:1433/database; name = Microsoft SQL Server; driverLibrary = lib/jtds/jtds-1.2.8.jar; jdbcSpecific = MSSQL; dbDriver = net.sourceforge.jtds.jdbc.Driver; }
+		jdbcDriver { database = MSACCESSJAVA; urlHint = jdbc:ucanaccess://database_file,jdbc:ucanaccess://database_file;newdatabaseversion=V2010; name = Microsoft Access; driverLibrary = lib/msaccess/ucanaccess-4.0.2.jar;lib/msaccess/jackcess-2.1.6.jar;lib/msaccess/hsqldb-2.3.1.jar; jdbcSpecific = MSACCESSJAVA; dbDriver = net.ucanaccess.jdbc.UcanaccessDriver; }
+		jdbcDriver { database = SYBASE; urlHint = jdbc:jtds:sybase://hostname:7100/database; name = Sybase; driverLibrary = lib/jtds/jtds-1.2.8.jar; jdbcSpecific = SYBASE; dbDriver = net.sourceforge.jtds.jdbc.Driver; }
+		jdbcDriver { database = SQLITE; urlHint = jdbc:sqlite:C:/database; name = SQLite; driverLibrary = lib/sqlite/sqlite-jdbc-3.6.20.1.jar; jdbcSpecific = SQLITE; dbDriver = org.sqlite.JDBC; }
+		jdbcDriver { database = DERBY; urlHint = jdbc:derby://hostname:1527/derby.db; name = Derby; driverLibrary = lib/derby/derbyclient-10.11.1.1.jar; jdbcSpecific = DERBY; dbDriver = org.apache.derby.jdbc.ClientDriver; }
+		jdbcDriver { database = FIREBIRD; urlHint = jdbc:firebirdsql:localhost/3050:/firebird/test.gdb; name = Firebird; jdbcSpecific = FIREBIRD; dbDriver = org.firebirdsql.jdbc.FBDriver; }
+		jdbcDriver { database = VERTICA; urlHint = jdbc:vertica://hostname:5433/database; name = Vertica; driverLibrary = lib/vertica/vertica-jdbc-9.1.1-0.jar; jdbcSpecific = VERTICA; dbDriver = com.vertica.jdbc.Driver; }
+
+2020-07-23 17:43:30,716 Plugins           DEBUG [main] - Plugin org.jetel.license loaded.
+	id - org.jetel.license
+	version - 5.6.2.13
+	provider-name - CloverDX
+
+2020-07-23 17:43:30,716 Plugins           DEBUG [main] - Plugin org.jetel.lookup loaded.
+	id - org.jetel.lookup
+	version - 5.6.2.13
+	provider-name - CloverDX
+		lookup { className = org.jetel.lookup.SimpleLookupTable; type = simpleLookup; }
+		lookup { className = org.jetel.lookup.DBLookupTable; type = dbLookup; }
+		lookup { className = org.jetel.lookup.RangeLookupTable; type = rangeLookup; }
+
+2020-07-23 17:43:30,716 Plugins           DEBUG [main] - Plugin org.jetel.sequence loaded.
+	id - org.jetel.sequence
+	version - 5.6.2.13
+	provider-name - CloverDX
+		sequence { className = org.jetel.sequence.SimpleSequence; type = SIMPLE_SEQUENCE; }
+		sequence { className = org.jetel.sequence.PrimitiveSequence; type = PRIMITIVE_SEQUENCE; }
+
+2020-07-23 17:43:30,717 Plugins           DEBUG [main] - Plugin org.jetel.component loaded.
+	id - org.jetel.component
+	version - 5.6.2.13
+	provider-name - CloverDX
+		component { className = org.jetel.component.DataReader; name = UniversalDataReader; type = DATA_READER; }
+		component { className = org.jetel.component.DataWriter; name = UniversalDataWriter; type = DATA_WRITER; }
+		component { className = org.jetel.component.DataReader; name = FlatFileReader; type = FLAT_FILE_READER; }
+		component { className = org.jetel.component.DataWriter; name = FlatFileWriter; type = FLAT_FILE_WRITER; }
+		component { className = org.jetel.component.DelimitedDataReader; name = DelimitedDataReader; type = DELIMITED_DATA_READER; }
+		component { className = org.jetel.component.DelimitedDataWriter; name = DelimitedDataWriter; type = DELIMITED_DATA_WRITER; }
+		component { className = org.jetel.component.SimpleCopy; name = SimpleCopy; type = SIMPLE_COPY; }
+		component { className = org.jetel.component.Concatenate; name = Concatenate; type = CONCATENATE; }
+		component { className = org.jetel.component.SimpleGather; name = SimpleGather; type = SIMPLE_GATHER; }
+		component { className = org.jetel.component.Reformat; name = Reformat; type = REFORMAT; }
+		component { className = org.jetel.component.DBInputTable; name = DatabaseReader; type = DB_INPUT_TABLE; }
+		component { className = org.jetel.component.Sort; name = Sort; type = SORT; }
+		component { className = org.jetel.component.DBOutputTable; name = DatabaseWriter; type = DB_OUTPUT_TABLE; }
+		component { className = org.jetel.component.FixLenDataWriter; name = FixLenDataWriter; type = FIXLEN_DATA_WRITER; }
+		component { className = org.jetel.component.Dedup; name = Dedup; type = DEDUP; }
+		component { className = org.jetel.component.FixLenDataReader; name = FixLenDataReader; type = FIXLEN_DATA_READER; }
+		component { className = org.jetel.component.Merge; name = Merge; type = MERGE; }
+		component { className = org.jetel.component.CrossJoin; name = CrossJoin; type = CROSS_JOIN; }
+		component { className = org.jetel.component.MergeJoin; name = MergeJoin; type = MERGE_JOIN; }
+		component { className = org.jetel.component.MergeJoin; name = ExtMergeJoin; type = EXT_MERGE_JOIN; }
+		component { className = org.jetel.component.MergeJoin; type = SORTED_JOIN; }
+		component { className = org.jetel.component.Trash; name = Trash; type = TRASH; }
+		component { className = org.jetel.component.Trashifier; type = TRASHIFIER; }
+		component { className = org.jetel.component.DBExecute; name = DBExecute; type = DB_EXECUTE; }
+		component { className = org.jetel.component.HashJoin; name = HashJoin; type = HASH_JOIN; }
+		component { className = org.jetel.component.HashJoin; name = ExtHashJoin; type = EXT_HASH_JOIN; }
+		component { className = org.jetel.component.CheckForeignKey; name = CheckForeignKey; type = CHECK_FOREIGN_KEY; }
+		component { className = org.jetel.component.DBFDataReader; name = DBFDataReader; type = DBF_DATA_READER; }
+		component { className = org.jetel.component.DBFDataWriter; name = DBFDataWriter; type = DBF_DATA_WRITER; }
+		component { className = org.jetel.component.ExtFilter; name = Filter; type = EXT_FILTER; }
+		component { className = org.jetel.component.ExtSort; name = ExtSort; type = EXT_SORT; }
+		component { className = org.jetel.component.SortWithinGroups; name = SortWithinGroups; type = SORT_WITHIN_GROUPS; }
+		component { className = org.jetel.component.Partition; name = Partition; type = PARTITION; }
+		component { className = org.jetel.component.DataIntersection; name = DataIntersection; type = DATA_INTERSECTION; }
+		component { className = org.jetel.component.Aggregate; name = Aggregate; type = AGGREGATE; }
+		component { className = org.jetel.component.SystemExecute; name = SystemExecute; type = SYS_EXECUTE; }
+		component { className = org.jetel.component.RunGraph; name = RunGraph; type = RUN_GRAPH; }
+		component { className = org.jetel.component.HttpConnector; name = HTTPConnector; type = HTTP_CONNECTOR; }
+		component { className = org.jetel.component.KeyGenerator; name = KeyGenerator; type = KEY_GEN; }
+		component { className = org.jetel.component.AproxMergeJoin; name = ApproximativeJoin; type = APROX_MERGE_JOIN; }
+		component { className = org.jetel.component.DBJoin; name = DBJoin; type = DBJOIN; }
+		component { className = org.jetel.component.XLSReader; name = XLSDataReader; type = XLS_READER; }
+		component { className = org.jetel.component.XLSWriter; name = XLSDataWriter; type = XLS_WRITER; }
+		component { className = org.jetel.component.CloverDataWriter; name = CloverDataWriter; type = CLOVER_WRITER; }
+		component { className = org.jetel.component.CloverDataReader; name = CloverDataReader; type = CLOVER_READER; }
+		component { className = org.jetel.component.StructureWriter; name = StructuredDataWriter; type = STRUCTURE_WRITER; }
+		component { className = org.jetel.component.Normalizer; name = Normalizer; type = NORMALIZER; }
+		component { className = org.jetel.component.Denormalizer; name = Denormalizer; type = DENORMALIZER; }
+		component { className = org.jetel.component.Rollup; name = Rollup; type = ROLLUP; }
+		component { className = org.jetel.component.JmsReader; name = JMSReader; type = JMS_READER; }
+		component { className = org.jetel.component.JmsWriter; name = JMSWriter; type = JMS_WRITER; }
+		component { className = org.jetel.component.LookupJoin; name = LookupJoin; type = LOOKUP_JOIN; }
+		component { className = org.jetel.component.LookupTableReaderWriter; name = LookupTableReaderWriter; type = LOOKUP_TABLE_READER_WRITER; }
+		component { className = org.jetel.component.DataGenerator; name = DataGenerator; type = DATA_GENERATOR; }
+		component { className = org.jetel.component.SequenceChecker; name = SequenceChecker; type = SEQUENCE_CHECKER; }
+		component { className = org.jetel.component.TextTableWriter; type = TEXT_TABLE_WRITER; }
+		component { className = org.jetel.component.XmlXPathReader; name = XMLXPathReader; type = XML_XPATH_READER; }
+		component { className = org.jetel.component.XMLExtract; name = XMLExtract; type = XML_EXTRACT; }
+		component { className = org.jetel.component.JsonExtract; name = JSONExtract; type = JSON_EXTRACT; }
+		component { className = org.jetel.component.XmlReader; name = XMLReader; type = XML_READER; }
+		component { className = org.jetel.component.SpeedLimiter; name = SpeedLimiter; type = SPEED_LIMITER; }
+		component { className = org.jetel.component.SpeedLimiter; name = Sleep; type = SLEEP; }
+		component { className = org.jetel.component.JavaExecute; name = JavaExecute; type = JAVA_EXECUTE; }
+		component { className = org.jetel.component.GenericComponent; name = CustomJavaReader; type = GENERIC_READER; }
+		component { className = org.jetel.component.GenericComponent; name = CustomJavaWriter; type = GENERIC_WRITER; }
+		component { className = org.jetel.component.GenericComponent; name = CustomJavaTransformer; type = GENERIC_TRANSFORMER; }
+		component { className = org.jetel.component.GenericComponent; name = CustomJavaComponent; type = GENERIC_COMPONENT; }
+		component { className = org.jetel.component.XmlWriter; name = XMLWriter (deprecated); type = XML_WRITER; }
+		component { className = org.jetel.component.ExtXmlWriter; name = XMLWriter; type = EXT_XML_WRITER; }
+		component { className = org.jetel.component.XSLDataTransformer; name = XSLTransformer; type = XSL_TRANSFORMER; }
+		metadata { id = UniversalDataReader_Error; }
+		metadata { id = HTTPConnector_Request; }
+		metadata { id = HTTPConnector_Response; }
+		metadata { id = HTTPConnector_Error; }
+		metadata { id = RunGraph_Input; }
+		metadata { id = RunGraph_Output; }
+
+2020-07-23 17:43:30,718 Plugins           DEBUG [main] - Plugin org.jetel.bulkloader loaded.
+	id - org.jetel.bulkloader
+	version - 5.6.2.13
+	provider-name - CloverDX
+		component { className = org.jetel.component.OracleDataWriter; name = OracleBulkWriter; type = ORACLE_DATA_WRITER; }
+		component { className = org.jetel.component.DB2DataWriter; name = DB2BulkWriter; type = DB2_DATA_WRITER; }
+		component { className = org.jetel.component.InformixDataWriter; name = InformixBulkWriter; type = INFORMIX_DATA_WRITER; }
+		component { className = org.jetel.component.MsSqlDataWriter; name = MSSQLBulkWriter; type = MS_SQL_DATA_WRITER; }
+		component { className = org.jetel.component.MysqlDataWriter; name = MySQLBulkWriter; type = MYSQL_DATA_WRITER; }
+		component { className = org.jetel.component.PostgreSqlDataWriter; name = PostgreSQLBulkWriter; type = POSTGRESQL_DATA_WRITER; }
+		component { className = org.jetel.component.InfobrightDataWriter; name = InfobrightBulkWriter; type = INFOBRIGHT_DATA_WRITER; }
+
+2020-07-23 17:43:30,718 Plugins           DEBUG [main] - Plugin org.jetel.hadoop loaded.
+	id - org.jetel.hadoop
+	version - 5.6.2.13
+	provider-name - CloverDX
+		connection { className = org.jetel.hadoop.connection.HadoopConnection; type = HADOOP; }
+		component { className = org.jetel.hadoop.component.HadoopWriter; name = HadoopWriter; type = HADOOP_WRITER; }
+		component { className = org.jetel.hadoop.component.HadoopReader; name = HadoopReader; type = HADOOP_READER; }
+		urlResolver { className = org.jetel.hadoop.service.filesystem.HadoopPathResolver; type = HADOOP_HDFS; }
+
+2020-07-23 17:43:30,719 Plugins           DEBUG [main] - Plugin org.jetel.smb2 loaded.
+	id - org.jetel.smb2
+	version - 5.6.2.13
+	provider-name - CloverDX
+		urlResolver { className = org.jetel.util.protocols.smb2.SMB2PathResolver; type = SMB2; }
+
+2020-07-23 17:43:30,719 Plugins           DEBUG [main] - Plugin com.cloveretl.tableau.TableauWriter loaded.
+	id - com.cloveretl.tableau.TableauWriter
+	version - 5.6.2.13
+	provider-name - CloverDX
+		component { className = com.cloveretl.tableau.TableauWriter; name = TableauWriter; type = TABLEAU_WRITER; }
+
+2020-07-23 17:43:30,719 Plugins           DEBUG [main] - Plugin org.jetel.thirdparty loaded.
+	id - org.jetel.thirdparty
+	version - 5.6.2.13
+	provider-name - CloverDX
+		component { className = org.jetel.component.Filter; name = Filter; type = FILTER; }
+		component { className = com.linagora.component.LdapReader; name = LDAPReader; type = LDAP_READER; }
+		component { className = com.linagora.component.LdapWriter; name = LDAPWriter; type = LDAP_WRITER; }
+
+2020-07-23 17:43:30,719 Plugins           DEBUG [main] - Plugin com.opensys.cloveretl.compiler loaded.
+	id - com.opensys.cloveretl.compiler
+	version - 5.6.2.13
+	provider-name - CloverDX
+		tlCompiler { className = com.opensys.cloveretl.ctl.BytecodeCompiler; type = bytecode.compiler; priority = 1; }
+
+2020-07-23 17:43:30,719 Plugins           DEBUG [main] - Plugin com.opensys.clover.component loaded.
+	id - com.opensys.clover.component
+	version - 5.6.2.13
+	provider-name - CloverDX
+		component { className = com.opensys.cloveretl.component.EmailFilter; name = EmailFilter; type = EMAIL_FILTER; }
+		component { className = com.opensys.cloveretl.component.EmailSender; name = EmailSender; type = EMAIL_SENDER; }
+		component { className = com.opensys.cloveretl.component.EmailReader; name = EmailReader; type = EMAIL_READER; }
+		component { className = com.opensys.cloveretl.component.FastSort; name = FastSort; type = FAST_SORT; }
+		component { className = com.opensys.cloveretl.component.MetaPivot; name = MetaPivot; type = META_PIVOT; }
+		component { className = com.opensys.cloveretl.component.MultiLevelReader; name = MultiLevelReader; type = MULTI_LEVEL_READER; }
+		component { className = com.opensys.cloveretl.component.RelationalJoin; name = RelationalJoin; type = RELATIONAL_JOIN; }
+		component { className = com.opensys.cloveretl.component.ParallelReader; name = ParallelReader; type = PARALLEL_READER; }
+		component { className = com.opensys.cloveretl.component.ClusterPartition; name = ParallelPartition; type = CLUSTER_PARTITION; }
+		component { className = com.opensys.cloveretl.component.ClusterSimpleGather; name = ParallelSimpleGather; type = CLUSTER_SIMPLE_GATHER; }
+		component { className = com.opensys.cloveretl.component.ClusterMerge; name = ParallelMerge; type = CLUSTER_MERGE; }
+		component { className = com.opensys.cloveretl.component.ClusterSimpleCopy; name = ParallelSimpleCopy; type = CLUSTER_SIMPLE_COPY; }
+		component { className = com.opensys.cloveretl.component.WebServiceClient; name = WebServiceClient; type = WEB_SERVICE_CLIENT; }
+		component { className = com.opensys.cloveretl.component.complexdatareader.ComplexDataReader; name = ComplexDataReader; type = COMPLEX_DATA_READER; }
+		component { className = com.opensys.cloveretl.component.DataSampler; name = DataSampler; type = DATA_SAMPLER; }
+		component { className = com.opensys.cloveretl.component.Pivot; name = Pivot; type = PIVOT; }
+		component { className = com.opensys.cloveretl.component.BeanReader; name = JavaBeanReader; type = BEAN_READER; }
+		component { className = com.opensys.cloveretl.component.BeanWriter; name = JavaBeanWriter; type = BEAN_WRITER; }
+		component { className = com.opensys.cloveretl.component.MapWriter; name = JavaMapWriter; type = MAP_WRITER; }
+		component { className = com.opensys.cloveretl.component.JsonReader; name = JSONReader; type = JSON_READER; }
+		component { className = com.opensys.cloveretl.component.JsonWriter; name = JSONWriter; type = JSON_WRITER; }
+		component { className = com.opensys.cloveretl.component.ExecuteGraph; name = ExecuteGraph; type = EXECUTE_GRAPH; }
+		component { className = com.opensys.cloveretl.component.ExecuteJobflow; name = ExecuteJobflow; type = EXECUTE_JOBFLOW; }
+		component { className = com.opensys.cloveretl.component.MonitorGraph; name = MonitorGraph; type = MONITOR_GRAPH; }
+		component { className = com.opensys.cloveretl.component.MonitorJobflow; name = MonitorJobflow; type = MONITOR_JOBFLOW; }
+		component { className = com.opensys.cloveretl.component.ExecuteScript; name = ExecuteScript; type = EXECUTE_SCRIPT; }
+		component { className = com.opensys.cloveretl.component.KillGraph; name = KillGraph; type = KILL_GRAPH; }
+		component { className = com.opensys.cloveretl.component.KillJobflow; name = KillJobflow; type = KILL_JOBFLOW; }
+		component { className = com.opensys.cloveretl.component.Fail; name = Fail; type = FAIL; }
+		component { className = com.opensys.cloveretl.component.SetJobOutput; name = SetJobOutput; type = SET_JOB_OUTPUT; }
+		component { className = com.opensys.cloveretl.component.GetJobInput; name = GetJobInput; type = GET_JOB_INPUT; }
+		component { className = com.opensys.cloveretl.component.TokenGather; name = TokenGather; type = TOKEN_GATHER; }
+		component { className = com.opensys.cloveretl.component.Barrier; name = Barrier; type = BARRIER; }
+		component { className = com.opensys.cloveretl.component.Condition; name = Condition; type = CONDITION; }
+		component { className = com.opensys.cloveretl.component.Success; name = Success; type = SUCCESS; }
+		component { className = com.opensys.cloveretl.component.Combine; name = Combine; type = COMBINE; }
+		component { className = com.opensys.cloveretl.component.ListFiles; name = ListFiles; type = LIST_FILES; }
+		component { className = com.opensys.cloveretl.component.CreateFiles; name = CreateFiles; type = CREATE_FILES; }
+		component { className = com.opensys.cloveretl.component.DeleteFiles; name = DeleteFiles; type = DELETE_FILES; }
+		component { className = com.opensys.cloveretl.component.CopyFiles; name = CopyFiles; type = COPY_FILES; }
+		component { className = com.opensys.cloveretl.component.MoveFiles; name = MoveFiles; type = MOVE_FILES; }
+		component { className = com.opensys.cloveretl.component.LoadBalancingPartition; name = LoadBalancingPartition; type = LOAD_BALANCING_PARTITION; }
+		component { className = com.opensys.cloveretl.component.ClusterLoadBalancingPartition; name = ParallelLoadBalancingPartition; type = CLUSTER_LOAD_BALANCING_PARTITION; }
+		component { className = com.opensys.cloveretl.component.ClusterRepartition; name = ParallelRepartition; type = CLUSTER_REPARTITION; }
+		component { className = com.opensys.cloveretl.component.ClusterRegather; type = CLUSTER_REGATHER; }
+		component { className = com.opensys.cloveretl.component.ExecuteMapReduce; name = ExecuteMapReduce; type = EXECUTE_MAPREDUCE; }
+		component { className = com.opensys.cloveretl.component.Loop; name = Loop; type = LOOP; }
+		component { className = com.opensys.cloveretl.component.SalesforceReader; name = SalesforceReader; type = SALESFORCE_READER; }
+		component { className = com.opensys.cloveretl.component.SalesforceWriter; name = SalesforceWriter; type = SALESFORCE_WRITER; }
+		component { className = com.opensys.cloveretl.component.SalesforceBulkReader; name = SalesforceBulkReader; type = SALESFORCE_BULK_READER; }
+		component { className = com.opensys.cloveretl.component.SalesforceBulkWriter; name = SalesforceBulkWriter; type = SALESFORCE_BULK_WRITER; }
+		component { className = com.opensys.cloveretl.component.SalesforceWaveWriter; name = SalesforceWaveWriter; type = SALESFORCE_WAVE_WRITER; }
+		component { className = com.opensys.cloveretl.component.dataservice.RestJobInput; name = Input; type = RESTJOB_INPUT; }
+		component { className = com.opensys.cloveretl.component.dataservice.RestJobOutput; name = Output; type = RESTJOB_OUTPUT; }
+		metadata { id = ExecuteGraph_RunStatus; }
+		metadata { id = ExecuteGraph_RunConfig; }
+		metadata { id = MonitorGraph_RunConfig; }
+		metadata { id = ExecuteScript_RunConfig; }
+		metadata { id = ExecuteScript_RunResult; }
+		metadata { id = KillGraph_RunConfig; }
+		metadata { id = CopyFiles_Attributes; }
+		metadata { id = CreateFiles_Attributes; }
+		metadata { id = DeleteFiles_Attributes; }
+		metadata { id = ListFiles_Attributes; }
+		metadata { id = MoveFiles_Attributes; }
+		metadata { id = CopyFiles_Result; }
+		metadata { id = CreateFiles_Result; }
+		metadata { id = DeleteFiles_Result; }
+		metadata { id = ListFiles_Result; }
+		metadata { id = MoveFiles_Result; }
+		metadata { id = CopyFiles_Error; }
+		metadata { id = CreateFiles_Error; }
+		metadata { id = DeleteFiles_Error; }
+		metadata { id = ListFiles_Error; }
+		metadata { id = MoveFiles_Error; }
+		metadata { id = ExecuteMapReduce_JobResult; }
+		metadata { id = ParallelReader_Error; }
+		metadata { id = MetaPivot_Output; }
+		metadata { id = RecordToKeyValues_Output; }
+		metadata { id = KeyValuesToRecord_Input; }
+		metadata { id = EmailReader_Message; }
+		metadata { id = EmailReader_Attachment; }
+		metadata { id = SalesforceWave_Success; }
+		metadata { id = SalesforceWave_Error; }
+		connection { className = com.opensys.cloveretl.connection.SalesforceConnection; type = SALESFORCE; }
+		graphAnalyzerParticipant { className = com.opensys.cloveretl.component.dataservice.b; type = restjob.graphAnalyzerParticipant; }
+
+2020-07-23 17:43:30,721 Plugins           DEBUG [main] - Plugin com.opensys.cloveretl.ctlfunction loaded.
+	id - com.opensys.cloveretl.ctlfunction
+	version - 5.6.2.13
+	provider-name - CloverDX
+		ctlfunction { libraryName = string; className = com.opensys.cloveretl.ctl.extensions.StringLib; }
+		ctlfunction { libraryName = HTTP; className = com.opensys.cloveretl.ctl.extensions.HttpLib; }
+
+2020-07-23 17:43:30,721 Plugins           DEBUG [main] - Plugin com.opensys.clover.lookup loaded.
+	id - com.opensys.clover.lookup
+	version - 5.6.2.13
+	provider-name - CloverDX
+		lookup { className = com.opensys.cloveretl.lookup.PersistentLookupTable; type = persistentLookup; }
+		lookup { className = com.opensys.cloveretl.lookup.AspellLookupTable; type = aspellLookup; }
+
+2020-07-23 17:43:30,721 Plugins           DEBUG [main] - Plugin com.opensys.clover.mongodb loaded.
+	id - com.opensys.clover.mongodb
+	version - 5.6.2.13
+	provider-name - CloverDX
+		connection { className = com.opensys.cloveretl.connection.nosql.mongo.MongoDBConnection; type = MONGODB; }
+		component { className = com.opensys.cloveretl.component.MongoDBReader; name = MongoDBReader; type = MONGODB_READER; }
+		component { className = com.opensys.cloveretl.component.MongoDBWriter; name = MongoDBWriter; type = MONGODB_WRITER; }
+		component { className = com.opensys.cloveretl.component.MongoDBExecute; name = MongoDBExecute; type = MONGODB_EXECUTE; }
+		metadata { id = MongoDBReader_Attributes; }
+		metadata { id = MongoDBWriter_Attributes; }
+		metadata { id = MongoDBExecute_Attributes; }
+		metadata { id = MongoDBReader_Result; }
+		metadata { id = MongoDBWriter_Result; }
+		metadata { id = MongoDBExecute_Result; }
+		metadata { id = MongoDBReader_Error; }
+		metadata { id = MongoDBWriter_Error; }
+		metadata { id = MongoDBExecute_Error; }
+
+2020-07-23 17:43:30,721 Plugins           DEBUG [main] - Plugin com.opensys.cloveretl.quickbase loaded.
+	id - com.opensys.cloveretl.quickbase
+	version - 5.6.2.13
+	provider-name - CloverDX
+		connection { className = com.opensys.cloveretl.quickbase.connection.QuickBaseConnection; type = QUICKBASE; }
+		component { className = com.opensys.cloveretl.quickbase.component.QuickBaseRecordReader; name = QuickBase Record Reader; type = QUICKBASE_RECORD_READER; }
+		component { className = com.opensys.cloveretl.quickbase.component.QuickBaseQueryReader; name = QuickBase Query Reader; type = QUICKBASE_QUERY_READER; }
+		component { className = com.opensys.cloveretl.quickbase.component.QuickBaseRecordWriter; name = QuickBase Record Writer; type = QUICKBASE_RECORD_WRITER; }
+		component { className = com.opensys.cloveretl.quickbase.component.QuickBaseImportCSV; name = QuickBase Import CSV; type = QUICKBASE_IMPORT_CSV; }
+
+2020-07-23 17:43:30,721 Plugins           DEBUG [main] - Plugin com.opensys.clover.spreadsheet loaded.
+	id - com.opensys.clover.spreadsheet
+	version - 5.6.2.13
+	provider-name - CloverDX
+		component { className = com.opensys.cloveretl.component.SpreadsheetReader; name = SpreadsheetDataReader; type = SPREADSHEET_READER; }
+		component { className = com.opensys.cloveretl.component.SpreadsheetWriter; name = SpreadsheetDataWriter; type = SPREADSHEET_WRITER; }
+		metadata { id = SpreadsheetReader_Error; }
+
+2020-07-23 17:43:30,721 Plugins           DEBUG [main] - Plugin com.opensys.clover.subgraph loaded.
+	id - com.opensys.clover.subgraph
+	version - 5.6.2.13
+	provider-name - CloverDX
+		component { className = com.opensys.cloveretl.component.Subgraph; name = Subgraph; type = SUBGRAPH; }
+		component { className = com.opensys.cloveretl.component.SubgraphInput; name = SubgraphInput; type = SUBGRAPH_INPUT; }
+		component { className = com.opensys.cloveretl.component.SubgraphOutput; name = SubgraphOutput; type = SUBGRAPH_OUTPUT; }
+
+2020-07-23 17:43:30,722 Plugins           DEBUG [main] - Plugin com.opensys.clover.validator loaded.
+	id - com.opensys.clover.validator
+	version - 5.6.2.13
+	provider-name - CloverDX
+		component { className = com.opensys.cloveretl.validator.component.Validator; name = Validator; type = VALIDATOR; }
+		metadata { id = Validator_InvalidRecords; }
+
+2020-07-23 17:43:30,722 Plugins           DEBUG [main] - Plugin org.jetel.profiler loaded.
+	id - org.jetel.profiler
+	version - 5.6.2.13
+	provider-name - CloverDX
+		generalObject { className = com.cloveretl.profiler.engine.ProfilerLauncherImpl; id = ProfilerLauncher; }
+		generalObject { className = com.cloveretl.profiler.engine.PreviewGraphGeneratorImpl; id = ProfilerPreviewGraphGenerator; }
+		component { className = com.cloveretl.profiler.engine.components.Profiler; name = ProfilerProbe; type = PROFILER_PROBE; }
+		component { className = com.cloveretl.profiler.engine.components.ExecuteProfilerJob; name = ExecuteProfilerJob; type = EXECUTE_PROFILER_JOB; }
+		metadata { id = ExecuteProfilerJob_RunStatus; }
+		metadata { id = ExecuteProfilerJob_RunConfig; }
+
+2020-07-23 17:43:30,724 EngineInitializer DEBUG [main] - License location: ./licenses
+2020-07-23 17:43:30,724 EngineInitializer DEBUG [main] - ======= Licenses =======
+2020-07-23 17:43:30,724 EngineInitializer DEBUG [main] - ======= License =======
+2020-07-23 17:43:30,725 EngineInitializer DEBUG [main] - Company : Northeastern University
+2020-07-23 17:43:30,725 EngineInitializer DEBUG [main] - No. : CLP1DNORTH16249830EX
+2020-07-23 17:43:30,725 EngineInitializer DEBUG [main] - Type : EVALUATION
+2020-07-23 17:43:30,725 EngineInitializer DEBUG [main] - Note : 
+2020-07-23 17:43:30,725 EngineInitializer DEBUG [main] - Person : Ture Carlson
+2020-07-23 17:43:30,725 EngineInitializer DEBUG [main] - Vendor : 
+2020-07-23 17:43:30,726 EngineInitializer DEBUG [main] - Expiration date : Sep 1, 2020
+2020-07-23 17:43:30,726 EngineInitializer DEBUG [main] - Upgrade valid until : Unlimited
+2020-07-23 17:43:30,726 EngineInitializer DEBUG [main] - ==== Products ====
+2020-07-23 17:43:30,726 EngineInitializer DEBUG [main] - Product Id : com.cloveretl.gui
+2020-07-23 17:43:30,726 EngineInitializer DEBUG [main] - Product info : Designer v5.6.x
+2020-07-23 17:43:30,726 EngineInitializer DEBUG [main] - Product name : Designer
+2020-07-23 17:43:30,727 EngineInitializer DEBUG [main] - Version : 5.6.0
+2020-07-23 17:43:30,727 EngineInitializer DEBUG [main] - Product Id : com.cloveretl.runtime
+2020-07-23 17:43:30,727 EngineInitializer DEBUG [main] - Product info : Runtime Environment v5.6.x
+2020-07-23 17:43:30,727 EngineInitializer DEBUG [main] - Product name : Runtime Environment
+2020-07-23 17:43:30,727 EngineInitializer DEBUG [main] - Version : 5.6.0
+2020-07-23 17:43:30,727 EngineInitializer DEBUG [main] - Product Id : com.cloveretl.profiler
+2020-07-23 17:43:30,727 EngineInitializer DEBUG [main] - Product info : Data Quality v5.6.x
+2020-07-23 17:43:30,727 EngineInitializer DEBUG [main] - Product name : Data Quality
+2020-07-23 17:43:30,727 EngineInitializer DEBUG [main] - Version : 5.6.0
+2020-07-23 17:43:30,727 EngineInitializer DEBUG [main] - ======= END Licenses =======
+2020-07-23 17:43:37,691 GuiPlugin         DEBUG [Worker-14: Start CloverDX Runtime] - Checking ETL runtime status: http://localhost:58125/clover/accessibilityTest.jsp
+2020-07-23 17:43:41,733 GuiPlugin         DEBUG [Worker-14: Start CloverDX Runtime] - ETL runtime refused HTTP connection: Connect to localhost:58125 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+2020-07-23 17:43:42,734 GuiPlugin         DEBUG [Worker-14: Start CloverDX Runtime] - Checking ETL runtime status: http://localhost:58125/clover/accessibilityTest.jsp
+2020-07-23 17:43:43,644 GuiPlugin         DEBUG [Worker-14: Start CloverDX Runtime] - ETL runtime responded: HTTP/1.1 503 Service Unavailable
+2020-07-23 17:43:43,645 GuiPlugin         DEBUG [Worker-14: Start CloverDX Runtime] - Response content: CloverDX Server not initialized yet
+2020-07-23 17:43:44,646 GuiPlugin         DEBUG [Worker-14: Start CloverDX Runtime] - Checking ETL runtime status: http://localhost:58125/clover/accessibilityTest.jsp
+2020-07-23 17:43:44,652 GuiPlugin         DEBUG [Worker-14: Start CloverDX Runtime] - ETL runtime responded: HTTP/1.1 503 Service Unavailable
+2020-07-23 17:43:44,652 GuiPlugin         DEBUG [Worker-14: Start CloverDX Runtime] - Response content: CloverDX Server not initialized yet
+2020-07-23 17:43:45,653 GuiPlugin         DEBUG [Worker-14: Start CloverDX Runtime] - Checking ETL runtime status: http://localhost:58125/clover/accessibilityTest.jsp
+2020-07-23 17:43:45,656 GuiPlugin         DEBUG [Worker-14: Start CloverDX Runtime] - ETL runtime responded: HTTP/1.1 503 Service Unavailable
+2020-07-23 17:43:45,656 GuiPlugin         DEBUG [Worker-14: Start CloverDX Runtime] - Response content: CloverDX Server not initialized yet
+2020-07-23 17:43:46,657 GuiPlugin         DEBUG [Worker-14: Start CloverDX Runtime] - Checking ETL runtime status: http://localhost:58125/clover/accessibilityTest.jsp
+2020-07-23 17:43:46,661 GuiPlugin         DEBUG [Worker-14: Start CloverDX Runtime] - ETL runtime responded: HTTP/1.1 503 Service Unavailable
+2020-07-23 17:43:46,661 GuiPlugin         DEBUG [Worker-14: Start CloverDX Runtime] - Response content: CloverDX Server not initialized yet
+2020-07-23 17:43:47,661 GuiPlugin         DEBUG [Worker-14: Start CloverDX Runtime] - Checking ETL runtime status: http://localhost:58125/clover/accessibilityTest.jsp
+2020-07-23 17:43:47,665 GuiPlugin         DEBUG [Worker-14: Start CloverDX Runtime] - ETL runtime responded: HTTP/1.1 503 Service Unavailable
+2020-07-23 17:43:47,665 GuiPlugin         DEBUG [Worker-14: Start CloverDX Runtime] - Response content: CloverDX Server not initialized yet
+2020-07-23 17:43:48,666 GuiPlugin         DEBUG [Worker-14: Start CloverDX Runtime] - Checking ETL runtime status: http://localhost:58125/clover/accessibilityTest.jsp
+2020-07-23 17:43:48,684 GuiPlugin         DEBUG [Worker-14: Start CloverDX Runtime] - ETL runtime responded: HTTP/1.1 200 OK
+2020-07-23 17:43:48,684 GuiPlugin         DEBUG [Worker-14: Start CloverDX Runtime] - Response content: OK
+2020-07-23 17:43:49,140 ServerGUIPlugin   DEBUG [Worker-14: Start CloverDX Runtime] - Server (http://localhost:58125/clover) call #1 duration=15ms getSandboxes() 
+2020-07-23 17:58:36,805 ServerGUIPlugin   DEBUG [Worker-7: C:\Users\Ture\Documents\GitHub\MOVD\ETL Files\MOVD] - Server (http://localhost:58125/clover) call #1 duration=8ms getSandboxes() 
+2020-07-23 17:58:36,846 ServerGUIPlugin   DEBUG [Worker-7: C:\Users\Ture\Documents\GitHub\MOVD\ETL Files\MOVD] - Server (http://localhost:58125/clover) call #1 duration=40ms createSandbox([MOVD, MOVD, SHARED, false, [com.cloveretl.server.api.webservice.generated.SandboxLocationInfo@1c34063c]]) 
+2020-07-23 17:58:36,851 GuiPlugin         DEBUG [Worker-1: Mark disconnected projects] - Job 'Mark disconnected projects' finished in 54 ms with status [Status OK: unknown code=0 OK null].
+2020-07-23 17:58:37,115 ServerGUIPlugin   DEBUG [Worker-6: Auto share git projects] - Server (http://localhost:58125/clover) call #1 duration=113ms deleteSandbox([MOVD]) 
+2020-07-23 17:58:37,124 ServerGUIPlugin   DEBUG [Worker-6: Auto share git projects] - Server (http://localhost:58125/clover) call #1 duration=9ms getSandboxes() 
+2020-07-23 17:58:37,145 ServerGUIPlugin   DEBUG [Worker-6: Auto share git projects] - Server (http://localhost:58125/clover) call #1 duration=20ms createSandbox([MOVD, MOVD, SHARED, false, [com.cloveretl.server.api.webservice.generated.SandboxLocationInfo@7459a3b]]) 
+2020-07-23 17:58:38,865 ServerGUIPlugin   DEBUG [Worker-19: Classpath validation] - Server (http://localhost:58125/clover) call #1 duration=7ms getSandboxes() 
+2020-07-23 17:58:38,891 ServerGUIPlugin   DEBUG [Worker-19: Classpath validation] - Server (http://localhost:58125/clover) call #1 duration=26ms validateClasspath([MOVD]) 
+2020-07-23 17:58:38,891 GuiPlugin         DEBUG [Worker-19: Classpath validation] - Job 'Classpath validation' finished in 34 ms with status [Status OK: unknown code=0 OK null].
+2020-07-23 18:01:01,400 ServerGUIPlugin   DEBUG [Worker-7: Updating ETL model] - Server (http://localhost:58125/clover) call #1 duration=6ms getSandboxes() 
+2020-07-23 18:01:02,140 ServerGUIPlugin   DEBUG [Worker-7: Updating ETL model] - Server (http://localhost:58125/clover) call #1 duration=740ms analyseGraph([MOVD, graph/Approval_Cases.grf]) 
+2020-07-23 18:01:02,140 GuiPlugin         DEBUG [Worker-7: Updating ETL model] - Job 'Updating ETL model' finished in 747 ms with status [Status OK: unknown code=0 OK null].
+2020-07-23 18:01:02,761 GuiPlugin         DEBUG [main] - 'GUI checkConfig' finished in 64 ms
+2020-07-23 18:01:02,765 GuiPlugin         DEBUG [main] - 'Engine checkConfig' finished in 3 ms
+2020-07-23 18:01:02,773 ServerGUIPlugin   DEBUG [Worker-22: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=7ms getSandboxes() 
+2020-07-23 18:01:02,786 ServerGUIPlugin   DEBUG [Worker-22: Start Checkconfig Operation] - checkConfig operation [0] started
+2020-07-23 18:01:02,786 ServerGUIPlugin   DEBUG [Worker-22: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=12ms startCheckConfigOperation([MOVD, graph/Approval_Cases.grf, <obfuscated_xml>]) 
+2020-07-23 18:01:02,844 GuiPlugin         DEBUG [main] - 'Initialize reference cache' finished in 11 ms
+2020-07-23 18:01:02,941 ServerGUIPlugin   DEBUG [Worker-23: Start Metadata Propagation Operation] - Server (http://localhost:58125/clover) call #1 duration=16ms getSandboxes() 
+2020-07-23 18:01:02,950 GuiPlugin         DEBUG [Worker-22: Updating Reference Cache] - Job 'Updating Reference Cache' finished in 106 ms with status [Status OK: unknown code=0 OK null].
+2020-07-23 18:01:02,952 ServerGUIPlugin   DEBUG [Worker-23: Start Metadata Propagation Operation] - propagateMetadata operation [0] started
+2020-07-23 18:01:02,952 ServerGUIPlugin   DEBUG [Worker-23: Start Metadata Propagation Operation] - Server (http://localhost:58125/clover) call #1 duration=10ms startPropagateMetadataOperation([MOVD, graph/Approval_Cases.grf, <obfuscated_xml>]) 
+2020-07-23 18:01:03,046 ServerGUIPlugin   DEBUG [Worker-27: Get Metadata Propagation Operation Result] - Server (http://localhost:58125/clover) call #1 duration=22ms getPropagateMetadataOperationResult([graph/Approval_Cases.grf, 0]) 
+2020-07-23 18:01:03,126 GuiPlugin         DEBUG [Worker-18: Metadata propagation] - Job 'Metadata propagation' finished in 432 ms with status [Status OK: unknown code=0 OK null].
+2020-07-23 18:01:03,135 ServerGUIPlugin   DEBUG [Worker-26: Start Metadata Propagation Operation] - Server (http://localhost:58125/clover) call #1 duration=6ms getSandboxes() 
+2020-07-23 18:01:03,136 ServerGUIPlugin   DEBUG [Worker-6: Get Checkconfig Operation Result] - Server (http://localhost:58125/clover) call #1 duration=269ms getCheckConfigOperationResult([0]) 
+2020-07-23 18:01:03,145 ServerGUIPlugin   DEBUG [Worker-26: Start Metadata Propagation Operation] - propagateMetadata operation [1] started
+2020-07-23 18:01:03,145 ServerGUIPlugin   DEBUG [Worker-26: Start Metadata Propagation Operation] - Server (http://localhost:58125/clover) call #1 duration=9ms startPropagateMetadataOperation([MOVD, graph/Approval_Cases.grf, <obfuscated_xml>]) 
+2020-07-23 18:01:03,167 GuiPlugin         DEBUG [Worker-21: Check graph configuration] - Job 'Check graph configuration' finished in 402 ms with status [Status OK: unknown code=0 OK null].
+2020-07-23 18:01:03,236 ServerGUIPlugin   DEBUG [Worker-18: Get Metadata Propagation Operation Result] - Server (http://localhost:58125/clover) call #1 duration=7ms getPropagateMetadataOperationResult([graph/Approval_Cases.grf, 1]) 
+2020-07-23 18:01:03,447 GuiPlugin         DEBUG [Worker-22: Metadata propagation] - Job 'Metadata propagation' finished in 321 ms with status [Status OK: unknown code=0 OK null].
+2020-07-23 18:01:07,657 ServerGUIPlugin   DEBUG [Worker-18: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=6ms getSandboxes() 
+2020-07-23 18:01:07,855 ServerGUIPlugin   DEBUG [Worker-18: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=27ms prepareDataView([MOVD, graph/Approval_Cases.grf, APPROVAL_READER, <obfuscated_xml>, 1, null, null]) 
+2020-07-23 18:01:07,980 ServerGUIPlugin   DEBUG [main] - Server (http://localhost:58125/clover) call #1 duration=9ms getDefaults() 
+2020-07-23 18:01:08,063 ServerGUIPlugin   DEBUG [Worker-18: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=206ms fetchDataView([-1, 100, 10000]) 
+com.cloveretl.server.api.webservice.generated.GetViewDataFaultMsg: Execution of data retrieval job failed: Component [ApprovalReader:APPROVAL_READER] finished with status ERROR. (Out0: 0 recs)
+ Error when executing statement: select avg(AdjustedApprove), CreateDate from `movd`.`trump_approval` group by CreateDate order by CreateDate desc;
+  Cannot connect to the DB: Public Key Retrieval is not allowed
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_202]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_202]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_202]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_202]
+	at com.sun.xml.ws.fault.SOAPFaultBuilder.createException(SOAPFaultBuilder.java:147) ~[?:?]
+	at com.sun.xml.ws.client.sei.StubHandler.readResponse(StubHandler.java:253) ~[?:?]
+	at com.sun.xml.ws.db.DatabindingImpl.deserializeResponse(DatabindingImpl.java:206) ~[?:?]
+	at com.sun.xml.ws.db.DatabindingImpl.deserializeResponse(DatabindingImpl.java:293) ~[?:?]
+	at com.sun.xml.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:119) ~[?:?]
+	at com.sun.xml.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:92) ~[?:?]
+	at com.sun.xml.ws.client.sei.SEIStub.invoke(SEIStub.java:161) ~[?:?]
+	at com.sun.proxy.$Proxy81.fetchDataView(Unknown Source) ~[?:?]
+	at com.cloveretl.gui.server.service.q.fetchDataView(Main:436) ~[com.cloveretl.gui.server.jar:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_202]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_202]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_202]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_202]
+	at com.cloveretl.gui.server.service.A.A(Main:236) [com.cloveretl.gui.server.jar:?]
+	at com.cloveretl.gui.server.service.A.invoke(Main:90) [com.cloveretl.gui.server.jar:?]
+	at com.sun.proxy.$Proxy82.fetchDataView(Unknown Source) [?:?]
+	at com.cloveretl.gui.server.runtime.ServerDebugDataLoader.A(Main:48) [com.cloveretl.gui.server.jar:?]
+	at com.cloveretl.gui.debugdata.provider.A.B(Main:243) [cloveretl-gui.jar:?]
+	at com.cloveretl.gui.debugdata.provider.A.a(Main:235) [cloveretl-gui.jar:?]
+	at com.cloveretl.gui.debugdata.provider.A.A(Main:54) [cloveretl-gui.jar:?]
+	at com.cloveretl.gui.debugdata.provider.V.run(Main:115) [cloveretl-gui.jar:?]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60) [org.eclipse.core.jobs_3.10.0.v20180427-1454.jar:?]
+2020-07-23 18:01:13,865 ServerGUIPlugin   DEBUG [Worker-27: Debug Data Provider Disposer] - Server (http://localhost:58125/clover) call #1 duration=5ms disposeDataView([-1]) 
+2020-07-23 18:01:14,802 ServerGUIPlugin   DEBUG [Worker-26: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=6ms getSandboxes() 
+2020-07-23 18:01:14,818 ServerGUIPlugin   DEBUG [Worker-26: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=12ms prepareDataView([MOVD, graph/Approval_Cases.grf, APPROVAL_READER, <obfuscated_xml>, 1, null, null]) 
+2020-07-23 18:01:14,870 ServerGUIPlugin   DEBUG [Worker-26: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=52ms fetchDataView([-2, 100, 10000]) 
+com.cloveretl.server.api.webservice.generated.GetViewDataFaultMsg: Execution of data retrieval job failed: Component [ApprovalReader:APPROVAL_READER] finished with status ERROR. (Out0: 0 recs)
+ Error when executing statement: select avg(AdjustedApprove), CreateDate from `movd`.`trump_approval` group by CreateDate order by CreateDate desc;
+  Cannot connect to the DB: Public Key Retrieval is not allowed
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_202]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_202]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_202]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_202]
+	at com.sun.xml.ws.fault.SOAPFaultBuilder.createException(SOAPFaultBuilder.java:147) ~[?:?]
+	at com.sun.xml.ws.client.sei.StubHandler.readResponse(StubHandler.java:253) ~[?:?]
+	at com.sun.xml.ws.db.DatabindingImpl.deserializeResponse(DatabindingImpl.java:206) ~[?:?]
+	at com.sun.xml.ws.db.DatabindingImpl.deserializeResponse(DatabindingImpl.java:293) ~[?:?]
+	at com.sun.xml.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:119) ~[?:?]
+	at com.sun.xml.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:92) ~[?:?]
+	at com.sun.xml.ws.client.sei.SEIStub.invoke(SEIStub.java:161) ~[?:?]
+	at com.sun.proxy.$Proxy81.fetchDataView(Unknown Source) ~[?:?]
+	at com.cloveretl.gui.server.service.q.fetchDataView(Main:436) ~[com.cloveretl.gui.server.jar:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_202]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_202]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_202]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_202]
+	at com.cloveretl.gui.server.service.A.A(Main:236) [com.cloveretl.gui.server.jar:?]
+	at com.cloveretl.gui.server.service.A.invoke(Main:90) [com.cloveretl.gui.server.jar:?]
+	at com.sun.proxy.$Proxy82.fetchDataView(Unknown Source) [?:?]
+	at com.cloveretl.gui.server.runtime.ServerDebugDataLoader.A(Main:48) [com.cloveretl.gui.server.jar:?]
+	at com.cloveretl.gui.debugdata.provider.A.B(Main:243) [cloveretl-gui.jar:?]
+	at com.cloveretl.gui.debugdata.provider.A.a(Main:235) [cloveretl-gui.jar:?]
+	at com.cloveretl.gui.debugdata.provider.A.A(Main:54) [cloveretl-gui.jar:?]
+	at com.cloveretl.gui.debugdata.provider.V.run(Main:115) [cloveretl-gui.jar:?]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60) [org.eclipse.core.jobs_3.10.0.v20180427-1454.jar:?]
+2020-07-23 18:02:27,989 ServerGUIPlugin   DEBUG [Worker-18: Debug Data Provider Disposer] - Server (http://localhost:58125/clover) call #1 duration=6ms disposeDataView([-2]) 
+2020-07-23 18:02:28,050 ServerGUIPlugin   DEBUG [Worker-7: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=6ms getSandboxes() 
+2020-07-23 18:02:28,078 ServerGUIPlugin   DEBUG [Worker-7: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=14ms prepareDataView([MOVD, graph/Approval_Cases.grf, COVID_READER, <obfuscated_xml>, 1, null, null]) 
+2020-07-23 18:02:28,128 ServerGUIPlugin   DEBUG [Worker-7: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=50ms fetchDataView([-3, 100, 10000]) 
+com.cloveretl.server.api.webservice.generated.GetViewDataFaultMsg: Execution of data retrieval job failed: Component [Covid Reader:COVID_READER] finished with status ERROR. (Out0: 0 recs)
+ Error when executing statement: SELECT sum(jhcovidstat.CumulativeCases), jhcovidstat.Date FROM movd.jhcovidstat group by date;
+  Cannot connect to the DB: Public Key Retrieval is not allowed
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_202]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_202]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_202]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_202]
+	at com.sun.xml.ws.fault.SOAPFaultBuilder.createException(SOAPFaultBuilder.java:147) ~[?:?]
+	at com.sun.xml.ws.client.sei.StubHandler.readResponse(StubHandler.java:253) ~[?:?]
+	at com.sun.xml.ws.db.DatabindingImpl.deserializeResponse(DatabindingImpl.java:206) ~[?:?]
+	at com.sun.xml.ws.db.DatabindingImpl.deserializeResponse(DatabindingImpl.java:293) ~[?:?]
+	at com.sun.xml.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:119) ~[?:?]
+	at com.sun.xml.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:92) ~[?:?]
+	at com.sun.xml.ws.client.sei.SEIStub.invoke(SEIStub.java:161) ~[?:?]
+	at com.sun.proxy.$Proxy81.fetchDataView(Unknown Source) ~[?:?]
+	at com.cloveretl.gui.server.service.q.fetchDataView(Main:436) ~[com.cloveretl.gui.server.jar:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_202]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_202]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_202]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_202]
+	at com.cloveretl.gui.server.service.A.A(Main:236) [com.cloveretl.gui.server.jar:?]
+	at com.cloveretl.gui.server.service.A.invoke(Main:90) [com.cloveretl.gui.server.jar:?]
+	at com.sun.proxy.$Proxy82.fetchDataView(Unknown Source) [?:?]
+	at com.cloveretl.gui.server.runtime.ServerDebugDataLoader.A(Main:48) [com.cloveretl.gui.server.jar:?]
+	at com.cloveretl.gui.debugdata.provider.A.B(Main:243) [cloveretl-gui.jar:?]
+	at com.cloveretl.gui.debugdata.provider.A.a(Main:235) [cloveretl-gui.jar:?]
+	at com.cloveretl.gui.debugdata.provider.A.A(Main:54) [cloveretl-gui.jar:?]
+	at com.cloveretl.gui.debugdata.provider.V.run(Main:115) [cloveretl-gui.jar:?]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60) [org.eclipse.core.jobs_3.10.0.v20180427-1454.jar:?]
+2020-07-23 18:02:59,088 ServerGUIPlugin   DEBUG [Worker-18: Debug Data Provider Disposer] - Server (http://localhost:58125/clover) call #1 duration=5ms disposeDataView([-3]) 
+2020-07-23 18:04:53,245 ServerGUIPlugin   DEBUG [Worker-22: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=6ms getSandboxes() 
+2020-07-23 18:04:53,261 ServerGUIPlugin   DEBUG [Worker-22: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=12ms prepareDataView([MOVD, graph/Approval_Cases.grf, DATABASE_READER, <obfuscated_xml>, 1, null, null]) 
+2020-07-23 18:04:53,314 ServerGUIPlugin   DEBUG [Worker-22: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=53ms fetchDataView([-4, 100, 10000]) 
+com.cloveretl.server.api.webservice.generated.GetViewDataFaultMsg: Execution of data retrieval job failed: Component [DatabaseReader:DATABASE_READER] finished with status ERROR. (Out0: 0 recs)
+ Error when executing statement: select `movd`.`approval_vs_covid`.`AdjustedApprove`,`movd`.`approval_vs_covid`.`CovidCases`,`movd`.`approval_vs_covid`.`Date`
+ from `movd`.`approval_vs_covid`
+  Cannot connect to the DB: Public Key Retrieval is not allowed
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_202]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_202]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_202]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_202]
+	at com.sun.xml.ws.fault.SOAPFaultBuilder.createException(SOAPFaultBuilder.java:147) ~[?:?]
+	at com.sun.xml.ws.client.sei.StubHandler.readResponse(StubHandler.java:253) ~[?:?]
+	at com.sun.xml.ws.db.DatabindingImpl.deserializeResponse(DatabindingImpl.java:206) ~[?:?]
+	at com.sun.xml.ws.db.DatabindingImpl.deserializeResponse(DatabindingImpl.java:293) ~[?:?]
+	at com.sun.xml.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:119) ~[?:?]
+	at com.sun.xml.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:92) ~[?:?]
+	at com.sun.xml.ws.client.sei.SEIStub.invoke(SEIStub.java:161) ~[?:?]
+	at com.sun.proxy.$Proxy81.fetchDataView(Unknown Source) ~[?:?]
+	at com.cloveretl.gui.server.service.q.fetchDataView(Main:436) ~[com.cloveretl.gui.server.jar:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_202]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_202]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_202]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_202]
+	at com.cloveretl.gui.server.service.A.A(Main:236) [com.cloveretl.gui.server.jar:?]
+	at com.cloveretl.gui.server.service.A.invoke(Main:90) [com.cloveretl.gui.server.jar:?]
+	at com.sun.proxy.$Proxy82.fetchDataView(Unknown Source) [?:?]
+	at com.cloveretl.gui.server.runtime.ServerDebugDataLoader.A(Main:48) [com.cloveretl.gui.server.jar:?]
+	at com.cloveretl.gui.debugdata.provider.A.B(Main:243) [cloveretl-gui.jar:?]
+	at com.cloveretl.gui.debugdata.provider.A.a(Main:235) [cloveretl-gui.jar:?]
+	at com.cloveretl.gui.debugdata.provider.A.A(Main:54) [cloveretl-gui.jar:?]
+	at com.cloveretl.gui.debugdata.provider.V.run(Main:115) [cloveretl-gui.jar:?]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60) [org.eclipse.core.jobs_3.10.0.v20180427-1454.jar:?]
+2020-07-23 18:05:18,969 ServerGUIPlugin   DEBUG [Worker-7: Debug Data Provider Disposer] - Server (http://localhost:58125/clover) call #1 duration=5ms disposeDataView([-4]) 
+2020-07-23 18:09:28,544 ServerGUIPlugin   DEBUG [Worker-7: Updating ETL model] - Server (http://localhost:58125/clover) call #1 duration=7ms getSandboxes() 
+2020-07-23 18:09:28,570 ServerGUIPlugin   DEBUG [Worker-7: Updating ETL model] - Server (http://localhost:58125/clover) call #1 duration=26ms analyseGraph([MOVD, graph/covid_SP500.grf]) 
+2020-07-23 18:09:28,570 GuiPlugin         DEBUG [Worker-7: Updating ETL model] - Job 'Updating ETL model' finished in 33 ms with status [Status OK: unknown code=0 OK null].
+2020-07-23 18:09:29,071 GuiPlugin         DEBUG [main] - 'GUI checkConfig' finished in 4 ms
+2020-07-23 18:09:29,073 GuiPlugin         DEBUG [main] - 'Engine checkConfig' finished in 2 ms
+2020-07-23 18:09:29,080 ServerGUIPlugin   DEBUG [Worker-24: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=7ms getSandboxes() 
+2020-07-23 18:09:29,081 GuiPlugin         DEBUG [main] - 'Initialize reference cache' finished in 7 ms
+2020-07-23 18:09:29,088 ServerGUIPlugin   DEBUG [Worker-24: Start Checkconfig Operation] - checkConfig operation [1] started
+2020-07-23 18:09:29,089 ServerGUIPlugin   DEBUG [Worker-24: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=9ms startCheckConfigOperation([MOVD, graph/covid_SP500.grf, <obfuscated_xml>]) 
+2020-07-23 18:09:29,092 GuiPlugin         DEBUG [Worker-7: Updating Reference Cache] - Job 'Updating Reference Cache' finished in 11 ms with status [Status OK: unknown code=0 OK null].
+2020-07-23 18:09:29,182 ServerGUIPlugin   DEBUG [Worker-24: Get Checkconfig Operation Result] - Server (http://localhost:58125/clover) call #1 duration=9ms getCheckConfigOperationResult([1]) 
+2020-07-23 18:09:29,247 ServerGUIPlugin   DEBUG [Worker-7: Start Metadata Propagation Operation] - Server (http://localhost:58125/clover) call #1 duration=7ms getSandboxes() 
+2020-07-23 18:09:29,255 ServerGUIPlugin   DEBUG [Worker-7: Start Metadata Propagation Operation] - propagateMetadata operation [2] started
+2020-07-23 18:09:29,255 ServerGUIPlugin   DEBUG [Worker-7: Start Metadata Propagation Operation] - Server (http://localhost:58125/clover) call #1 duration=8ms startPropagateMetadataOperation([MOVD, graph/covid_SP500.grf, <obfuscated_xml>]) 
+2020-07-23 18:09:29,273 GuiPlugin         DEBUG [Worker-28: Check graph configuration] - Job 'Check graph configuration' finished in 200 ms with status [Status OK: unknown code=0 OK null].
+2020-07-23 18:09:29,346 ServerGUIPlugin   DEBUG [Worker-30: Get Metadata Propagation Operation Result] - Server (http://localhost:58125/clover) call #1 duration=6ms getPropagateMetadataOperationResult([graph/covid_SP500.grf, 2]) 
+2020-07-23 18:09:29,441 GuiPlugin         DEBUG [Worker-29: Metadata propagation] - Job 'Metadata propagation' finished in 374 ms with status [Status OK: unknown code=0 OK null].
+2020-07-23 18:09:29,450 ServerGUIPlugin   DEBUG [Worker-25: Start Metadata Propagation Operation] - Server (http://localhost:58125/clover) call #1 duration=7ms getSandboxes() 
+2020-07-23 18:09:29,458 ServerGUIPlugin   DEBUG [Worker-25: Start Metadata Propagation Operation] - propagateMetadata operation [3] started
+2020-07-23 18:09:29,458 ServerGUIPlugin   DEBUG [Worker-25: Start Metadata Propagation Operation] - Server (http://localhost:58125/clover) call #1 duration=7ms startPropagateMetadataOperation([MOVD, graph/covid_SP500.grf, <obfuscated_xml>]) 
+2020-07-23 18:09:29,549 ServerGUIPlugin   DEBUG [Worker-29: Get Metadata Propagation Operation Result] - Server (http://localhost:58125/clover) call #1 duration=6ms getPropagateMetadataOperationResult([graph/covid_SP500.grf, 3]) 
+2020-07-23 18:09:29,643 GuiPlugin         DEBUG [Worker-30: Metadata propagation] - Job 'Metadata propagation' finished in 202 ms with status [Status OK: unknown code=0 OK null].
+2020-07-23 18:13:36,575 GuiPlugin         DEBUG [main] - 'GUI checkConfig' finished in 2 ms
+2020-07-23 18:13:36,576 GuiPlugin         DEBUG [main] - 'Engine checkConfig' finished in 1 ms
+2020-07-23 18:13:36,584 ServerGUIPlugin   DEBUG [Worker-25: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=7ms getSandboxes() 
+2020-07-23 18:13:36,591 ServerGUIPlugin   DEBUG [Worker-25: Start Checkconfig Operation] - checkConfig operation [2] started
+2020-07-23 18:13:36,591 ServerGUIPlugin   DEBUG [Worker-25: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=7ms startCheckConfigOperation([MOVD, graph/covid_SP500.grf, <obfuscated_xml>]) 
+2020-07-23 18:13:36,684 ServerGUIPlugin   DEBUG [Worker-7: Get Checkconfig Operation Result] - Server (http://localhost:58125/clover) call #1 duration=8ms getCheckConfigOperationResult([2]) 
+2020-07-23 18:13:36,776 GuiPlugin         DEBUG [Worker-28: Check graph configuration] - Job 'Check graph configuration' finished in 200 ms with status [Status OK: unknown code=0 OK null].
+2020-07-23 18:13:38,635 GuiPlugin         DEBUG [main] - 'GUI checkConfig' finished in 1 ms
+2020-07-23 18:13:38,636 GuiPlugin         DEBUG [main] - 'Engine checkConfig' finished in 1 ms
+2020-07-23 18:13:38,643 ServerGUIPlugin   DEBUG [Worker-25: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=7ms getSandboxes() 
+2020-07-23 18:13:38,651 ServerGUIPlugin   DEBUG [Worker-25: Start Checkconfig Operation] - checkConfig operation [3] started
+2020-07-23 18:13:38,651 ServerGUIPlugin   DEBUG [Worker-25: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=8ms startCheckConfigOperation([MOVD, graph/covid_SP500.grf, <obfuscated_xml>]) 
+2020-07-23 18:13:38,754 ServerGUIPlugin   DEBUG [Worker-34: Get Checkconfig Operation Result] - Server (http://localhost:58125/clover) call #1 duration=18ms getCheckConfigOperationResult([3]) 
+2020-07-23 18:13:38,837 GuiPlugin         DEBUG [Worker-28: Check graph configuration] - Job 'Check graph configuration' finished in 201 ms with status [Status OK: unknown code=0 OK null].
+2020-07-23 18:15:27,409 ServerGUIPlugin   DEBUG [Thread-29] - Server (http://localhost:58125/clover) call #1 duration=6ms echo([Connection check]) 
+2020-07-23 18:15:27,417 ServerGUIPlugin   DEBUG [Thread-29] - Server (http://localhost:58125/clover) call #1 duration=7ms getSandboxes() 
+2020-07-23 18:15:27,484 ServerGUIPlugin   DEBUG [Thread-29] - Server (http://localhost:58125/clover) call #1 duration=52ms A([com.cloveretl.server.api.wsjdbc.generated.Properties@4e7a712f]) 
+2020-07-23 18:15:27,596 ServerGUIPlugin   DEBUG [Thread-29] - Server (http://localhost:58125/clover) call #1 duration=112ms a([/-/-/e97b29f9-f2f7-428c-98de-9b3f2f269b0f]) 
+2020-07-23 18:15:27,610 ServerGUIPlugin   DEBUG [Thread-29] - Server (http://localhost:58125/clover) call #1 duration=6ms a([/-/-/e97b29f9-f2f7-428c-98de-9b3f2f269b0f, 174f9846-21ed-46d6-af6c-e92043ea87ac]) 
+2020-07-23 18:15:37,009 GuiPlugin         DEBUG [main] - 'GUI checkConfig' finished in 2 ms
+2020-07-23 18:15:37,021 GuiPlugin         DEBUG [main] - 'Engine checkConfig' finished in 12 ms
+2020-07-23 18:15:37,027 ServerGUIPlugin   DEBUG [Worker-33: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=6ms getSandboxes() 
+2020-07-23 18:15:37,028 GuiPlugin         DEBUG [main] - 'GUI checkConfig' finished in 1 ms
+2020-07-23 18:15:37,030 GuiPlugin         DEBUG [main] - 'Engine checkConfig' finished in 2 ms
+2020-07-23 18:15:37,035 ServerGUIPlugin   DEBUG [Worker-33: Start Checkconfig Operation] - checkConfig operation [4] started
+2020-07-23 18:15:37,036 ServerGUIPlugin   DEBUG [Worker-33: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=8ms startCheckConfigOperation([MOVD, graph/covid_SP500.grf, <obfuscated_xml>]) 
+2020-07-23 18:15:37,129 ServerGUIPlugin   DEBUG [Worker-7: Get Checkconfig Operation Result] - Server (http://localhost:58125/clover) call #1 duration=8ms getCheckConfigOperationResult([4]) 
+2020-07-23 18:15:37,221 GuiPlugin         DEBUG [Worker-34: Check graph configuration] - Job 'Check graph configuration' finished in 200 ms with status [Status OK: unknown code=0 OK null].
+2020-07-23 18:15:37,227 ServerGUIPlugin   DEBUG [Worker-35: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=6ms getSandboxes() 
+2020-07-23 18:15:37,237 ServerGUIPlugin   DEBUG [Worker-35: Start Checkconfig Operation] - checkConfig operation [5] started
+2020-07-23 18:15:37,237 ServerGUIPlugin   DEBUG [Worker-35: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=9ms startCheckConfigOperation([MOVD, graph/covid_SP500.grf, <obfuscated_xml>]) 
+2020-07-23 18:15:37,327 ServerGUIPlugin   DEBUG [Worker-34: Get Checkconfig Operation Result] - Server (http://localhost:58125/clover) call #1 duration=6ms getCheckConfigOperationResult([5]) 
+2020-07-23 18:15:37,421 GuiPlugin         DEBUG [Worker-28: Check graph configuration] - Job 'Check graph configuration' finished in 200 ms with status [Status OK: unknown code=0 OK null].
+2020-07-23 18:15:40,207 GuiPlugin         DEBUG [main] - 'GUI checkConfig' finished in 2 ms
+2020-07-23 18:15:40,209 GuiPlugin         DEBUG [main] - 'Engine checkConfig' finished in 1 ms
+2020-07-23 18:15:40,214 ServerGUIPlugin   DEBUG [Worker-35: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=5ms getSandboxes() 
+2020-07-23 18:15:40,221 ServerGUIPlugin   DEBUG [Worker-35: Start Checkconfig Operation] - checkConfig operation [6] started
+2020-07-23 18:15:40,221 ServerGUIPlugin   DEBUG [Worker-35: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=7ms startCheckConfigOperation([MOVD, graph/covid_SP500.grf, <obfuscated_xml>]) 
+2020-07-23 18:15:40,314 ServerGUIPlugin   DEBUG [Worker-28: Get Checkconfig Operation Result] - Server (http://localhost:58125/clover) call #1 duration=5ms getCheckConfigOperationResult([6]) 
+2020-07-23 18:15:40,409 GuiPlugin         DEBUG [Worker-36: Check graph configuration] - Job 'Check graph configuration' finished in 200 ms with status [Status OK: unknown code=0 OK null].
+2020-07-23 18:15:41,483 ServerGUIPlugin   DEBUG [Worker-36: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=5ms getSandboxes() 
+2020-07-23 18:15:41,498 ServerGUIPlugin   DEBUG [Worker-36: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=12ms prepareDataView([MOVD, graph/covid_SP500.grf, SP500_READER, <obfuscated_xml>, 1, null, <obfuscated_xml>]) 
+2020-07-23 18:15:41,563 ServerGUIPlugin   DEBUG [Worker-36: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=64ms fetchDataView([-5, 100, 10000]) 
+com.cloveretl.server.api.webservice.generated.GetViewDataFaultMsg: Execution of data retrieval job failed: Component [SP500 Reader:SP500_READER] finished with status ERROR. (Out0: 0 recs)
+ Error when executing statement: select * from `movd`.`sp500`
+  Cannot connect to the DB: Public Key Retrieval is not allowed
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_202]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_202]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_202]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_202]
+	at com.sun.xml.ws.fault.SOAPFaultBuilder.createException(SOAPFaultBuilder.java:147) ~[?:?]
+	at com.sun.xml.ws.client.sei.StubHandler.readResponse(StubHandler.java:253) ~[?:?]
+	at com.sun.xml.ws.db.DatabindingImpl.deserializeResponse(DatabindingImpl.java:206) ~[?:?]
+	at com.sun.xml.ws.db.DatabindingImpl.deserializeResponse(DatabindingImpl.java:293) ~[?:?]
+	at com.sun.xml.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:119) ~[?:?]
+	at com.sun.xml.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:92) ~[?:?]
+	at com.sun.xml.ws.client.sei.SEIStub.invoke(SEIStub.java:161) ~[?:?]
+	at com.sun.proxy.$Proxy81.fetchDataView(Unknown Source) ~[?:?]
+	at com.cloveretl.gui.server.service.q.fetchDataView(Main:436) ~[com.cloveretl.gui.server.jar:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_202]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_202]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_202]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_202]
+	at com.cloveretl.gui.server.service.A.A(Main:236) [com.cloveretl.gui.server.jar:?]
+	at com.cloveretl.gui.server.service.A.invoke(Main:90) [com.cloveretl.gui.server.jar:?]
+	at com.sun.proxy.$Proxy82.fetchDataView(Unknown Source) [?:?]
+	at com.cloveretl.gui.server.runtime.ServerDebugDataLoader.A(Main:48) [com.cloveretl.gui.server.jar:?]
+	at com.cloveretl.gui.debugdata.provider.A.B(Main:243) [cloveretl-gui.jar:?]
+	at com.cloveretl.gui.debugdata.provider.A.a(Main:235) [cloveretl-gui.jar:?]
+	at com.cloveretl.gui.debugdata.provider.A.A(Main:54) [cloveretl-gui.jar:?]
+	at com.cloveretl.gui.debugdata.provider.V.run(Main:115) [cloveretl-gui.jar:?]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60) [org.eclipse.core.jobs_3.10.0.v20180427-1454.jar:?]
+2020-07-23 18:15:59,195 ServerGUIPlugin   DEBUG [Thread-31] - Server (http://localhost:58125/clover) call #1 duration=6ms echo([Connection check]) 
+2020-07-23 18:15:59,200 ServerGUIPlugin   DEBUG [Thread-31] - Server (http://localhost:58125/clover) call #1 duration=4ms getSandboxes() 
+2020-07-23 18:15:59,207 ServerGUIPlugin   DEBUG [Thread-31] - Server (http://localhost:58125/clover) call #1 duration=6ms A([com.cloveretl.server.api.wsjdbc.generated.Properties@1ef483ab]) 
+2020-07-23 18:15:59,224 ServerGUIPlugin   DEBUG [Thread-31] - Server (http://localhost:58125/clover) call #1 duration=17ms a([/-/-/fff82575-43d7-44de-b1f4-988fd2d7218a]) 
+2020-07-23 18:15:59,229 ServerGUIPlugin   DEBUG [Thread-31] - Server (http://localhost:58125/clover) call #1 duration=5ms a([/-/-/fff82575-43d7-44de-b1f4-988fd2d7218a, 65d36a0b-bff4-4e76-9758-76457a3ab85a]) 
+2020-07-23 18:16:02,713 GuiPlugin         DEBUG [main] - 'GUI checkConfig' finished in 1 ms
+2020-07-23 18:16:02,715 GuiPlugin         DEBUG [main] - 'Engine checkConfig' finished in 2 ms
+2020-07-23 18:16:02,720 ServerGUIPlugin   DEBUG [Worker-36: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=5ms getSandboxes() 
+2020-07-23 18:16:02,721 GuiPlugin         DEBUG [main] - 'GUI checkConfig' finished in 1 ms
+2020-07-23 18:16:02,722 GuiPlugin         DEBUG [main] - 'Engine checkConfig' finished in 1 ms
+2020-07-23 18:16:02,728 ServerGUIPlugin   DEBUG [Worker-36: Start Checkconfig Operation] - checkConfig operation [7] started
+2020-07-23 18:16:02,728 ServerGUIPlugin   DEBUG [Worker-36: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=8ms startCheckConfigOperation([MOVD, graph/covid_SP500.grf, <obfuscated_xml>]) 
+2020-07-23 18:16:02,820 ServerGUIPlugin   DEBUG [Worker-37: Get Checkconfig Operation Result] - Server (http://localhost:58125/clover) call #1 duration=5ms getCheckConfigOperationResult([7]) 
+2020-07-23 18:16:02,915 GuiPlugin         DEBUG [Worker-35: Check graph configuration] - Job 'Check graph configuration' finished in 200 ms with status [Status OK: unknown code=0 OK null].
+2020-07-23 18:16:02,920 ServerGUIPlugin   DEBUG [Worker-28: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=5ms getSandboxes() 
+2020-07-23 18:16:02,928 ServerGUIPlugin   DEBUG [Worker-28: Start Checkconfig Operation] - checkConfig operation [8] started
+2020-07-23 18:16:02,928 ServerGUIPlugin   DEBUG [Worker-28: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=8ms startCheckConfigOperation([MOVD, graph/covid_SP500.grf, <obfuscated_xml>]) 
+2020-07-23 18:16:03,021 ServerGUIPlugin   DEBUG [Worker-34: Get Checkconfig Operation Result] - Server (http://localhost:58125/clover) call #1 duration=6ms getCheckConfigOperationResult([8]) 
+2020-07-23 18:16:03,115 GuiPlugin         DEBUG [Worker-36: Check graph configuration] - Job 'Check graph configuration' finished in 200 ms with status [Status OK: unknown code=0 OK null].
+2020-07-23 18:16:04,453 GuiPlugin         DEBUG [main] - 'GUI checkConfig' finished in 1 ms
+2020-07-23 18:16:04,454 GuiPlugin         DEBUG [main] - 'Engine checkConfig' finished in 1 ms
+2020-07-23 18:16:04,460 ServerGUIPlugin   DEBUG [Worker-34: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=5ms getSandboxes() 
+2020-07-23 18:16:04,466 ServerGUIPlugin   DEBUG [Worker-34: Start Checkconfig Operation] - checkConfig operation [9] started
+2020-07-23 18:16:04,467 ServerGUIPlugin   DEBUG [Worker-34: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=7ms startCheckConfigOperation([MOVD, graph/covid_SP500.grf, <obfuscated_xml>]) 
+2020-07-23 18:16:04,561 ServerGUIPlugin   DEBUG [Worker-35: Get Checkconfig Operation Result] - Server (http://localhost:58125/clover) call #1 duration=6ms getCheckConfigOperationResult([9]) 
+2020-07-23 18:16:04,655 GuiPlugin         DEBUG [Worker-36: Check graph configuration] - Job 'Check graph configuration' finished in 201 ms with status [Status OK: unknown code=0 OK null].
+2020-07-23 18:16:05,370 ServerGUIPlugin   DEBUG [Worker-35: Debug Data Provider Disposer] - Server (http://localhost:58125/clover) call #1 duration=5ms disposeDataView([-5]) 
+2020-07-23 18:16:05,396 ServerGUIPlugin   DEBUG [Worker-37: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=5ms getSandboxes() 
+2020-07-23 18:16:05,411 ServerGUIPlugin   DEBUG [Worker-37: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=12ms prepareDataView([MOVD, graph/covid_SP500.grf, COVID_READER, <obfuscated_xml>, 1, null, <obfuscated_xml>]) 
+2020-07-23 18:16:05,466 ServerGUIPlugin   DEBUG [Worker-37: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=55ms fetchDataView([-6, 100, 10000]) 
+com.cloveretl.server.api.webservice.generated.GetViewDataFaultMsg: Execution of data retrieval job failed: Component [Covid Reader:COVID_READER] finished with status ERROR. (Out0: 0 recs)
+ Error when executing statement: select sum(NewCases) As NewCases, Date from `movd`.`jhcovidstat` group by Date
+  Cannot connect to the DB: Public Key Retrieval is not allowed
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_202]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_202]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_202]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_202]
+	at com.sun.xml.ws.fault.SOAPFaultBuilder.createException(SOAPFaultBuilder.java:147) ~[?:?]
+	at com.sun.xml.ws.client.sei.StubHandler.readResponse(StubHandler.java:253) ~[?:?]
+	at com.sun.xml.ws.db.DatabindingImpl.deserializeResponse(DatabindingImpl.java:206) ~[?:?]
+	at com.sun.xml.ws.db.DatabindingImpl.deserializeResponse(DatabindingImpl.java:293) ~[?:?]
+	at com.sun.xml.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:119) ~[?:?]
+	at com.sun.xml.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:92) ~[?:?]
+	at com.sun.xml.ws.client.sei.SEIStub.invoke(SEIStub.java:161) ~[?:?]
+	at com.sun.proxy.$Proxy81.fetchDataView(Unknown Source) ~[?:?]
+	at com.cloveretl.gui.server.service.q.fetchDataView(Main:436) ~[com.cloveretl.gui.server.jar:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_202]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_202]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_202]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_202]
+	at com.cloveretl.gui.server.service.A.A(Main:236) [com.cloveretl.gui.server.jar:?]
+	at com.cloveretl.gui.server.service.A.invoke(Main:90) [com.cloveretl.gui.server.jar:?]
+	at com.sun.proxy.$Proxy82.fetchDataView(Unknown Source) [?:?]
+	at com.cloveretl.gui.server.runtime.ServerDebugDataLoader.A(Main:48) [com.cloveretl.gui.server.jar:?]
+	at com.cloveretl.gui.debugdata.provider.A.B(Main:243) [cloveretl-gui.jar:?]
+	at com.cloveretl.gui.debugdata.provider.A.a(Main:235) [cloveretl-gui.jar:?]
+	at com.cloveretl.gui.debugdata.provider.A.A(Main:54) [cloveretl-gui.jar:?]
+	at com.cloveretl.gui.debugdata.provider.V.run(Main:115) [cloveretl-gui.jar:?]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60) [org.eclipse.core.jobs_3.10.0.v20180427-1454.jar:?]
+2020-07-23 18:16:22,225 ServerGUIPlugin   DEBUG [Thread-32] - Server (http://localhost:58125/clover) call #1 duration=6ms echo([Connection check]) 
+2020-07-23 18:16:22,230 ServerGUIPlugin   DEBUG [Thread-32] - Server (http://localhost:58125/clover) call #1 duration=5ms getSandboxes() 
+2020-07-23 18:16:22,236 ServerGUIPlugin   DEBUG [Thread-32] - Server (http://localhost:58125/clover) call #1 duration=6ms A([com.cloveretl.server.api.wsjdbc.generated.Properties@3da12861]) 
+2020-07-23 18:16:22,253 ServerGUIPlugin   DEBUG [Thread-32] - Server (http://localhost:58125/clover) call #1 duration=17ms a([/-/-/b779bda6-7284-48b4-a3cb-af1b81964570]) 
+2020-07-23 18:16:22,259 ServerGUIPlugin   DEBUG [Thread-32] - Server (http://localhost:58125/clover) call #1 duration=5ms a([/-/-/b779bda6-7284-48b4-a3cb-af1b81964570, f44c103b-e498-45d0-8346-c8f72c3cc9a9]) 
+2020-07-23 18:16:32,479 GuiPlugin         DEBUG [main] - 'GUI checkConfig' finished in 1 ms
+2020-07-23 18:16:32,481 GuiPlugin         DEBUG [main] - 'Engine checkConfig' finished in 1 ms
+2020-07-23 18:16:32,487 ServerGUIPlugin   DEBUG [Worker-33: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=6ms getSandboxes() 
+2020-07-23 18:16:32,488 GuiPlugin         DEBUG [main] - 'GUI checkConfig' finished in 1 ms
+2020-07-23 18:16:32,490 GuiPlugin         DEBUG [main] - 'Engine checkConfig' finished in 2 ms
+2020-07-23 18:16:32,495 ServerGUIPlugin   DEBUG [Worker-33: Start Checkconfig Operation] - checkConfig operation [10] started
+2020-07-23 18:16:32,495 ServerGUIPlugin   DEBUG [Worker-33: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=7ms startCheckConfigOperation([MOVD, graph/covid_SP500.grf, <obfuscated_xml>]) 
+2020-07-23 18:16:32,587 ServerGUIPlugin   DEBUG [Worker-34: Get Checkconfig Operation Result] - Server (http://localhost:58125/clover) call #1 duration=5ms getCheckConfigOperationResult([10]) 
+2020-07-23 18:16:32,682 GuiPlugin         DEBUG [Worker-36: Check graph configuration] - Job 'Check graph configuration' finished in 201 ms with status [Status OK: unknown code=0 OK null].
+2020-07-23 18:16:32,688 ServerGUIPlugin   DEBUG [Worker-35: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=6ms getSandboxes() 
+2020-07-23 18:16:32,697 ServerGUIPlugin   DEBUG [Worker-35: Start Checkconfig Operation] - checkConfig operation [11] started
+2020-07-23 18:16:32,697 ServerGUIPlugin   DEBUG [Worker-35: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=9ms startCheckConfigOperation([MOVD, graph/covid_SP500.grf, <obfuscated_xml>]) 
+2020-07-23 18:16:32,788 ServerGUIPlugin   DEBUG [Worker-34: Get Checkconfig Operation Result] - Server (http://localhost:58125/clover) call #1 duration=6ms getCheckConfigOperationResult([11]) 
+2020-07-23 18:16:32,882 GuiPlugin         DEBUG [Worker-33: Check graph configuration] - Job 'Check graph configuration' finished in 200 ms with status [Status OK: unknown code=0 OK null].
+2020-07-23 18:16:34,507 GuiPlugin         DEBUG [main] - 'GUI checkConfig' finished in 1 ms
+2020-07-23 18:16:34,509 GuiPlugin         DEBUG [main] - 'Engine checkConfig' finished in 2 ms
+2020-07-23 18:16:34,515 ServerGUIPlugin   DEBUG [Worker-7: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=6ms getSandboxes() 
+2020-07-23 18:16:34,521 ServerGUIPlugin   DEBUG [Worker-7: Start Checkconfig Operation] - checkConfig operation [12] started
+2020-07-23 18:16:34,521 ServerGUIPlugin   DEBUG [Worker-7: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=6ms startCheckConfigOperation([MOVD, graph/covid_SP500.grf, <obfuscated_xml>]) 
+2020-07-23 18:16:34,616 ServerGUIPlugin   DEBUG [Worker-35: Get Checkconfig Operation Result] - Server (http://localhost:58125/clover) call #1 duration=7ms getCheckConfigOperationResult([12]) 
+2020-07-23 18:16:34,709 GuiPlugin         DEBUG [Worker-38: Check graph configuration] - Job 'Check graph configuration' finished in 200 ms with status [Status OK: unknown code=0 OK null].
+2020-07-23 18:16:41,985 ServerGUIPlugin   DEBUG [Finalizer] - Server (http://localhost:58125/clover) call #1 duration=25ms A([/-/-/b779bda6-7284-48b4-a3cb-af1b81964570]) 
+2020-07-23 18:16:41,990 ServerGUIPlugin   DEBUG [Finalizer] - Server (http://localhost:58125/clover) call #1 duration=5ms A([/-/-/fff82575-43d7-44de-b1f4-988fd2d7218a]) 
+2020-07-23 18:16:41,994 ServerGUIPlugin   DEBUG [Finalizer] - Server (http://localhost:58125/clover) call #1 duration=4ms A([/-/-/e97b29f9-f2f7-428c-98de-9b3f2f269b0f]) 
+2020-07-23 18:17:21,602 ServerGUIPlugin   DEBUG [Thread-33] - Server (http://localhost:58125/clover) call #1 duration=5ms echo([Connection check]) 
+2020-07-23 18:17:21,607 ServerGUIPlugin   DEBUG [Thread-33] - Server (http://localhost:58125/clover) call #1 duration=5ms getSandboxes() 
+2020-07-23 18:17:21,614 ServerGUIPlugin   DEBUG [Thread-33] - Server (http://localhost:58125/clover) call #1 duration=7ms A([com.cloveretl.server.api.wsjdbc.generated.Properties@59bb8465]) 
+2020-07-23 18:17:21,622 ServerGUIPlugin   DEBUG [Thread-33] - Server (http://localhost:58125/clover) call #1 duration=8ms a([/-/-/e0f1b3a2-f4f2-4b33-ad51-08c503e9fa8c]) 
+2020-07-23 18:17:21,626 ServerGUIPlugin   DEBUG [Thread-33] - Server (http://localhost:58125/clover) call #1 duration=4ms a([/-/-/e0f1b3a2-f4f2-4b33-ad51-08c503e9fa8c, 22e911f7-be3a-4163-902a-3ee1ceedaba5]) 
+2020-07-23 18:17:24,019 GuiPlugin         DEBUG [main] - 'GUI checkConfig' finished in 1 ms
+2020-07-23 18:17:24,032 GuiPlugin         DEBUG [main] - 'Engine checkConfig' finished in 12 ms
+2020-07-23 18:17:24,038 ServerGUIPlugin   DEBUG [Worker-38: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=6ms getSandboxes() 
+2020-07-23 18:17:24,040 GuiPlugin         DEBUG [main] - 'GUI checkConfig' finished in 1 ms
+2020-07-23 18:17:24,042 GuiPlugin         DEBUG [main] - 'Engine checkConfig' finished in 2 ms
+2020-07-23 18:17:24,046 ServerGUIPlugin   DEBUG [Worker-38: Start Checkconfig Operation] - checkConfig operation [13] started
+2020-07-23 18:17:24,046 ServerGUIPlugin   DEBUG [Worker-38: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=8ms startCheckConfigOperation([MOVD, graph/covid_SP500.grf, <obfuscated_xml>]) 
+2020-07-23 18:17:24,138 ServerGUIPlugin   DEBUG [Worker-37: Get Checkconfig Operation Result] - Server (http://localhost:58125/clover) call #1 duration=6ms getCheckConfigOperationResult([13]) 
+2020-07-23 18:17:24,232 GuiPlugin         DEBUG [Worker-28: Check graph configuration] - Job 'Check graph configuration' finished in 200 ms with status [Status OK: unknown code=0 OK null].
+2020-07-23 18:17:24,237 ServerGUIPlugin   DEBUG [Worker-7: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=5ms getSandboxes() 
+2020-07-23 18:17:24,244 ServerGUIPlugin   DEBUG [Worker-7: Start Checkconfig Operation] - checkConfig operation [14] started
+2020-07-23 18:17:24,244 ServerGUIPlugin   DEBUG [Worker-7: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=7ms startCheckConfigOperation([MOVD, graph/covid_SP500.grf, <obfuscated_xml>]) 
+2020-07-23 18:17:24,337 ServerGUIPlugin   DEBUG [Worker-37: Get Checkconfig Operation Result] - Server (http://localhost:58125/clover) call #1 duration=5ms getCheckConfigOperationResult([14]) 
+2020-07-23 18:17:24,432 GuiPlugin         DEBUG [Worker-38: Check graph configuration] - Job 'Check graph configuration' finished in 200 ms with status [Status OK: unknown code=0 OK null].
+2020-07-23 18:17:27,628 GuiPlugin         DEBUG [main] - 'GUI checkConfig' finished in 1 ms
+2020-07-23 18:17:27,630 GuiPlugin         DEBUG [main] - 'Engine checkConfig' finished in 1 ms
+2020-07-23 18:17:27,636 ServerGUIPlugin   DEBUG [Worker-37: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=6ms getSandboxes() 
+2020-07-23 18:17:27,643 ServerGUIPlugin   DEBUG [Worker-37: Start Checkconfig Operation] - checkConfig operation [15] started
+2020-07-23 18:17:27,644 ServerGUIPlugin   DEBUG [Worker-37: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=8ms startCheckConfigOperation([MOVD, graph/covid_SP500.grf, <obfuscated_xml>]) 
+2020-07-23 18:17:27,738 ServerGUIPlugin   DEBUG [Worker-34: Get Checkconfig Operation Result] - Server (http://localhost:58125/clover) call #1 duration=7ms getCheckConfigOperationResult([15]) 
+2020-07-23 18:17:27,831 GuiPlugin         DEBUG [Worker-35: Check graph configuration] - Job 'Check graph configuration' finished in 201 ms with status [Status OK: unknown code=0 OK null].
+2020-07-23 18:17:51,942 ServerGUIPlugin   DEBUG [Worker-37: Debug Data Provider Disposer] - Server (http://localhost:58125/clover) call #1 duration=6ms disposeDataView([-6]) 
+2020-07-23 18:17:51,970 ServerGUIPlugin   DEBUG [Worker-35: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=6ms getSandboxes() 
+2020-07-23 18:17:51,987 ServerGUIPlugin   DEBUG [Worker-35: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=12ms prepareDataView([MOVD, graph/covid_SP500.grf, SP500_READER, <obfuscated_xml>, 1, null, <obfuscated_xml>]) 
+2020-07-23 18:17:52,592 ServerGUIPlugin   DEBUG [Worker-35: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=603ms fetchDataView([-7, 100, 10000]) 
+2020-07-23 18:17:52,722 ServerGUIPlugin   DEBUG [main] - Server (http://localhost:58125/clover) call #1 duration=5ms getTimeZone() 
+2020-07-23 18:17:56,589 GuiPlugin         DEBUG [main] - 'GUI checkConfig' finished in 2 ms
+2020-07-23 18:17:56,590 GuiPlugin         DEBUG [main] - 'Engine checkConfig' finished in 1 ms
+2020-07-23 18:17:56,595 ServerGUIPlugin   DEBUG [Worker-33: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=5ms getSandboxes() 
+2020-07-23 18:17:56,605 ServerGUIPlugin   DEBUG [Worker-33: Start Checkconfig Operation] - checkConfig operation [16] started
+2020-07-23 18:17:56,605 ServerGUIPlugin   DEBUG [Worker-33: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=9ms startCheckConfigOperation([MOVD, graph/covid_SP500.grf, <obfuscated_xml>]) 
+2020-07-23 18:17:56,690 GuiPlugin         DEBUG [Worker-34: Check graph configuration] - Job 'Check graph configuration' finished in 100 ms with status [Status CANCEL: unknown code=1  null].
+2020-07-23 18:17:56,692 GuiPlugin         DEBUG [main] - 'GUI checkConfig' finished in 0 ms
+2020-07-23 18:17:56,694 GuiPlugin         DEBUG [main] - 'Engine checkConfig' finished in 1 ms
+2020-07-23 18:17:56,697 ServerGUIPlugin   DEBUG [Worker-37: Abort Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=7ms abortCheckConfigOperation([16]) 
+2020-07-23 18:17:56,701 ServerGUIPlugin   DEBUG [Worker-35: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=7ms getSandboxes() 
+2020-07-23 18:17:56,709 ServerGUIPlugin   DEBUG [Worker-35: Start Checkconfig Operation] - checkConfig operation [17] started
+2020-07-23 18:17:56,709 ServerGUIPlugin   DEBUG [Worker-35: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=8ms startCheckConfigOperation([MOVD, graph/covid_SP500.grf, <obfuscated_xml>]) 
+2020-07-23 18:17:56,801 ServerGUIPlugin   DEBUG [Worker-38: Get Checkconfig Operation Result] - Server (http://localhost:58125/clover) call #1 duration=7ms getCheckConfigOperationResult([17]) 
+2020-07-23 18:17:56,895 GuiPlugin         DEBUG [Worker-28: Check graph configuration] - Job 'Check graph configuration' finished in 201 ms with status [Status OK: unknown code=0 OK null].
+2020-07-23 18:18:03,854 ServerGUIPlugin   DEBUG [Worker-39: Debug Data Provider Disposer] - Server (http://localhost:58125/clover) call #1 duration=5ms disposeDataView([-7]) 
+2020-07-23 18:18:11,060 GuiPlugin         DEBUG [main] - 'GUI checkConfig' finished in 1 ms
+2020-07-23 18:18:11,062 GuiPlugin         DEBUG [main] - 'Engine checkConfig' finished in 1 ms
+2020-07-23 18:18:11,067 ServerGUIPlugin   DEBUG [Worker-39: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=5ms getSandboxes() 
+2020-07-23 18:18:11,073 ServerGUIPlugin   DEBUG [Worker-39: Start Checkconfig Operation] - checkConfig operation [18] started
+2020-07-23 18:18:11,074 ServerGUIPlugin   DEBUG [Worker-39: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=6ms startCheckConfigOperation([MOVD, graph/covid_SP500.grf, <obfuscated_xml>]) 
+2020-07-23 18:18:11,167 ServerGUIPlugin   DEBUG [Worker-33: Get Checkconfig Operation Result] - Server (http://localhost:58125/clover) call #1 duration=5ms getCheckConfigOperationResult([18]) 
+2020-07-23 18:18:11,243 GuiPlugin         DEBUG [main] - 'GUI checkConfig' finished in 0 ms
+2020-07-23 18:18:11,244 GuiPlugin         DEBUG [main] - 'Engine checkConfig' finished in 1 ms
+2020-07-23 18:18:11,262 GuiPlugin         DEBUG [Worker-34: Check graph configuration] - Job 'Check graph configuration' finished in 200 ms with status [Status CANCEL: unknown code=1  null].
+2020-07-23 18:18:11,267 ServerGUIPlugin   DEBUG [Worker-37: Abort Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=5ms abortCheckConfigOperation([18]) 
+2020-07-23 18:18:11,267 ServerGUIPlugin   DEBUG [Worker-35: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=5ms getSandboxes() 
+2020-07-23 18:18:11,274 ServerGUIPlugin   DEBUG [Worker-35: Start Checkconfig Operation] - checkConfig operation [19] started
+2020-07-23 18:18:11,274 ServerGUIPlugin   DEBUG [Worker-35: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=7ms startCheckConfigOperation([MOVD, graph/covid_SP500.grf, <obfuscated_xml>]) 
+2020-07-23 18:18:11,367 ServerGUIPlugin   DEBUG [Worker-34: Get Checkconfig Operation Result] - Server (http://localhost:58125/clover) call #1 duration=5ms getCheckConfigOperationResult([19]) 
+2020-07-23 18:18:11,462 GuiPlugin         DEBUG [Worker-28: Check graph configuration] - Job 'Check graph configuration' finished in 200 ms with status [Status OK: unknown code=0 OK null].
+2020-07-23 18:18:12,519 ServerGUIPlugin   DEBUG [Worker-28: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=6ms getSandboxes() 
+2020-07-23 18:18:12,537 ServerGUIPlugin   DEBUG [Worker-28: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=14ms prepareDataView([MOVD, graph/covid_SP500.grf, DATABASE_READER2, <obfuscated_xml>, 1, null, <obfuscated_xml>]) 
+2020-07-23 18:18:12,597 ServerGUIPlugin   DEBUG [Worker-28: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=59ms fetchDataView([-8, 100, 10000]) 
+com.cloveretl.server.api.webservice.generated.GetViewDataFaultMsg: Execution of data retrieval job failed: Component [DatabaseReader:DATABASE_READER2] finished with status ERROR. (Out0: 0 recs)
+ Error when executing statement: select Date, SP500, NewCases from `movd`.`sp500_vs_covid`
+  Cannot connect to the DB: Public Key Retrieval is not allowed
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_202]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_202]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_202]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_202]
+	at com.sun.xml.ws.fault.SOAPFaultBuilder.createException(SOAPFaultBuilder.java:147) ~[?:?]
+	at com.sun.xml.ws.client.sei.StubHandler.readResponse(StubHandler.java:253) ~[?:?]
+	at com.sun.xml.ws.db.DatabindingImpl.deserializeResponse(DatabindingImpl.java:206) ~[?:?]
+	at com.sun.xml.ws.db.DatabindingImpl.deserializeResponse(DatabindingImpl.java:293) ~[?:?]
+	at com.sun.xml.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:119) ~[?:?]
+	at com.sun.xml.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:92) ~[?:?]
+	at com.sun.xml.ws.client.sei.SEIStub.invoke(SEIStub.java:161) ~[?:?]
+	at com.sun.proxy.$Proxy81.fetchDataView(Unknown Source) ~[?:?]
+	at com.cloveretl.gui.server.service.q.fetchDataView(Main:436) ~[com.cloveretl.gui.server.jar:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_202]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_202]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_202]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_202]
+	at com.cloveretl.gui.server.service.A.A(Main:236) [com.cloveretl.gui.server.jar:?]
+	at com.cloveretl.gui.server.service.A.invoke(Main:90) [com.cloveretl.gui.server.jar:?]
+	at com.sun.proxy.$Proxy82.fetchDataView(Unknown Source) [?:?]
+	at com.cloveretl.gui.server.runtime.ServerDebugDataLoader.A(Main:48) [com.cloveretl.gui.server.jar:?]
+	at com.cloveretl.gui.debugdata.provider.A.B(Main:243) [cloveretl-gui.jar:?]
+	at com.cloveretl.gui.debugdata.provider.A.a(Main:235) [cloveretl-gui.jar:?]
+	at com.cloveretl.gui.debugdata.provider.A.A(Main:54) [cloveretl-gui.jar:?]
+	at com.cloveretl.gui.debugdata.provider.V.run(Main:115) [cloveretl-gui.jar:?]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60) [org.eclipse.core.jobs_3.10.0.v20180427-1454.jar:?]
+2020-07-23 18:18:18,127 GuiPlugin         DEBUG [main] - 'GUI checkConfig' finished in 1 ms
+2020-07-23 18:18:18,128 GuiPlugin         DEBUG [main] - 'Engine checkConfig' finished in 1 ms
+2020-07-23 18:18:18,136 ServerGUIPlugin   DEBUG [Worker-33: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=8ms getSandboxes() 
+2020-07-23 18:18:18,144 ServerGUIPlugin   DEBUG [Worker-33: Start Checkconfig Operation] - checkConfig operation [20] started
+2020-07-23 18:18:18,144 ServerGUIPlugin   DEBUG [Worker-33: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=8ms startCheckConfigOperation([MOVD, graph/covid_SP500.grf, <obfuscated_xml>]) 
+2020-07-23 18:18:18,228 GuiPlugin         DEBUG [Worker-28: Check graph configuration] - Job 'Check graph configuration' finished in 100 ms with status [Status CANCEL: unknown code=1  null].
+2020-07-23 18:18:18,234 ServerGUIPlugin   DEBUG [Worker-35: Abort Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=6ms abortCheckConfigOperation([20]) 
+2020-07-23 18:18:18,255 GuiPlugin         DEBUG [main] - 'GUI checkConfig' finished in 1 ms
+2020-07-23 18:18:18,256 GuiPlugin         DEBUG [main] - 'Engine checkConfig' finished in 1 ms
+2020-07-23 18:18:18,261 ServerGUIPlugin   DEBUG [Worker-28: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=4ms getSandboxes() 
+2020-07-23 18:18:18,267 ServerGUIPlugin   DEBUG [Worker-28: Start Checkconfig Operation] - checkConfig operation [21] started
+2020-07-23 18:18:18,268 ServerGUIPlugin   DEBUG [Worker-28: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=7ms startCheckConfigOperation([MOVD, graph/covid_SP500.grf, <obfuscated_xml>]) 
+2020-07-23 18:18:18,362 ServerGUIPlugin   DEBUG [Worker-36: Get Checkconfig Operation Result] - Server (http://localhost:58125/clover) call #1 duration=6ms getCheckConfigOperationResult([21]) 
+2020-07-23 18:18:18,457 GuiPlugin         DEBUG [Worker-39: Check graph configuration] - Job 'Check graph configuration' finished in 201 ms with status [Status OK: unknown code=0 OK null].
+2020-07-23 18:18:19,263 ServerGUIPlugin   DEBUG [Worker-28: Debug Data Provider Disposer] - Server (http://localhost:58125/clover) call #1 duration=5ms disposeDataView([-8]) 
+2020-07-23 18:18:29,023 ServerGUIPlugin   DEBUG [main] - Server (http://localhost:58125/clover) call #1 duration=6ms getSandboxes() 
+2020-07-23 18:18:29,047 ServerGUIPlugin   DEBUG [main] - Server (http://localhost:58125/clover) call #1 duration=24ms analyseGraph([MOVD, graph/covid_SP500.grf]) 
+2020-07-23 18:18:29,110 GuiPlugin         DEBUG [main] - 'Initialize reference cache' finished in 6 ms
+2020-07-23 18:18:29,120 GuiPlugin         DEBUG [Worker-33: Updating Reference Cache] - Job 'Updating Reference Cache' finished in 10 ms with status [Status OK: unknown code=0 OK null].
+2020-07-23 18:18:29,212 GuiPlugin         DEBUG [main] - 'GUI checkConfig' finished in 1 ms
+2020-07-23 18:18:29,213 GuiPlugin         DEBUG [main] - 'Engine checkConfig' finished in 1 ms
+2020-07-23 18:18:29,219 ServerGUIPlugin   DEBUG [Worker-34: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=6ms getSandboxes() 
+2020-07-23 18:18:29,226 ServerGUIPlugin   DEBUG [Worker-34: Start Checkconfig Operation] - checkConfig operation [22] started
+2020-07-23 18:18:29,226 ServerGUIPlugin   DEBUG [Worker-34: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=6ms startCheckConfigOperation([MOVD, graph/covid_SP500.grf, <obfuscated_xml>]) 
+2020-07-23 18:18:29,236 ServerGUIPlugin   DEBUG [Worker-40: Start Metadata Propagation Operation] - Server (http://localhost:58125/clover) call #1 duration=5ms getSandboxes() 
+2020-07-23 18:18:29,246 ServerGUIPlugin   DEBUG [Worker-40: Start Metadata Propagation Operation] - propagateMetadata operation [4] started
+2020-07-23 18:18:29,246 ServerGUIPlugin   DEBUG [Worker-40: Start Metadata Propagation Operation] - Server (http://localhost:58125/clover) call #1 duration=9ms startPropagateMetadataOperation([MOVD, graph/covid_SP500.grf, <obfuscated_xml>]) 
+2020-07-23 18:18:29,318 ServerGUIPlugin   DEBUG [Worker-35: Get Checkconfig Operation Result] - Server (http://localhost:58125/clover) call #1 duration=5ms getCheckConfigOperationResult([22]) 
+2020-07-23 18:18:29,343 ServerGUIPlugin   DEBUG [Worker-34: Get Metadata Propagation Operation Result] - Server (http://localhost:58125/clover) call #1 duration=12ms getPropagateMetadataOperationResult([graph/covid_SP500.grf, 4]) 
+2020-07-23 18:18:29,414 GuiPlugin         DEBUG [Worker-28: Check graph configuration] - Job 'Check graph configuration' finished in 201 ms with status [Status OK: unknown code=0 OK null].
+2020-07-23 18:18:29,462 GuiPlugin         DEBUG [Worker-37: Metadata propagation] - Job 'Metadata propagation' finished in 252 ms with status [Status OK: unknown code=0 OK null].
+2020-07-23 18:18:32,613 ServerGUIPlugin   DEBUG [Finalizer] - Server (http://localhost:58125/clover) call #1 duration=7ms A([/-/-/e0f1b3a2-f4f2-4b33-ad51-08c503e9fa8c]) 
+2020-07-23 18:18:32,626 ServerGUIPlugin   DEBUG [Worker-7: Launching covid_SP500.grf] - Server (http://localhost:58125/clover) call #1 duration=4ms getSandboxes() 
+2020-07-23 18:18:32,634 ServerGUIPlugin   DEBUG [Worker-7: Launching covid_SP500.grf] - Server (http://localhost:58125/clover) call #1 duration=5ms getSandbox([MOVD]) 
+2020-07-23 18:18:32,680 ServerGUIPlugin   DEBUG [Worker-7: Launching covid_SP500.grf] - Server (http://localhost:58125/clover) call #1 duration=40ms executeGraph([MOVD, graph/covid_SP500.grf, true, com.cloveretl.server.api.webservice.generated.WSProperties@8fcbc4e, com.cloveretl.server.api.webservice.generated.WSProperties@39e35049, null, null]) 
+2020-07-23 18:18:32,703 ServerGUIPlugin   DEBUG [Worker-7: Launching covid_SP500.grf] - Server (http://localhost:58125/clover) call #1 duration=6ms getExecutionLogEncoding() 
+2020-07-23 18:18:32,723 ServerGUIPlugin   DEBUG [Worker-36: Status monitoring: #1] - Server (http://localhost:58125/clover) call #1 duration=26ms getJobExecutionHierarchy([1]) 
+2020-07-23 18:18:32,730 ServerGUIPlugin   DEBUG [Worker-36: Status monitoring: #1] - Server (http://localhost:58125/clover) call #1 duration=5ms getSandbox([MOVD]) 
+2020-07-23 18:18:32,863 ServerGUIPlugin   DEBUG [Worker-7: Launching covid_SP500.grf] - Server (http://localhost:58125/clover) call #1 duration=8ms getJobExecutionStatus([1, null, -1]) 
+2020-07-23 18:18:32,873 ServerGUIPlugin   DEBUG [Worker-38: Log monitoring: #1] - Server (http://localhost:58125/clover) call #1 duration=6ms getJobExecutionStatus([1, null, -1]) 
+2020-07-23 18:18:32,875 ServerGUIPlugin   DEBUG [Worker-34: Tracking: #1] - Server (http://localhost:58125/clover) call #1 duration=5ms getGraphTracking([1]) 
+2020-07-23 18:18:32,879 ServerGUIPlugin   DEBUG [Worker-38: Log monitoring: #1] - Server (http://localhost:58125/clover) call #1 duration=6ms getGraphExecutionLog([1, 0]) 
+2020-07-23 18:18:37,791 ServerGUIPlugin   DEBUG [Worker-39: Status monitoring: #1] - Server (http://localhost:58125/clover) call #1 duration=8ms getJobExecutionHierarchy([1]) 
+2020-07-23 18:18:37,804 ServerGUIPlugin   DEBUG [Worker-38: Tracking: #1] - Server (http://localhost:58125/clover) call #1 duration=12ms getGraphTracking([1]) 
+2020-07-23 18:18:37,804 ServerGUIPlugin   DEBUG [Worker-36: Log monitoring: #1] - Server (http://localhost:58125/clover) call #1 duration=12ms getJobExecutionStatus([1, null, -1]) 
+2020-07-23 18:18:37,807 ServerGUIPlugin   DEBUG [Worker-39: Status monitoring: #1] - Server (http://localhost:58125/clover) call #1 duration=14ms getGraphTracking([1]) 
+2020-07-23 18:18:37,813 ServerGUIPlugin   DEBUG [Worker-36: Log monitoring: #1] - Server (http://localhost:58125/clover) call #1 duration=9ms getGraphExecutionLog([1, 4570]) 
+2020-07-23 18:18:37,820 ServerGUIPlugin   DEBUG [Worker-39: Status monitoring: #1] - Server (http://localhost:58125/clover) call #1 duration=12ms getJobExecutionStatus([1, null, -1]) 
+2020-07-23 18:18:37,826 ServerGUIPlugin   DEBUG [Worker-39: Status monitoring: #1] - Server (http://localhost:58125/clover) call #1 duration=4ms getSandbox([MOVD]) 
+2020-07-23 18:18:37,858 ServerGUIPlugin   DEBUG [main] - Server (http://localhost:58125/clover) call #1 duration=7ms getJobExecutionStatus([1, null, -1]) 
+2020-07-23 18:22:01,756 Defaults          INFO  [main] - Loading default properties from: defaultProperties
+2020-07-23 18:22:02,141 Defaults          INFO  [main] - Loading default properties from: defaultProperties
+2020-07-23 18:22:02,283 Plugins           DEBUG [main] - Plugin org.jetel.connection loaded.
+	id - org.jetel.connection
+	version - 5.6.2.13
+	provider-name - CloverDX
+		connection { className = org.jetel.connection.jdbc.DBConnectionImpl; type = JDBC; }
+		connection { className = org.jetel.connection.jms.JmsConnection; type = JMS; }
+
+2020-07-23 18:22:02,284 Plugins           DEBUG [main] - Plugin org.jetel.ctlfunction loaded.
+	id - org.jetel.ctlfunction
+	version - 5.6.2.13
+	provider-name - CloverDX
+		ctlfunction { libraryName = math; className = org.jetel.ctl.extensions.MathLib; }
+		ctlfunction { libraryName = date; className = org.jetel.ctl.extensions.DateLib; }
+		ctlfunction { libraryName = string; className = org.jetel.ctl.extensions.StringLib; }
+		ctlfunction { libraryName = convert; className = org.jetel.ctl.extensions.ConvertLib; }
+		ctlfunction { libraryName = container; className = org.jetel.ctl.extensions.ContainerLib; }
+		ctlfunction { libraryName = random; className = org.jetel.ctl.extensions.RandomLib; }
+		ctlfunction { libraryName = util; className = org.jetel.ctl.extensions.UtilLib; }
+		ctlfunction { libraryName = dynamic; className = org.jetel.ctl.extensions.DynamicLib; }
+		ctlfunction { libraryName = string; className = org.jetel.ctl.extensions.StringLibExt; }
+		ctlfunction { libraryName = mapping; className = org.jetel.ctl.extensions.MappingLib; }
+		ctlfunction { libraryName = dynamic; className = org.jetel.ctl.extensions.DynamicLibExt; }
+
+2020-07-23 18:22:02,284 Plugins           DEBUG [main] - Plugin org.jetel.engine loaded.
+	id - org.jetel.engine
+	version - 5.6.2.13
+	provider-name - CloverDX
+		dictionaryType { className = org.jetel.graph.dictionary.StringDictionaryType; type = string; }
+		dictionaryType { className = org.jetel.graph.dictionary.ObjectDictionaryType; type = object; }
+		dictionaryType { className = org.jetel.graph.dictionary.ReadableChannelDictionaryType; type = readable.channel; }
+		dictionaryType { className = org.jetel.graph.dictionary.WritableChannelDictionaryType; type = writable.channel; }
+		dictionaryType { className = org.jetel.graph.dictionary.IntegerDictionaryType; type = integer; }
+		dictionaryType { className = org.jetel.graph.dictionary.LongDictionaryType; type = long; }
+		dictionaryType { className = org.jetel.graph.dictionary.DecimalDictionaryType; type = decimal; }
+		dictionaryType { className = org.jetel.graph.dictionary.NumberDictionaryType; type = number; }
+		dictionaryType { className = org.jetel.graph.dictionary.DateDictionaryType; type = date; }
+		dictionaryType { className = org.jetel.graph.dictionary.BooleanDictionaryType; type = boolean; }
+		dictionaryType { className = org.jetel.graph.dictionary.ByteDictionaryType; type = byte; }
+		dictionaryType { className = org.jetel.graph.dictionary.ListDictionaryType; type = list; }
+		dictionaryType { className = org.jetel.graph.dictionary.MapDictionaryType; type = map; }
+		tlCompiler { className = org.jetel.ctl.TLCompiler; type = simple.compiler; }
+		ctlfunction { libraryName = record; className = org.jetel.ctl.extensions.IntegralLib; }
+		urlResolver { className = org.jetel.util.file.SMBPathResolver; type = SMB; }
+		urlResolver { className = org.jetel.util.protocols.amazon.S3PathResolver; type = S3; }
+		authorityProxy { className = org.jetel.graph.runtime.PrimitiveAuthorityProxy; type = PrimitiveAuthorityProxy; priority = 0; }
+
+2020-07-23 18:22:02,285 Plugins           DEBUG [main] - Plugin org.jetel.jdbc loaded.
+	id - org.jetel.jdbc
+	version - 5.6.2.13
+	provider-name - CloverDX
+		jdbcSpecific { database = GENERIC; name = Generic; class = org.jetel.connection.jdbc.specific.impl.DefaultJdbcSpecific; }
+		jdbcSpecific { database = REDSHIFT; name = Amazon Redshift; class = org.jetel.connection.jdbc.specific.impl.RedshiftSpecific; }
+		jdbcSpecific { database = DB2; name = DB2; class = org.jetel.connection.jdbc.specific.impl.DB2Specific; }
+		jdbcSpecific { database = DERBY; name = Derby; class = org.jetel.connection.jdbc.specific.impl.DerbySpecific; productName = Apache Derby; }
+		jdbcSpecific { database = EXASOLUTION; name = EXASolution; class = org.jetel.connection.jdbc.specific.impl.ExasolSpecific; }
+		jdbcSpecific { database = FIREBIRD; name = Firebird; class = org.jetel.connection.jdbc.specific.impl.FirebirdSpecific; }
+		jdbcSpecific { database = HIVE; name = Hive; class = org.jetel.connection.jdbc.specific.impl.HiveSpecific; }
+		jdbcSpecific { database = INFORMIX; name = Informix; class = org.jetel.connection.jdbc.specific.impl.InformixSpecific; }
+		jdbcSpecific { database = MSACCESSJAVA; name = Microsoft Access; class = org.jetel.connection.jdbc.specific.impl.MSAccessPureJavaSpecific; }
+		jdbcSpecific { database = MSSQL; name = MS SQL Server 2008-2012; class = org.jetel.connection.jdbc.specific.impl.MSSQLSpecific; productName = Microsoft SQL Server; }
+		jdbcSpecific { database = MSSQL2005; name = MS SQL Server 2000-2005; class = org.jetel.connection.jdbc.specific.impl.MSSQLSpecific2005; }
+		jdbcSpecific { database = MYSQL; name = MySQL; class = org.jetel.connection.jdbc.specific.impl.MySQLSpecific; productName = MySQL; }
+		jdbcSpecific { database = ORACLE; name = Oracle; class = org.jetel.connection.jdbc.specific.impl.OracleSpecific; productName = Oracle; }
+		jdbcSpecific { database = PERVASIVE; name = Pervasive; class = org.jetel.connection.jdbc.specific.impl.PervasiveSpecific; }
+		jdbcSpecific { database = POSTGRE; name = PostgreSQL; class = org.jetel.connection.jdbc.specific.impl.PostgreSpecific; }
+		jdbcSpecific { database = SYBASE; name = Sybase; class = org.jetel.connection.jdbc.specific.impl.SybaseSpecific; }
+		jdbcSpecific { database = SQLITE; name = SQLite; class = org.jetel.connection.jdbc.specific.impl.SQLiteSpecific; }
+		jdbcSpecific { database = VERTICA; name = Vertica; class = org.jetel.connection.jdbc.specific.impl.VerticaSpecific; }
+		jdbcDriver { database = MYSQL; urlHint = jdbc:mysql://hostname:3306/database; jdbc.zeroDateTimeBehavior = convertToNull; name = MySQL; driverLibrary = lib/mysql/mysql-connector-java-5.1.47.jar; jdbcSpecific = MYSQL; dbDriver = org.gjt.mm.mysql.Driver; }
+		jdbcDriver { database = ORACLE; urlHint = jdbc:oracle:thin:@host:1521:SID,jdbc:oracle:thin:@cluster-alias:1521/service_name,jdbc:oracle:thin:@(DESCRIPTION=(LOAD_BALANCE=on)(ADDRESS=(PROTOCOL=TCP)(HOST=host1)(PORT=1521))(ADDRESS=(PROTOCOL=TCP)(HOST=host2)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=service_name))),jdbc:oracle:thin:@(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=cluster_alias)(PORT=1521))(CONNECT_DATA=(SERVICE_NAME=service_name))),jdbc:oracle:thin:@host:1521/service_name; name = Oracle; driverLibrary = lib/oracle/ojdbc6-11.2.0.3.jar; jdbcSpecific = ORACLE; dbDriver = oracle.jdbc.OracleDriver; }
+		jdbcDriver { database = POSTGRE; urlHint = jdbc:postgresql://hostname/database; name = PostgreSQL; driverLibrary = lib/postgre/postgresql-42.2.2.jre7.jar; jdbcSpecific = POSTGRE; dbDriver = org.postgresql.Driver; }
+		jdbcDriver { database = REDSHIFT; urlHint = jdbc:redshift://cluster_id.redshift.amazonaws.com:5439/database; name = Amazon Redshift; driverLibrary = lib/redshift/RedshiftJDBC41-1.1.17.1017.jar; jdbcSpecific = REDSHIFT; dbDriver = com.amazon.redshift.jdbc41.Driver; }
+		jdbcDriver { database = MSSQL; urlHint = jdbc:jtds:sqlserver://hostname:1433/database;instance=instanceName,jdbc:jtds:sqlserver://hostname:1433/database; name = Microsoft SQL Server; driverLibrary = lib/jtds/jtds-1.2.8.jar; jdbcSpecific = MSSQL; dbDriver = net.sourceforge.jtds.jdbc.Driver; }
+		jdbcDriver { database = MSACCESSJAVA; urlHint = jdbc:ucanaccess://database_file,jdbc:ucanaccess://database_file;newdatabaseversion=V2010; name = Microsoft Access; driverLibrary = lib/msaccess/ucanaccess-4.0.2.jar;lib/msaccess/jackcess-2.1.6.jar;lib/msaccess/hsqldb-2.3.1.jar; jdbcSpecific = MSACCESSJAVA; dbDriver = net.ucanaccess.jdbc.UcanaccessDriver; }
+		jdbcDriver { database = SYBASE; urlHint = jdbc:jtds:sybase://hostname:7100/database; name = Sybase; driverLibrary = lib/jtds/jtds-1.2.8.jar; jdbcSpecific = SYBASE; dbDriver = net.sourceforge.jtds.jdbc.Driver; }
+		jdbcDriver { database = SQLITE; urlHint = jdbc:sqlite:C:/database; name = SQLite; driverLibrary = lib/sqlite/sqlite-jdbc-3.6.20.1.jar; jdbcSpecific = SQLITE; dbDriver = org.sqlite.JDBC; }
+		jdbcDriver { database = DERBY; urlHint = jdbc:derby://hostname:1527/derby.db; name = Derby; driverLibrary = lib/derby/derbyclient-10.11.1.1.jar; jdbcSpecific = DERBY; dbDriver = org.apache.derby.jdbc.ClientDriver; }
+		jdbcDriver { database = FIREBIRD; urlHint = jdbc:firebirdsql:localhost/3050:/firebird/test.gdb; name = Firebird; jdbcSpecific = FIREBIRD; dbDriver = org.firebirdsql.jdbc.FBDriver; }
+		jdbcDriver { database = VERTICA; urlHint = jdbc:vertica://hostname:5433/database; name = Vertica; driverLibrary = lib/vertica/vertica-jdbc-9.1.1-0.jar; jdbcSpecific = VERTICA; dbDriver = com.vertica.jdbc.Driver; }
+
+2020-07-23 18:22:02,285 Plugins           DEBUG [main] - Plugin org.jetel.license loaded.
+	id - org.jetel.license
+	version - 5.6.2.13
+	provider-name - CloverDX
+
+2020-07-23 18:22:02,286 Plugins           DEBUG [main] - Plugin org.jetel.lookup loaded.
+	id - org.jetel.lookup
+	version - 5.6.2.13
+	provider-name - CloverDX
+		lookup { className = org.jetel.lookup.SimpleLookupTable; type = simpleLookup; }
+		lookup { className = org.jetel.lookup.DBLookupTable; type = dbLookup; }
+		lookup { className = org.jetel.lookup.RangeLookupTable; type = rangeLookup; }
+
+2020-07-23 18:22:02,286 Plugins           DEBUG [main] - Plugin org.jetel.sequence loaded.
+	id - org.jetel.sequence
+	version - 5.6.2.13
+	provider-name - CloverDX
+		sequence { className = org.jetel.sequence.SimpleSequence; type = SIMPLE_SEQUENCE; }
+		sequence { className = org.jetel.sequence.PrimitiveSequence; type = PRIMITIVE_SEQUENCE; }
+
+2020-07-23 18:22:02,287 Plugins           DEBUG [main] - Plugin org.jetel.component loaded.
+	id - org.jetel.component
+	version - 5.6.2.13
+	provider-name - CloverDX
+		component { className = org.jetel.component.DataReader; name = UniversalDataReader; type = DATA_READER; }
+		component { className = org.jetel.component.DataWriter; name = UniversalDataWriter; type = DATA_WRITER; }
+		component { className = org.jetel.component.DataReader; name = FlatFileReader; type = FLAT_FILE_READER; }
+		component { className = org.jetel.component.DataWriter; name = FlatFileWriter; type = FLAT_FILE_WRITER; }
+		component { className = org.jetel.component.DelimitedDataReader; name = DelimitedDataReader; type = DELIMITED_DATA_READER; }
+		component { className = org.jetel.component.DelimitedDataWriter; name = DelimitedDataWriter; type = DELIMITED_DATA_WRITER; }
+		component { className = org.jetel.component.SimpleCopy; name = SimpleCopy; type = SIMPLE_COPY; }
+		component { className = org.jetel.component.Concatenate; name = Concatenate; type = CONCATENATE; }
+		component { className = org.jetel.component.SimpleGather; name = SimpleGather; type = SIMPLE_GATHER; }
+		component { className = org.jetel.component.Reformat; name = Reformat; type = REFORMAT; }
+		component { className = org.jetel.component.DBInputTable; name = DatabaseReader; type = DB_INPUT_TABLE; }
+		component { className = org.jetel.component.Sort; name = Sort; type = SORT; }
+		component { className = org.jetel.component.DBOutputTable; name = DatabaseWriter; type = DB_OUTPUT_TABLE; }
+		component { className = org.jetel.component.FixLenDataWriter; name = FixLenDataWriter; type = FIXLEN_DATA_WRITER; }
+		component { className = org.jetel.component.Dedup; name = Dedup; type = DEDUP; }
+		component { className = org.jetel.component.FixLenDataReader; name = FixLenDataReader; type = FIXLEN_DATA_READER; }
+		component { className = org.jetel.component.Merge; name = Merge; type = MERGE; }
+		component { className = org.jetel.component.CrossJoin; name = CrossJoin; type = CROSS_JOIN; }
+		component { className = org.jetel.component.MergeJoin; name = MergeJoin; type = MERGE_JOIN; }
+		component { className = org.jetel.component.MergeJoin; name = ExtMergeJoin; type = EXT_MERGE_JOIN; }
+		component { className = org.jetel.component.MergeJoin; type = SORTED_JOIN; }
+		component { className = org.jetel.component.Trash; name = Trash; type = TRASH; }
+		component { className = org.jetel.component.Trashifier; type = TRASHIFIER; }
+		component { className = org.jetel.component.DBExecute; name = DBExecute; type = DB_EXECUTE; }
+		component { className = org.jetel.component.HashJoin; name = HashJoin; type = HASH_JOIN; }
+		component { className = org.jetel.component.HashJoin; name = ExtHashJoin; type = EXT_HASH_JOIN; }
+		component { className = org.jetel.component.CheckForeignKey; name = CheckForeignKey; type = CHECK_FOREIGN_KEY; }
+		component { className = org.jetel.component.DBFDataReader; name = DBFDataReader; type = DBF_DATA_READER; }
+		component { className = org.jetel.component.DBFDataWriter; name = DBFDataWriter; type = DBF_DATA_WRITER; }
+		component { className = org.jetel.component.ExtFilter; name = Filter; type = EXT_FILTER; }
+		component { className = org.jetel.component.ExtSort; name = ExtSort; type = EXT_SORT; }
+		component { className = org.jetel.component.SortWithinGroups; name = SortWithinGroups; type = SORT_WITHIN_GROUPS; }
+		component { className = org.jetel.component.Partition; name = Partition; type = PARTITION; }
+		component { className = org.jetel.component.DataIntersection; name = DataIntersection; type = DATA_INTERSECTION; }
+		component { className = org.jetel.component.Aggregate; name = Aggregate; type = AGGREGATE; }
+		component { className = org.jetel.component.SystemExecute; name = SystemExecute; type = SYS_EXECUTE; }
+		component { className = org.jetel.component.RunGraph; name = RunGraph; type = RUN_GRAPH; }
+		component { className = org.jetel.component.HttpConnector; name = HTTPConnector; type = HTTP_CONNECTOR; }
+		component { className = org.jetel.component.KeyGenerator; name = KeyGenerator; type = KEY_GEN; }
+		component { className = org.jetel.component.AproxMergeJoin; name = ApproximativeJoin; type = APROX_MERGE_JOIN; }
+		component { className = org.jetel.component.DBJoin; name = DBJoin; type = DBJOIN; }
+		component { className = org.jetel.component.XLSReader; name = XLSDataReader; type = XLS_READER; }
+		component { className = org.jetel.component.XLSWriter; name = XLSDataWriter; type = XLS_WRITER; }
+		component { className = org.jetel.component.CloverDataWriter; name = CloverDataWriter; type = CLOVER_WRITER; }
+		component { className = org.jetel.component.CloverDataReader; name = CloverDataReader; type = CLOVER_READER; }
+		component { className = org.jetel.component.StructureWriter; name = StructuredDataWriter; type = STRUCTURE_WRITER; }
+		component { className = org.jetel.component.Normalizer; name = Normalizer; type = NORMALIZER; }
+		component { className = org.jetel.component.Denormalizer; name = Denormalizer; type = DENORMALIZER; }
+		component { className = org.jetel.component.Rollup; name = Rollup; type = ROLLUP; }
+		component { className = org.jetel.component.JmsReader; name = JMSReader; type = JMS_READER; }
+		component { className = org.jetel.component.JmsWriter; name = JMSWriter; type = JMS_WRITER; }
+		component { className = org.jetel.component.LookupJoin; name = LookupJoin; type = LOOKUP_JOIN; }
+		component { className = org.jetel.component.LookupTableReaderWriter; name = LookupTableReaderWriter; type = LOOKUP_TABLE_READER_WRITER; }
+		component { className = org.jetel.component.DataGenerator; name = DataGenerator; type = DATA_GENERATOR; }
+		component { className = org.jetel.component.SequenceChecker; name = SequenceChecker; type = SEQUENCE_CHECKER; }
+		component { className = org.jetel.component.TextTableWriter; type = TEXT_TABLE_WRITER; }
+		component { className = org.jetel.component.XmlXPathReader; name = XMLXPathReader; type = XML_XPATH_READER; }
+		component { className = org.jetel.component.XMLExtract; name = XMLExtract; type = XML_EXTRACT; }
+		component { className = org.jetel.component.JsonExtract; name = JSONExtract; type = JSON_EXTRACT; }
+		component { className = org.jetel.component.XmlReader; name = XMLReader; type = XML_READER; }
+		component { className = org.jetel.component.SpeedLimiter; name = SpeedLimiter; type = SPEED_LIMITER; }
+		component { className = org.jetel.component.SpeedLimiter; name = Sleep; type = SLEEP; }
+		component { className = org.jetel.component.JavaExecute; name = JavaExecute; type = JAVA_EXECUTE; }
+		component { className = org.jetel.component.GenericComponent; name = CustomJavaReader; type = GENERIC_READER; }
+		component { className = org.jetel.component.GenericComponent; name = CustomJavaWriter; type = GENERIC_WRITER; }
+		component { className = org.jetel.component.GenericComponent; name = CustomJavaTransformer; type = GENERIC_TRANSFORMER; }
+		component { className = org.jetel.component.GenericComponent; name = CustomJavaComponent; type = GENERIC_COMPONENT; }
+		component { className = org.jetel.component.XmlWriter; name = XMLWriter (deprecated); type = XML_WRITER; }
+		component { className = org.jetel.component.ExtXmlWriter; name = XMLWriter; type = EXT_XML_WRITER; }
+		component { className = org.jetel.component.XSLDataTransformer; name = XSLTransformer; type = XSL_TRANSFORMER; }
+		metadata { id = UniversalDataReader_Error; }
+		metadata { id = HTTPConnector_Request; }
+		metadata { id = HTTPConnector_Response; }
+		metadata { id = HTTPConnector_Error; }
+		metadata { id = RunGraph_Input; }
+		metadata { id = RunGraph_Output; }
+
+2020-07-23 18:22:02,288 Plugins           DEBUG [main] - Plugin org.jetel.bulkloader loaded.
+	id - org.jetel.bulkloader
+	version - 5.6.2.13
+	provider-name - CloverDX
+		component { className = org.jetel.component.OracleDataWriter; name = OracleBulkWriter; type = ORACLE_DATA_WRITER; }
+		component { className = org.jetel.component.DB2DataWriter; name = DB2BulkWriter; type = DB2_DATA_WRITER; }
+		component { className = org.jetel.component.InformixDataWriter; name = InformixBulkWriter; type = INFORMIX_DATA_WRITER; }
+		component { className = org.jetel.component.MsSqlDataWriter; name = MSSQLBulkWriter; type = MS_SQL_DATA_WRITER; }
+		component { className = org.jetel.component.MysqlDataWriter; name = MySQLBulkWriter; type = MYSQL_DATA_WRITER; }
+		component { className = org.jetel.component.PostgreSqlDataWriter; name = PostgreSQLBulkWriter; type = POSTGRESQL_DATA_WRITER; }
+		component { className = org.jetel.component.InfobrightDataWriter; name = InfobrightBulkWriter; type = INFOBRIGHT_DATA_WRITER; }
+
+2020-07-23 18:22:02,288 Plugins           DEBUG [main] - Plugin org.jetel.hadoop loaded.
+	id - org.jetel.hadoop
+	version - 5.6.2.13
+	provider-name - CloverDX
+		connection { className = org.jetel.hadoop.connection.HadoopConnection; type = HADOOP; }
+		component { className = org.jetel.hadoop.component.HadoopWriter; name = HadoopWriter; type = HADOOP_WRITER; }
+		component { className = org.jetel.hadoop.component.HadoopReader; name = HadoopReader; type = HADOOP_READER; }
+		urlResolver { className = org.jetel.hadoop.service.filesystem.HadoopPathResolver; type = HADOOP_HDFS; }
+
+2020-07-23 18:22:02,288 Plugins           DEBUG [main] - Plugin org.jetel.smb2 loaded.
+	id - org.jetel.smb2
+	version - 5.6.2.13
+	provider-name - CloverDX
+		urlResolver { className = org.jetel.util.protocols.smb2.SMB2PathResolver; type = SMB2; }
+
+2020-07-23 18:22:02,288 Plugins           DEBUG [main] - Plugin com.cloveretl.tableau.TableauWriter loaded.
+	id - com.cloveretl.tableau.TableauWriter
+	version - 5.6.2.13
+	provider-name - CloverDX
+		component { className = com.cloveretl.tableau.TableauWriter; name = TableauWriter; type = TABLEAU_WRITER; }
+
+2020-07-23 18:22:02,289 Plugins           DEBUG [main] - Plugin org.jetel.thirdparty loaded.
+	id - org.jetel.thirdparty
+	version - 5.6.2.13
+	provider-name - CloverDX
+		component { className = org.jetel.component.Filter; name = Filter; type = FILTER; }
+		component { className = com.linagora.component.LdapReader; name = LDAPReader; type = LDAP_READER; }
+		component { className = com.linagora.component.LdapWriter; name = LDAPWriter; type = LDAP_WRITER; }
+
+2020-07-23 18:22:02,289 Plugins           DEBUG [main] - Plugin com.opensys.cloveretl.compiler loaded.
+	id - com.opensys.cloveretl.compiler
+	version - 5.6.2.13
+	provider-name - CloverDX
+		tlCompiler { className = com.opensys.cloveretl.ctl.BytecodeCompiler; type = bytecode.compiler; priority = 1; }
+
+2020-07-23 18:22:02,290 Plugins           DEBUG [main] - Plugin com.opensys.clover.component loaded.
+	id - com.opensys.clover.component
+	version - 5.6.2.13
+	provider-name - CloverDX
+		component { className = com.opensys.cloveretl.component.EmailFilter; name = EmailFilter; type = EMAIL_FILTER; }
+		component { className = com.opensys.cloveretl.component.EmailSender; name = EmailSender; type = EMAIL_SENDER; }
+		component { className = com.opensys.cloveretl.component.EmailReader; name = EmailReader; type = EMAIL_READER; }
+		component { className = com.opensys.cloveretl.component.FastSort; name = FastSort; type = FAST_SORT; }
+		component { className = com.opensys.cloveretl.component.MetaPivot; name = MetaPivot; type = META_PIVOT; }
+		component { className = com.opensys.cloveretl.component.MultiLevelReader; name = MultiLevelReader; type = MULTI_LEVEL_READER; }
+		component { className = com.opensys.cloveretl.component.RelationalJoin; name = RelationalJoin; type = RELATIONAL_JOIN; }
+		component { className = com.opensys.cloveretl.component.ParallelReader; name = ParallelReader; type = PARALLEL_READER; }
+		component { className = com.opensys.cloveretl.component.ClusterPartition; name = ParallelPartition; type = CLUSTER_PARTITION; }
+		component { className = com.opensys.cloveretl.component.ClusterSimpleGather; name = ParallelSimpleGather; type = CLUSTER_SIMPLE_GATHER; }
+		component { className = com.opensys.cloveretl.component.ClusterMerge; name = ParallelMerge; type = CLUSTER_MERGE; }
+		component { className = com.opensys.cloveretl.component.ClusterSimpleCopy; name = ParallelSimpleCopy; type = CLUSTER_SIMPLE_COPY; }
+		component { className = com.opensys.cloveretl.component.WebServiceClient; name = WebServiceClient; type = WEB_SERVICE_CLIENT; }
+		component { className = com.opensys.cloveretl.component.complexdatareader.ComplexDataReader; name = ComplexDataReader; type = COMPLEX_DATA_READER; }
+		component { className = com.opensys.cloveretl.component.DataSampler; name = DataSampler; type = DATA_SAMPLER; }
+		component { className = com.opensys.cloveretl.component.Pivot; name = Pivot; type = PIVOT; }
+		component { className = com.opensys.cloveretl.component.BeanReader; name = JavaBeanReader; type = BEAN_READER; }
+		component { className = com.opensys.cloveretl.component.BeanWriter; name = JavaBeanWriter; type = BEAN_WRITER; }
+		component { className = com.opensys.cloveretl.component.MapWriter; name = JavaMapWriter; type = MAP_WRITER; }
+		component { className = com.opensys.cloveretl.component.JsonReader; name = JSONReader; type = JSON_READER; }
+		component { className = com.opensys.cloveretl.component.JsonWriter; name = JSONWriter; type = JSON_WRITER; }
+		component { className = com.opensys.cloveretl.component.ExecuteGraph; name = ExecuteGraph; type = EXECUTE_GRAPH; }
+		component { className = com.opensys.cloveretl.component.ExecuteJobflow; name = ExecuteJobflow; type = EXECUTE_JOBFLOW; }
+		component { className = com.opensys.cloveretl.component.MonitorGraph; name = MonitorGraph; type = MONITOR_GRAPH; }
+		component { className = com.opensys.cloveretl.component.MonitorJobflow; name = MonitorJobflow; type = MONITOR_JOBFLOW; }
+		component { className = com.opensys.cloveretl.component.ExecuteScript; name = ExecuteScript; type = EXECUTE_SCRIPT; }
+		component { className = com.opensys.cloveretl.component.KillGraph; name = KillGraph; type = KILL_GRAPH; }
+		component { className = com.opensys.cloveretl.component.KillJobflow; name = KillJobflow; type = KILL_JOBFLOW; }
+		component { className = com.opensys.cloveretl.component.Fail; name = Fail; type = FAIL; }
+		component { className = com.opensys.cloveretl.component.SetJobOutput; name = SetJobOutput; type = SET_JOB_OUTPUT; }
+		component { className = com.opensys.cloveretl.component.GetJobInput; name = GetJobInput; type = GET_JOB_INPUT; }
+		component { className = com.opensys.cloveretl.component.TokenGather; name = TokenGather; type = TOKEN_GATHER; }
+		component { className = com.opensys.cloveretl.component.Barrier; name = Barrier; type = BARRIER; }
+		component { className = com.opensys.cloveretl.component.Condition; name = Condition; type = CONDITION; }
+		component { className = com.opensys.cloveretl.component.Success; name = Success; type = SUCCESS; }
+		component { className = com.opensys.cloveretl.component.Combine; name = Combine; type = COMBINE; }
+		component { className = com.opensys.cloveretl.component.ListFiles; name = ListFiles; type = LIST_FILES; }
+		component { className = com.opensys.cloveretl.component.CreateFiles; name = CreateFiles; type = CREATE_FILES; }
+		component { className = com.opensys.cloveretl.component.DeleteFiles; name = DeleteFiles; type = DELETE_FILES; }
+		component { className = com.opensys.cloveretl.component.CopyFiles; name = CopyFiles; type = COPY_FILES; }
+		component { className = com.opensys.cloveretl.component.MoveFiles; name = MoveFiles; type = MOVE_FILES; }
+		component { className = com.opensys.cloveretl.component.LoadBalancingPartition; name = LoadBalancingPartition; type = LOAD_BALANCING_PARTITION; }
+		component { className = com.opensys.cloveretl.component.ClusterLoadBalancingPartition; name = ParallelLoadBalancingPartition; type = CLUSTER_LOAD_BALANCING_PARTITION; }
+		component { className = com.opensys.cloveretl.component.ClusterRepartition; name = ParallelRepartition; type = CLUSTER_REPARTITION; }
+		component { className = com.opensys.cloveretl.component.ClusterRegather; type = CLUSTER_REGATHER; }
+		component { className = com.opensys.cloveretl.component.ExecuteMapReduce; name = ExecuteMapReduce; type = EXECUTE_MAPREDUCE; }
+		component { className = com.opensys.cloveretl.component.Loop; name = Loop; type = LOOP; }
+		component { className = com.opensys.cloveretl.component.SalesforceReader; name = SalesforceReader; type = SALESFORCE_READER; }
+		component { className = com.opensys.cloveretl.component.SalesforceWriter; name = SalesforceWriter; type = SALESFORCE_WRITER; }
+		component { className = com.opensys.cloveretl.component.SalesforceBulkReader; name = SalesforceBulkReader; type = SALESFORCE_BULK_READER; }
+		component { className = com.opensys.cloveretl.component.SalesforceBulkWriter; name = SalesforceBulkWriter; type = SALESFORCE_BULK_WRITER; }
+		component { className = com.opensys.cloveretl.component.SalesforceWaveWriter; name = SalesforceWaveWriter; type = SALESFORCE_WAVE_WRITER; }
+		component { className = com.opensys.cloveretl.component.dataservice.RestJobInput; name = Input; type = RESTJOB_INPUT; }
+		component { className = com.opensys.cloveretl.component.dataservice.RestJobOutput; name = Output; type = RESTJOB_OUTPUT; }
+		metadata { id = ExecuteGraph_RunStatus; }
+		metadata { id = ExecuteGraph_RunConfig; }
+		metadata { id = MonitorGraph_RunConfig; }
+		metadata { id = ExecuteScript_RunConfig; }
+		metadata { id = ExecuteScript_RunResult; }
+		metadata { id = KillGraph_RunConfig; }
+		metadata { id = CopyFiles_Attributes; }
+		metadata { id = CreateFiles_Attributes; }
+		metadata { id = DeleteFiles_Attributes; }
+		metadata { id = ListFiles_Attributes; }
+		metadata { id = MoveFiles_Attributes; }
+		metadata { id = CopyFiles_Result; }
+		metadata { id = CreateFiles_Result; }
+		metadata { id = DeleteFiles_Result; }
+		metadata { id = ListFiles_Result; }
+		metadata { id = MoveFiles_Result; }
+		metadata { id = CopyFiles_Error; }
+		metadata { id = CreateFiles_Error; }
+		metadata { id = DeleteFiles_Error; }
+		metadata { id = ListFiles_Error; }
+		metadata { id = MoveFiles_Error; }
+		metadata { id = ExecuteMapReduce_JobResult; }
+		metadata { id = ParallelReader_Error; }
+		metadata { id = MetaPivot_Output; }
+		metadata { id = RecordToKeyValues_Output; }
+		metadata { id = KeyValuesToRecord_Input; }
+		metadata { id = EmailReader_Message; }
+		metadata { id = EmailReader_Attachment; }
+		metadata { id = SalesforceWave_Success; }
+		metadata { id = SalesforceWave_Error; }
+		connection { className = com.opensys.cloveretl.connection.SalesforceConnection; type = SALESFORCE; }
+		graphAnalyzerParticipant { className = com.opensys.cloveretl.component.dataservice.b; type = restjob.graphAnalyzerParticipant; }
+
+2020-07-23 18:22:02,291 Plugins           DEBUG [main] - Plugin com.opensys.cloveretl.ctlfunction loaded.
+	id - com.opensys.cloveretl.ctlfunction
+	version - 5.6.2.13
+	provider-name - CloverDX
+		ctlfunction { libraryName = string; className = com.opensys.cloveretl.ctl.extensions.StringLib; }
+		ctlfunction { libraryName = HTTP; className = com.opensys.cloveretl.ctl.extensions.HttpLib; }
+
+2020-07-23 18:22:02,291 Plugins           DEBUG [main] - Plugin com.opensys.clover.lookup loaded.
+	id - com.opensys.clover.lookup
+	version - 5.6.2.13
+	provider-name - CloverDX
+		lookup { className = com.opensys.cloveretl.lookup.PersistentLookupTable; type = persistentLookup; }
+		lookup { className = com.opensys.cloveretl.lookup.AspellLookupTable; type = aspellLookup; }
+
+2020-07-23 18:22:02,291 Plugins           DEBUG [main] - Plugin com.opensys.clover.mongodb loaded.
+	id - com.opensys.clover.mongodb
+	version - 5.6.2.13
+	provider-name - CloverDX
+		connection { className = com.opensys.cloveretl.connection.nosql.mongo.MongoDBConnection; type = MONGODB; }
+		component { className = com.opensys.cloveretl.component.MongoDBReader; name = MongoDBReader; type = MONGODB_READER; }
+		component { className = com.opensys.cloveretl.component.MongoDBWriter; name = MongoDBWriter; type = MONGODB_WRITER; }
+		component { className = com.opensys.cloveretl.component.MongoDBExecute; name = MongoDBExecute; type = MONGODB_EXECUTE; }
+		metadata { id = MongoDBReader_Attributes; }
+		metadata { id = MongoDBWriter_Attributes; }
+		metadata { id = MongoDBExecute_Attributes; }
+		metadata { id = MongoDBReader_Result; }
+		metadata { id = MongoDBWriter_Result; }
+		metadata { id = MongoDBExecute_Result; }
+		metadata { id = MongoDBReader_Error; }
+		metadata { id = MongoDBWriter_Error; }
+		metadata { id = MongoDBExecute_Error; }
+
+2020-07-23 18:22:02,292 Plugins           DEBUG [main] - Plugin com.opensys.cloveretl.quickbase loaded.
+	id - com.opensys.cloveretl.quickbase
+	version - 5.6.2.13
+	provider-name - CloverDX
+		connection { className = com.opensys.cloveretl.quickbase.connection.QuickBaseConnection; type = QUICKBASE; }
+		component { className = com.opensys.cloveretl.quickbase.component.QuickBaseRecordReader; name = QuickBase Record Reader; type = QUICKBASE_RECORD_READER; }
+		component { className = com.opensys.cloveretl.quickbase.component.QuickBaseQueryReader; name = QuickBase Query Reader; type = QUICKBASE_QUERY_READER; }
+		component { className = com.opensys.cloveretl.quickbase.component.QuickBaseRecordWriter; name = QuickBase Record Writer; type = QUICKBASE_RECORD_WRITER; }
+		component { className = com.opensys.cloveretl.quickbase.component.QuickBaseImportCSV; name = QuickBase Import CSV; type = QUICKBASE_IMPORT_CSV; }
+
+2020-07-23 18:22:02,292 Plugins           DEBUG [main] - Plugin com.opensys.clover.spreadsheet loaded.
+	id - com.opensys.clover.spreadsheet
+	version - 5.6.2.13
+	provider-name - CloverDX
+		component { className = com.opensys.cloveretl.component.SpreadsheetReader; name = SpreadsheetDataReader; type = SPREADSHEET_READER; }
+		component { className = com.opensys.cloveretl.component.SpreadsheetWriter; name = SpreadsheetDataWriter; type = SPREADSHEET_WRITER; }
+		metadata { id = SpreadsheetReader_Error; }
+
+2020-07-23 18:22:02,292 Plugins           DEBUG [main] - Plugin com.opensys.clover.subgraph loaded.
+	id - com.opensys.clover.subgraph
+	version - 5.6.2.13
+	provider-name - CloverDX
+		component { className = com.opensys.cloveretl.component.Subgraph; name = Subgraph; type = SUBGRAPH; }
+		component { className = com.opensys.cloveretl.component.SubgraphInput; name = SubgraphInput; type = SUBGRAPH_INPUT; }
+		component { className = com.opensys.cloveretl.component.SubgraphOutput; name = SubgraphOutput; type = SUBGRAPH_OUTPUT; }
+
+2020-07-23 18:22:02,292 Plugins           DEBUG [main] - Plugin com.opensys.clover.validator loaded.
+	id - com.opensys.clover.validator
+	version - 5.6.2.13
+	provider-name - CloverDX
+		component { className = com.opensys.cloveretl.validator.component.Validator; name = Validator; type = VALIDATOR; }
+		metadata { id = Validator_InvalidRecords; }
+
+2020-07-23 18:22:02,293 Plugins           DEBUG [main] - Plugin org.jetel.profiler loaded.
+	id - org.jetel.profiler
+	version - 5.6.2.13
+	provider-name - CloverDX
+		generalObject { className = com.cloveretl.profiler.engine.ProfilerLauncherImpl; id = ProfilerLauncher; }
+		generalObject { className = com.cloveretl.profiler.engine.PreviewGraphGeneratorImpl; id = ProfilerPreviewGraphGenerator; }
+		component { className = com.cloveretl.profiler.engine.components.Profiler; name = ProfilerProbe; type = PROFILER_PROBE; }
+		component { className = com.cloveretl.profiler.engine.components.ExecuteProfilerJob; name = ExecuteProfilerJob; type = EXECUTE_PROFILER_JOB; }
+		metadata { id = ExecuteProfilerJob_RunStatus; }
+		metadata { id = ExecuteProfilerJob_RunConfig; }
+
+2020-07-23 18:22:02,295 EngineInitializer DEBUG [main] - License location: ./licenses
+2020-07-23 18:22:02,296 EngineInitializer DEBUG [main] - ======= Licenses =======
+2020-07-23 18:22:02,296 EngineInitializer DEBUG [main] - ======= License =======
+2020-07-23 18:22:02,296 EngineInitializer DEBUG [main] - Company : Northeastern University
+2020-07-23 18:22:02,296 EngineInitializer DEBUG [main] - No. : CLP1DNORTH16249830EX
+2020-07-23 18:22:02,296 EngineInitializer DEBUG [main] - Type : EVALUATION
+2020-07-23 18:22:02,296 EngineInitializer DEBUG [main] - Note : 
+2020-07-23 18:22:02,296 EngineInitializer DEBUG [main] - Person : Ture Carlson
+2020-07-23 18:22:02,296 EngineInitializer DEBUG [main] - Vendor : 
+2020-07-23 18:22:02,297 EngineInitializer DEBUG [main] - Expiration date : Sep 1, 2020
+2020-07-23 18:22:02,297 EngineInitializer DEBUG [main] - Upgrade valid until : Unlimited
+2020-07-23 18:22:02,297 EngineInitializer DEBUG [main] - ==== Products ====
+2020-07-23 18:22:02,297 EngineInitializer DEBUG [main] - Product Id : com.cloveretl.gui
+2020-07-23 18:22:02,297 EngineInitializer DEBUG [main] - Product info : Designer v5.6.x
+2020-07-23 18:22:02,297 EngineInitializer DEBUG [main] - Product name : Designer
+2020-07-23 18:22:02,297 EngineInitializer DEBUG [main] - Version : 5.6.0
+2020-07-23 18:22:02,297 EngineInitializer DEBUG [main] - Product Id : com.cloveretl.runtime
+2020-07-23 18:22:02,297 EngineInitializer DEBUG [main] - Product info : Runtime Environment v5.6.x
+2020-07-23 18:22:02,298 EngineInitializer DEBUG [main] - Product name : Runtime Environment
+2020-07-23 18:22:02,298 EngineInitializer DEBUG [main] - Version : 5.6.0
+2020-07-23 18:22:02,298 EngineInitializer DEBUG [main] - Product Id : com.cloveretl.profiler
+2020-07-23 18:22:02,298 EngineInitializer DEBUG [main] - Product info : Data Quality v5.6.x
+2020-07-23 18:22:02,298 EngineInitializer DEBUG [main] - Product name : Data Quality
+2020-07-23 18:22:02,298 EngineInitializer DEBUG [main] - Version : 5.6.0
+2020-07-23 18:22:02,298 EngineInitializer DEBUG [main] - ======= END Licenses =======
+2020-07-23 18:22:08,877 GuiPlugin         DEBUG [Worker-4: Start CloverDX Runtime] - Checking ETL runtime status: http://localhost:58125/clover/accessibilityTest.jsp
+2020-07-23 18:22:12,922 GuiPlugin         DEBUG [Worker-4: Start CloverDX Runtime] - ETL runtime refused HTTP connection: Connect to localhost:58125 [localhost/127.0.0.1, localhost/0:0:0:0:0:0:0:1] failed: Connection refused: connect
+2020-07-23 18:22:13,923 GuiPlugin         DEBUG [Worker-4: Start CloverDX Runtime] - Checking ETL runtime status: http://localhost:58125/clover/accessibilityTest.jsp
+2020-07-23 18:22:14,298 GuiPlugin         DEBUG [Worker-4: Start CloverDX Runtime] - ETL runtime responded: HTTP/1.1 503 Service Unavailable
+2020-07-23 18:22:14,299 GuiPlugin         DEBUG [Worker-4: Start CloverDX Runtime] - Response content: CloverDX Server not initialized yet
+2020-07-23 18:22:15,300 GuiPlugin         DEBUG [Worker-4: Start CloverDX Runtime] - Checking ETL runtime status: http://localhost:58125/clover/accessibilityTest.jsp
+2020-07-23 18:22:15,307 GuiPlugin         DEBUG [Worker-4: Start CloverDX Runtime] - ETL runtime responded: HTTP/1.1 503 Service Unavailable
+2020-07-23 18:22:15,307 GuiPlugin         DEBUG [Worker-4: Start CloverDX Runtime] - Response content: CloverDX Server not initialized yet
+2020-07-23 18:22:16,308 GuiPlugin         DEBUG [Worker-4: Start CloverDX Runtime] - Checking ETL runtime status: http://localhost:58125/clover/accessibilityTest.jsp
+2020-07-23 18:22:16,311 GuiPlugin         DEBUG [Worker-4: Start CloverDX Runtime] - ETL runtime responded: HTTP/1.1 503 Service Unavailable
+2020-07-23 18:22:16,312 GuiPlugin         DEBUG [Worker-4: Start CloverDX Runtime] - Response content: CloverDX Server not initialized yet
+2020-07-23 18:22:17,312 GuiPlugin         DEBUG [Worker-4: Start CloverDX Runtime] - Checking ETL runtime status: http://localhost:58125/clover/accessibilityTest.jsp
+2020-07-23 18:22:17,316 GuiPlugin         DEBUG [Worker-4: Start CloverDX Runtime] - ETL runtime responded: HTTP/1.1 503 Service Unavailable
+2020-07-23 18:22:17,316 GuiPlugin         DEBUG [Worker-4: Start CloverDX Runtime] - Response content: CloverDX Server not initialized yet
+2020-07-23 18:22:18,316 GuiPlugin         DEBUG [Worker-4: Start CloverDX Runtime] - Checking ETL runtime status: http://localhost:58125/clover/accessibilityTest.jsp
+2020-07-23 18:22:18,321 GuiPlugin         DEBUG [Worker-4: Start CloverDX Runtime] - ETL runtime responded: HTTP/1.1 503 Service Unavailable
+2020-07-23 18:22:18,321 GuiPlugin         DEBUG [Worker-4: Start CloverDX Runtime] - Response content: CloverDX Server not initialized yet
+2020-07-23 18:22:19,322 GuiPlugin         DEBUG [Worker-4: Start CloverDX Runtime] - Checking ETL runtime status: http://localhost:58125/clover/accessibilityTest.jsp
+2020-07-23 18:22:19,372 GuiPlugin         DEBUG [Worker-4: Start CloverDX Runtime] - ETL runtime responded: HTTP/1.1 200 OK
+2020-07-23 18:22:19,372 GuiPlugin         DEBUG [Worker-4: Start CloverDX Runtime] - Response content: OK
+2020-07-23 18:22:19,889 ServerGUIPlugin   DEBUG [Worker-4: Start CloverDX Runtime] - Server (http://localhost:58125/clover) call #1 duration=15ms getSandboxes() 
+2020-07-23 18:22:19,932 ServerGUIPlugin   DEBUG [Worker-4: Start CloverDX Runtime] - Server (http://localhost:58125/clover) call #1 duration=42ms createSandbox([MOVD, MOVD, SHARED, false, [com.cloveretl.server.api.webservice.generated.SandboxLocationInfo@8bc064c]]) 
+2020-07-23 18:22:25,790 ServerGUIPlugin   DEBUG [Worker-0: Updating ETL model] - Server (http://localhost:58125/clover) call #1 duration=8ms getSandboxes() 
+2020-07-23 18:22:26,619 ServerGUIPlugin   DEBUG [Worker-0: Updating ETL model] - Server (http://localhost:58125/clover) call #1 duration=829ms analyseGraph([MOVD, graph/unemployment_vs_sickness.grf]) 
+2020-07-23 18:22:26,619 GuiPlugin         DEBUG [Worker-0: Updating ETL model] - Job 'Updating ETL model' finished in 839 ms with status [Status OK: unknown code=0 OK null].
+2020-07-23 18:22:27,255 GuiPlugin         DEBUG [main] - 'GUI checkConfig' finished in 56 ms
+2020-07-23 18:22:27,260 GuiPlugin         DEBUG [main] - 'Engine checkConfig' finished in 4 ms
+2020-07-23 18:22:27,268 ServerGUIPlugin   DEBUG [Worker-1: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=7ms getSandboxes() 
+2020-07-23 18:22:27,282 ServerGUIPlugin   DEBUG [Worker-1: Start Checkconfig Operation] - checkConfig operation [0] started
+2020-07-23 18:22:27,282 ServerGUIPlugin   DEBUG [Worker-1: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=14ms startCheckConfigOperation([MOVD, graph/unemployment_vs_sickness.grf, <obfuscated_xml>]) 
+2020-07-23 18:22:27,329 GuiPlugin         DEBUG [main] - 'Initialize reference cache' finished in 14 ms
+2020-07-23 18:22:27,435 ServerGUIPlugin   DEBUG [Worker-8: Start Metadata Propagation Operation] - Server (http://localhost:58125/clover) call #1 duration=9ms getSandboxes() 
+2020-07-23 18:22:27,441 GuiPlugin         DEBUG [Worker-5: Updating Reference Cache] - Job 'Updating Reference Cache' finished in 112 ms with status [Status OK: unknown code=0 OK null].
+2020-07-23 18:22:27,451 ServerGUIPlugin   DEBUG [Worker-8: Start Metadata Propagation Operation] - propagateMetadata operation [0] started
+2020-07-23 18:22:27,452 ServerGUIPlugin   DEBUG [Worker-8: Start Metadata Propagation Operation] - Server (http://localhost:58125/clover) call #1 duration=16ms startPropagateMetadataOperation([MOVD, graph/unemployment_vs_sickness.grf, <obfuscated_xml>]) 
+2020-07-23 18:22:27,546 ServerGUIPlugin   DEBUG [Worker-17: Get Metadata Propagation Operation Result] - Server (http://localhost:58125/clover) call #1 duration=20ms getPropagateMetadataOperationResult([graph/unemployment_vs_sickness.grf, 0]) 
+2020-07-23 18:22:27,628 GuiPlugin         DEBUG [Worker-6: Metadata propagation] - Job 'Metadata propagation' finished in 432 ms with status [Status OK: unknown code=0 OK null].
+2020-07-23 18:22:27,630 ServerGUIPlugin   DEBUG [Worker-3: Get Checkconfig Operation Result] - Server (http://localhost:58125/clover) call #1 duration=267ms getCheckConfigOperationResult([0]) 
+2020-07-23 18:22:27,646 ServerGUIPlugin   DEBUG [Worker-10: Start Metadata Propagation Operation] - Server (http://localhost:58125/clover) call #1 duration=5ms getSandboxes() 
+2020-07-23 18:22:27,657 ServerGUIPlugin   DEBUG [Worker-10: Start Metadata Propagation Operation] - propagateMetadata operation [1] started
+2020-07-23 18:22:27,658 ServerGUIPlugin   DEBUG [Worker-10: Start Metadata Propagation Operation] - Server (http://localhost:58125/clover) call #1 duration=11ms startPropagateMetadataOperation([MOVD, graph/unemployment_vs_sickness.grf, <obfuscated_xml>]) 
+2020-07-23 18:22:27,668 GuiPlugin         DEBUG [Worker-7: Check graph configuration] - Job 'Check graph configuration' finished in 408 ms with status [Status OK: unknown code=0 OK null].
+2020-07-23 18:22:27,748 ServerGUIPlugin   DEBUG [Worker-13: Get Metadata Propagation Operation Result] - Server (http://localhost:58125/clover) call #1 duration=7ms getPropagateMetadataOperationResult([graph/unemployment_vs_sickness.grf, 1]) 
+2020-07-23 18:22:27,841 GuiPlugin         DEBUG [Worker-18: Metadata propagation] - Job 'Metadata propagation' finished in 213 ms with status [Status OK: unknown code=0 OK null].
+2020-07-23 18:23:30,861 ServerGUIPlugin   DEBUG [Worker-18: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=9ms getSandboxes() 
+2020-07-23 18:23:30,962 ServerGUIPlugin   DEBUG [main] - Server (http://localhost:58125/clover) call #1 duration=11ms getDefaults() 
+2020-07-23 18:23:31,026 ServerGUIPlugin   DEBUG [Worker-18: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=28ms prepareDataView([MOVD, graph/unemployment_vs_sickness.grf, UNEMPLOYMENT_READER, <obfuscated_xml>, 1, null, null]) 
+2020-07-23 18:23:31,402 ServerGUIPlugin   DEBUG [Worker-18: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=375ms fetchDataView([-1, 100, 10000]) 
+com.cloveretl.server.api.webservice.generated.GetViewDataFaultMsg: Execution of data retrieval job failed: Component [Unemployment Reader:UNEMPLOYMENT_READER] finished with status ERROR. (Out0: 0 recs)
+ Error when executing statement: SELECT Period, avg(UnemploymentRatePercentage) AS USA_Unemployment_Rate FROM movd.unemploymentstat Where Period BETWEEN '2020-01-01' AND '2020-07-01' group by Period;
+  Cannot connect to the DB: Public Key Retrieval is not allowed
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_202]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_202]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_202]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_202]
+	at com.sun.xml.ws.fault.SOAPFaultBuilder.createException(SOAPFaultBuilder.java:147) ~[?:?]
+	at com.sun.xml.ws.client.sei.StubHandler.readResponse(StubHandler.java:253) ~[?:?]
+	at com.sun.xml.ws.db.DatabindingImpl.deserializeResponse(DatabindingImpl.java:206) ~[?:?]
+	at com.sun.xml.ws.db.DatabindingImpl.deserializeResponse(DatabindingImpl.java:293) ~[?:?]
+	at com.sun.xml.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:119) ~[?:?]
+	at com.sun.xml.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:92) ~[?:?]
+	at com.sun.xml.ws.client.sei.SEIStub.invoke(SEIStub.java:161) ~[?:?]
+	at com.sun.proxy.$Proxy81.fetchDataView(Unknown Source) ~[?:?]
+	at com.cloveretl.gui.server.service.q.fetchDataView(Main:436) ~[com.cloveretl.gui.server.jar:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_202]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_202]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_202]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_202]
+	at com.cloveretl.gui.server.service.A.A(Main:236) [com.cloveretl.gui.server.jar:?]
+	at com.cloveretl.gui.server.service.A.invoke(Main:90) [com.cloveretl.gui.server.jar:?]
+	at com.sun.proxy.$Proxy82.fetchDataView(Unknown Source) [?:?]
+	at com.cloveretl.gui.server.runtime.ServerDebugDataLoader.A(Main:48) [com.cloveretl.gui.server.jar:?]
+	at com.cloveretl.gui.debugdata.provider.A.B(Main:243) [cloveretl-gui.jar:?]
+	at com.cloveretl.gui.debugdata.provider.A.a(Main:235) [cloveretl-gui.jar:?]
+	at com.cloveretl.gui.debugdata.provider.A.A(Main:54) [cloveretl-gui.jar:?]
+	at com.cloveretl.gui.debugdata.provider.V.run(Main:115) [cloveretl-gui.jar:?]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60) [org.eclipse.core.jobs_3.10.0.v20180427-1454.jar:?]
+2020-07-23 18:23:51,615 ServerGUIPlugin   DEBUG [Worker-15: Debug Data Provider Disposer] - Server (http://localhost:58125/clover) call #1 duration=6ms disposeDataView([-1]) 
+2020-07-23 18:23:51,674 ServerGUIPlugin   DEBUG [Worker-0: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=6ms getSandboxes() 
+2020-07-23 18:23:51,694 ServerGUIPlugin   DEBUG [Worker-0: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=15ms prepareDataView([MOVD, graph/unemployment_vs_sickness.grf, COVID_READER, <obfuscated_xml>, 1, null, null]) 
+2020-07-23 18:23:51,751 ServerGUIPlugin   DEBUG [Worker-0: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=57ms fetchDataView([-2, 100, 10000]) 
+com.cloveretl.server.api.webservice.generated.GetViewDataFaultMsg: Execution of data retrieval job failed: Component [Covid Reader:COVID_READER] finished with status ERROR. (Out0: 0 recs)
+ Error when executing statement: SELECT sum(jhcovidstat.CumulativeCases), jhcovidstat.Date FROM movd.jhcovidstat group by date;
+  Cannot connect to the DB: Public Key Retrieval is not allowed
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_202]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_202]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_202]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_202]
+	at com.sun.xml.ws.fault.SOAPFaultBuilder.createException(SOAPFaultBuilder.java:147) ~[?:?]
+	at com.sun.xml.ws.client.sei.StubHandler.readResponse(StubHandler.java:253) ~[?:?]
+	at com.sun.xml.ws.db.DatabindingImpl.deserializeResponse(DatabindingImpl.java:206) ~[?:?]
+	at com.sun.xml.ws.db.DatabindingImpl.deserializeResponse(DatabindingImpl.java:293) ~[?:?]
+	at com.sun.xml.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:119) ~[?:?]
+	at com.sun.xml.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:92) ~[?:?]
+	at com.sun.xml.ws.client.sei.SEIStub.invoke(SEIStub.java:161) ~[?:?]
+	at com.sun.proxy.$Proxy81.fetchDataView(Unknown Source) ~[?:?]
+	at com.cloveretl.gui.server.service.q.fetchDataView(Main:436) ~[com.cloveretl.gui.server.jar:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_202]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_202]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_202]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_202]
+	at com.cloveretl.gui.server.service.A.A(Main:236) [com.cloveretl.gui.server.jar:?]
+	at com.cloveretl.gui.server.service.A.invoke(Main:90) [com.cloveretl.gui.server.jar:?]
+	at com.sun.proxy.$Proxy82.fetchDataView(Unknown Source) [?:?]
+	at com.cloveretl.gui.server.runtime.ServerDebugDataLoader.A(Main:48) [com.cloveretl.gui.server.jar:?]
+	at com.cloveretl.gui.debugdata.provider.A.B(Main:243) [cloveretl-gui.jar:?]
+	at com.cloveretl.gui.debugdata.provider.A.a(Main:235) [cloveretl-gui.jar:?]
+	at com.cloveretl.gui.debugdata.provider.A.A(Main:54) [cloveretl-gui.jar:?]
+	at com.cloveretl.gui.debugdata.provider.V.run(Main:115) [cloveretl-gui.jar:?]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60) [org.eclipse.core.jobs_3.10.0.v20180427-1454.jar:?]
+2020-07-23 18:24:14,944 ServerGUIPlugin   DEBUG [Worker-6: Debug Data Provider Disposer] - Server (http://localhost:58125/clover) call #1 duration=5ms disposeDataView([-2]) 
+2020-07-23 18:25:00,121 ServerGUIPlugin   DEBUG [Worker-3: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=7ms getSandboxes() 
+2020-07-23 18:25:00,144 ServerGUIPlugin   DEBUG [Worker-3: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=18ms prepareDataView([MOVD, graph/unemployment_vs_sickness.grf, DATABASE_READER, <obfuscated_xml>, 1, null, null]) 
+2020-07-23 18:25:00,202 ServerGUIPlugin   DEBUG [Worker-3: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=57ms fetchDataView([-3, 100, 10000]) 
+com.cloveretl.server.api.webservice.generated.GetViewDataFaultMsg: Execution of data retrieval job failed: Component [DatabaseReader:DATABASE_READER] finished with status ERROR. (Out0: 0 recs)
+ Error when executing statement: select Date, UnemploymentRate, CumulativeCases from `movd`.`unemployment_vs_covid`
+  Cannot connect to the DB: Public Key Retrieval is not allowed
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_202]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_202]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_202]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_202]
+	at com.sun.xml.ws.fault.SOAPFaultBuilder.createException(SOAPFaultBuilder.java:147) ~[?:?]
+	at com.sun.xml.ws.client.sei.StubHandler.readResponse(StubHandler.java:253) ~[?:?]
+	at com.sun.xml.ws.db.DatabindingImpl.deserializeResponse(DatabindingImpl.java:206) ~[?:?]
+	at com.sun.xml.ws.db.DatabindingImpl.deserializeResponse(DatabindingImpl.java:293) ~[?:?]
+	at com.sun.xml.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:119) ~[?:?]
+	at com.sun.xml.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:92) ~[?:?]
+	at com.sun.xml.ws.client.sei.SEIStub.invoke(SEIStub.java:161) ~[?:?]
+	at com.sun.proxy.$Proxy81.fetchDataView(Unknown Source) ~[?:?]
+	at com.cloveretl.gui.server.service.q.fetchDataView(Main:436) ~[com.cloveretl.gui.server.jar:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_202]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_202]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_202]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_202]
+	at com.cloveretl.gui.server.service.A.A(Main:236) [com.cloveretl.gui.server.jar:?]
+	at com.cloveretl.gui.server.service.A.invoke(Main:90) [com.cloveretl.gui.server.jar:?]
+	at com.sun.proxy.$Proxy82.fetchDataView(Unknown Source) [?:?]
+	at com.cloveretl.gui.server.runtime.ServerDebugDataLoader.A(Main:48) [com.cloveretl.gui.server.jar:?]
+	at com.cloveretl.gui.debugdata.provider.A.B(Main:243) [cloveretl-gui.jar:?]
+	at com.cloveretl.gui.debugdata.provider.A.a(Main:235) [cloveretl-gui.jar:?]
+	at com.cloveretl.gui.debugdata.provider.A.A(Main:54) [cloveretl-gui.jar:?]
+	at com.cloveretl.gui.debugdata.provider.V.run(Main:115) [cloveretl-gui.jar:?]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60) [org.eclipse.core.jobs_3.10.0.v20180427-1454.jar:?]
+2020-07-23 18:25:14,747 ServerGUIPlugin   DEBUG [Worker-12: Debug Data Provider Disposer] - Server (http://localhost:58125/clover) call #1 duration=4ms disposeDataView([-3]) 
+2020-07-23 18:52:15,415 ServerGUIPlugin   DEBUG [Worker-18: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=7ms getSandboxes() 
+2020-07-23 18:52:15,444 ServerGUIPlugin   DEBUG [Worker-18: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=15ms prepareDataView([MOVD, graph/unemployment_vs_sickness.grf, UNEMPLOYMENT_READER, <obfuscated_xml>, 1, null, null]) 
+2020-07-23 18:52:15,498 ServerGUIPlugin   DEBUG [Worker-18: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=54ms fetchDataView([-4, 100, 10000]) 
+com.cloveretl.server.api.webservice.generated.GetViewDataFaultMsg: Execution of data retrieval job failed: Component [Unemployment Reader:UNEMPLOYMENT_READER] finished with status ERROR. (Out0: 0 recs)
+ Error when executing statement: SELECT Period, avg(UnemploymentRatePercentage) AS USA_Unemployment_Rate FROM movd.unemploymentstat Where Period BETWEEN '2020-01-01' AND '2020-07-01' group by Period;
+  Cannot connect to the DB: Public Key Retrieval is not allowed
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_202]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_202]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_202]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_202]
+	at com.sun.xml.ws.fault.SOAPFaultBuilder.createException(SOAPFaultBuilder.java:147) ~[?:?]
+	at com.sun.xml.ws.client.sei.StubHandler.readResponse(StubHandler.java:253) ~[?:?]
+	at com.sun.xml.ws.db.DatabindingImpl.deserializeResponse(DatabindingImpl.java:206) ~[?:?]
+	at com.sun.xml.ws.db.DatabindingImpl.deserializeResponse(DatabindingImpl.java:293) ~[?:?]
+	at com.sun.xml.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:119) ~[?:?]
+	at com.sun.xml.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:92) ~[?:?]
+	at com.sun.xml.ws.client.sei.SEIStub.invoke(SEIStub.java:161) ~[?:?]
+	at com.sun.proxy.$Proxy81.fetchDataView(Unknown Source) ~[?:?]
+	at com.cloveretl.gui.server.service.q.fetchDataView(Main:436) ~[com.cloveretl.gui.server.jar:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_202]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_202]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_202]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_202]
+	at com.cloveretl.gui.server.service.A.A(Main:236) [com.cloveretl.gui.server.jar:?]
+	at com.cloveretl.gui.server.service.A.invoke(Main:90) [com.cloveretl.gui.server.jar:?]
+	at com.sun.proxy.$Proxy82.fetchDataView(Unknown Source) [?:?]
+	at com.cloveretl.gui.server.runtime.ServerDebugDataLoader.A(Main:48) [com.cloveretl.gui.server.jar:?]
+	at com.cloveretl.gui.debugdata.provider.A.B(Main:243) [cloveretl-gui.jar:?]
+	at com.cloveretl.gui.debugdata.provider.A.a(Main:235) [cloveretl-gui.jar:?]
+	at com.cloveretl.gui.debugdata.provider.A.A(Main:54) [cloveretl-gui.jar:?]
+	at com.cloveretl.gui.debugdata.provider.V.run(Main:115) [cloveretl-gui.jar:?]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60) [org.eclipse.core.jobs_3.10.0.v20180427-1454.jar:?]
+2020-07-23 18:52:37,230 ServerGUIPlugin   DEBUG [Worker-8: Debug Data Provider Disposer] - Server (http://localhost:58125/clover) call #1 duration=5ms disposeDataView([-4]) 
+2020-07-23 18:52:37,281 ServerGUIPlugin   DEBUG [Worker-6: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=6ms getSandboxes() 
+2020-07-23 18:52:37,299 ServerGUIPlugin   DEBUG [Worker-6: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=14ms prepareDataView([MOVD, graph/unemployment_vs_sickness.grf, COVID_READER, <obfuscated_xml>, 1, null, null]) 
+2020-07-23 18:52:37,349 ServerGUIPlugin   DEBUG [Worker-6: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=50ms fetchDataView([-5, 100, 10000]) 
+com.cloveretl.server.api.webservice.generated.GetViewDataFaultMsg: Execution of data retrieval job failed: Component [Covid Reader:COVID_READER] finished with status ERROR. (Out0: 0 recs)
+ Error when executing statement: SELECT sum(jhcovidstat.CumulativeCases), jhcovidstat.Date FROM movd.jhcovidstat group by date;
+  Cannot connect to the DB: Public Key Retrieval is not allowed
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_202]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_202]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_202]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_202]
+	at com.sun.xml.ws.fault.SOAPFaultBuilder.createException(SOAPFaultBuilder.java:147) ~[?:?]
+	at com.sun.xml.ws.client.sei.StubHandler.readResponse(StubHandler.java:253) ~[?:?]
+	at com.sun.xml.ws.db.DatabindingImpl.deserializeResponse(DatabindingImpl.java:206) ~[?:?]
+	at com.sun.xml.ws.db.DatabindingImpl.deserializeResponse(DatabindingImpl.java:293) ~[?:?]
+	at com.sun.xml.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:119) ~[?:?]
+	at com.sun.xml.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:92) ~[?:?]
+	at com.sun.xml.ws.client.sei.SEIStub.invoke(SEIStub.java:161) ~[?:?]
+	at com.sun.proxy.$Proxy81.fetchDataView(Unknown Source) ~[?:?]
+	at com.cloveretl.gui.server.service.q.fetchDataView(Main:436) ~[com.cloveretl.gui.server.jar:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_202]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_202]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_202]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_202]
+	at com.cloveretl.gui.server.service.A.A(Main:236) [com.cloveretl.gui.server.jar:?]
+	at com.cloveretl.gui.server.service.A.invoke(Main:90) [com.cloveretl.gui.server.jar:?]
+	at com.sun.proxy.$Proxy82.fetchDataView(Unknown Source) [?:?]
+	at com.cloveretl.gui.server.runtime.ServerDebugDataLoader.A(Main:48) [com.cloveretl.gui.server.jar:?]
+	at com.cloveretl.gui.debugdata.provider.A.B(Main:243) [cloveretl-gui.jar:?]
+	at com.cloveretl.gui.debugdata.provider.A.a(Main:235) [cloveretl-gui.jar:?]
+	at com.cloveretl.gui.debugdata.provider.A.A(Main:54) [cloveretl-gui.jar:?]
+	at com.cloveretl.gui.debugdata.provider.V.run(Main:115) [cloveretl-gui.jar:?]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60) [org.eclipse.core.jobs_3.10.0.v20180427-1454.jar:?]
+2020-07-23 18:52:54,892 ServerGUIPlugin   DEBUG [Worker-18: Updating ETL model] - Server (http://localhost:58125/clover) call #1 duration=6ms getSandboxes() 
+2020-07-23 18:52:54,918 ServerGUIPlugin   DEBUG [Worker-18: Updating ETL model] - Server (http://localhost:58125/clover) call #1 duration=26ms analyseGraph([MOVD, graph/covid_SP500.grf]) 
+2020-07-23 18:52:54,918 GuiPlugin         DEBUG [Worker-18: Updating ETL model] - Job 'Updating ETL model' finished in 32 ms with status [Status OK: unknown code=0 OK null].
+2020-07-23 18:52:55,138 ServerGUIPlugin   DEBUG [Worker-6: Debug Data Provider Disposer] - Server (http://localhost:58125/clover) call #1 duration=5ms disposeDataView([-5]) 
+2020-07-23 18:52:55,386 GuiPlugin         DEBUG [main] - 'GUI checkConfig' finished in 3 ms
+2020-07-23 18:52:55,387 GuiPlugin         DEBUG [main] - 'Engine checkConfig' finished in 1 ms
+2020-07-23 18:52:55,393 ServerGUIPlugin   DEBUG [Worker-0: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=5ms getSandboxes() 
+2020-07-23 18:52:55,396 GuiPlugin         DEBUG [main] - 'Initialize reference cache' finished in 7 ms
+2020-07-23 18:52:55,403 ServerGUIPlugin   DEBUG [Worker-0: Start Checkconfig Operation] - checkConfig operation [1] started
+2020-07-23 18:52:55,403 ServerGUIPlugin   DEBUG [Worker-0: Start Checkconfig Operation] - Server (http://localhost:58125/clover) call #1 duration=10ms startCheckConfigOperation([MOVD, graph/covid_SP500.grf, <obfuscated_xml>]) 
+2020-07-23 18:52:55,407 GuiPlugin         DEBUG [Worker-18: Updating Reference Cache] - Job 'Updating Reference Cache' finished in 11 ms with status [Status OK: unknown code=0 OK null].
+2020-07-23 18:52:55,502 ServerGUIPlugin   DEBUG [Worker-18: Get Checkconfig Operation Result] - Server (http://localhost:58125/clover) call #1 duration=14ms getCheckConfigOperationResult([1]) 
+2020-07-23 18:52:55,519 ServerGUIPlugin   DEBUG [Worker-18: Start Metadata Propagation Operation] - Server (http://localhost:58125/clover) call #1 duration=5ms getSandboxes() 
+2020-07-23 18:52:55,527 ServerGUIPlugin   DEBUG [Worker-18: Start Metadata Propagation Operation] - propagateMetadata operation [2] started
+2020-07-23 18:52:55,527 ServerGUIPlugin   DEBUG [Worker-18: Start Metadata Propagation Operation] - Server (http://localhost:58125/clover) call #1 duration=8ms startPropagateMetadataOperation([MOVD, graph/covid_SP500.grf, <obfuscated_xml>]) 
+2020-07-23 18:52:55,588 GuiPlugin         DEBUG [Worker-19: Check graph configuration] - Job 'Check graph configuration' finished in 201 ms with status [Status OK: unknown code=0 OK null].
+2020-07-23 18:52:55,619 ServerGUIPlugin   DEBUG [Worker-20: Get Metadata Propagation Operation Result] - Server (http://localhost:58125/clover) call #1 duration=6ms getPropagateMetadataOperationResult([graph/covid_SP500.grf, 2]) 
+2020-07-23 18:52:55,714 GuiPlugin         DEBUG [Worker-6: Metadata propagation] - Job 'Metadata propagation' finished in 332 ms with status [Status OK: unknown code=0 OK null].
+2020-07-23 18:52:55,721 ServerGUIPlugin   DEBUG [Worker-20: Start Metadata Propagation Operation] - Server (http://localhost:58125/clover) call #1 duration=5ms getSandboxes() 
+2020-07-23 18:52:55,728 ServerGUIPlugin   DEBUG [Worker-20: Start Metadata Propagation Operation] - propagateMetadata operation [3] started
+2020-07-23 18:52:55,729 ServerGUIPlugin   DEBUG [Worker-20: Start Metadata Propagation Operation] - Server (http://localhost:58125/clover) call #1 duration=8ms startPropagateMetadataOperation([MOVD, graph/covid_SP500.grf, <obfuscated_xml>]) 
+2020-07-23 18:52:55,822 ServerGUIPlugin   DEBUG [Worker-6: Get Metadata Propagation Operation Result] - Server (http://localhost:58125/clover) call #1 duration=6ms getPropagateMetadataOperationResult([graph/covid_SP500.grf, 3]) 
+2020-07-23 18:52:55,916 GuiPlugin         DEBUG [Worker-19: Metadata propagation] - Job 'Metadata propagation' finished in 202 ms with status [Status OK: unknown code=0 OK null].
+2020-07-23 18:52:56,972 ServerGUIPlugin   DEBUG [Worker-22: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=6ms getSandboxes() 
+2020-07-23 18:52:56,988 ServerGUIPlugin   DEBUG [Worker-22: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=12ms prepareDataView([MOVD, graph/covid_SP500.grf, SP500_READER, <obfuscated_xml>, 1, null, null]) 
+2020-07-23 18:52:57,587 ServerGUIPlugin   DEBUG [Worker-22: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=599ms fetchDataView([-6, 100, 10000]) 
+2020-07-23 18:53:15,630 ServerGUIPlugin   DEBUG [Worker-18: Debug Data Provider Disposer] - Server (http://localhost:58125/clover) call #1 duration=5ms disposeDataView([-6]) 
+2020-07-23 18:53:15,682 ServerGUIPlugin   DEBUG [Worker-0: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=8ms getSandboxes() 
+2020-07-23 18:53:15,709 ServerGUIPlugin   DEBUG [Worker-0: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=13ms prepareDataView([MOVD, graph/covid_SP500.grf, COVID_READER, <obfuscated_xml>, 1, null, null]) 
+2020-07-23 18:53:16,131 ServerGUIPlugin   DEBUG [Worker-0: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=422ms fetchDataView([-7, 100, 10000]) 
+com.cloveretl.server.api.webservice.generated.GetViewDataFaultMsg: Execution of data retrieval job failed: Component [Covid Reader:COVID_READER] finished with status ERROR. (Out0: 0 recs)
+ Error when executing statement: select sum(NewCases) As NewCases, Date from `movd`.`jhcovidstat` group by Date
+  Date (date) cannot be set to "01/22/2020" - doesn't match defined format "yyyy-MM-dd" in field 2 ("Date"), metadata "Covid"; value: '01/22/2020'
+   Unparseable date: "01/22/2020" at position 2
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_202]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_202]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_202]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_202]
+	at com.sun.xml.ws.fault.SOAPFaultBuilder.createException(SOAPFaultBuilder.java:147) ~[?:?]
+	at com.sun.xml.ws.client.sei.StubHandler.readResponse(StubHandler.java:253) ~[?:?]
+	at com.sun.xml.ws.db.DatabindingImpl.deserializeResponse(DatabindingImpl.java:206) ~[?:?]
+	at com.sun.xml.ws.db.DatabindingImpl.deserializeResponse(DatabindingImpl.java:293) ~[?:?]
+	at com.sun.xml.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:119) ~[?:?]
+	at com.sun.xml.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:92) ~[?:?]
+	at com.sun.xml.ws.client.sei.SEIStub.invoke(SEIStub.java:161) ~[?:?]
+	at com.sun.proxy.$Proxy81.fetchDataView(Unknown Source) ~[?:?]
+	at com.cloveretl.gui.server.service.q.fetchDataView(Main:436) ~[com.cloveretl.gui.server.jar:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_202]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_202]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_202]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_202]
+	at com.cloveretl.gui.server.service.A.A(Main:236) [com.cloveretl.gui.server.jar:?]
+	at com.cloveretl.gui.server.service.A.invoke(Main:90) [com.cloveretl.gui.server.jar:?]
+	at com.sun.proxy.$Proxy82.fetchDataView(Unknown Source) [?:?]
+	at com.cloveretl.gui.server.runtime.ServerDebugDataLoader.A(Main:48) [com.cloveretl.gui.server.jar:?]
+	at com.cloveretl.gui.debugdata.provider.A.B(Main:243) [cloveretl-gui.jar:?]
+	at com.cloveretl.gui.debugdata.provider.A.a(Main:235) [cloveretl-gui.jar:?]
+	at com.cloveretl.gui.debugdata.provider.A.A(Main:54) [cloveretl-gui.jar:?]
+	at com.cloveretl.gui.debugdata.provider.V.run(Main:115) [cloveretl-gui.jar:?]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60) [org.eclipse.core.jobs_3.10.0.v20180427-1454.jar:?]
+2020-07-23 18:53:56,346 ServerGUIPlugin   DEBUG [Worker-18: Debug Data Provider Disposer] - Server (http://localhost:58125/clover) call #1 duration=6ms disposeDataView([-7]) 
+2020-07-23 18:55:10,445 ServerGUIPlugin   DEBUG [Worker-21: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=7ms getSandboxes() 
+2020-07-23 18:55:10,462 ServerGUIPlugin   DEBUG [Worker-21: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=12ms prepareDataView([MOVD, graph/covid_SP500.grf, DATABASE_READER2, <obfuscated_xml>, 1, null, null]) 
+2020-07-23 18:55:10,526 ServerGUIPlugin   DEBUG [Worker-21: Debug Data Fetch] - Server (http://localhost:58125/clover) call #1 duration=64ms fetchDataView([-8, 100, 10000]) 
+com.cloveretl.server.api.webservice.generated.GetViewDataFaultMsg: Execution of data retrieval job failed: Component [DatabaseReader:DATABASE_READER2] finished with status ERROR. (Out0: 0 recs)
+ Error when executing statement: select Date, SP500, NewCases from `movd`.`sp500_vs_covid`
+  Table 'movd.sp500_vs_covid' doesn't exist
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_202]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_202]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_202]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_202]
+	at com.sun.xml.ws.fault.SOAPFaultBuilder.createException(SOAPFaultBuilder.java:147) ~[?:?]
+	at com.sun.xml.ws.client.sei.StubHandler.readResponse(StubHandler.java:253) ~[?:?]
+	at com.sun.xml.ws.db.DatabindingImpl.deserializeResponse(DatabindingImpl.java:206) ~[?:?]
+	at com.sun.xml.ws.db.DatabindingImpl.deserializeResponse(DatabindingImpl.java:293) ~[?:?]
+	at com.sun.xml.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:119) ~[?:?]
+	at com.sun.xml.ws.client.sei.SyncMethodHandler.invoke(SyncMethodHandler.java:92) ~[?:?]
+	at com.sun.xml.ws.client.sei.SEIStub.invoke(SEIStub.java:161) ~[?:?]
+	at com.sun.proxy.$Proxy81.fetchDataView(Unknown Source) ~[?:?]
+	at com.cloveretl.gui.server.service.q.fetchDataView(Main:436) ~[com.cloveretl.gui.server.jar:?]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_202]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:1.8.0_202]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:1.8.0_202]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[?:1.8.0_202]
+	at com.cloveretl.gui.server.service.A.A(Main:236) [com.cloveretl.gui.server.jar:?]
+	at com.cloveretl.gui.server.service.A.invoke(Main:90) [com.cloveretl.gui.server.jar:?]
+	at com.sun.proxy.$Proxy82.fetchDataView(Unknown Source) [?:?]
+	at com.cloveretl.gui.server.runtime.ServerDebugDataLoader.A(Main:48) [com.cloveretl.gui.server.jar:?]
+	at com.cloveretl.gui.debugdata.provider.A.B(Main:243) [cloveretl-gui.jar:?]
+	at com.cloveretl.gui.debugdata.provider.A.a(Main:235) [cloveretl-gui.jar:?]
+	at com.cloveretl.gui.debugdata.provider.A.A(Main:54) [cloveretl-gui.jar:?]
+	at com.cloveretl.gui.debugdata.provider.V.run(Main:115) [cloveretl-gui.jar:?]
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60) [org.eclipse.core.jobs_3.10.0.v20180427-1454.jar:?]
+2020-07-23 18:55:24,072 ServerGUIPlugin   DEBUG [Worker-21: Debug Data Provider Disposer] - Server (http://localhost:58125/clover) call #1 duration=5ms disposeDataView([-8]) 

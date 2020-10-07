@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Graph author="Nic" created="Tue Jul 14 09:52:25 EDT 2020" guiVersion="5.6.2.13" id="1594735004725" licenseCode="CLP1DNXAXX73302537EX" name="Unemployment" showComponentDetails="true">
+<Global>
+<Metadata id="Metadata4">
+<Record fieldDelimiter=";" name="UnemploymentStat" previewAttachmentCharset="UTF-8" recordDelimiter="\n" type="delimited">
+<Field format="yyyy-MM-dd" name="Period" size="10" type="date"/>
+<Field name="NCHSUrbanization" size="45" type="string"/>
+<Field name="UnemploymentRatePercentage" size="22" type="number"/>
+</Record>
+</Metadata>
+<Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/MOVD?useSSL=false" id="JDBC0" jdbcSpecific="MYSQL" name="MOVD" password="Livefully" type="JDBC" user="root"/>
+<GraphParameters>
+<GraphParameterFile fileURL="workspace.prm"/>
+</GraphParameters>
+<Dictionary/>
+</Global>
+<Phase number="0">
+<Node aggregateKey="NCHSUrbanization;Period" guiName="Aggregate" guiX="337" guiY="-78" id="AGGREGATE" mapping="$Period:=$Period;$NCHSUrbanization:=$NCHSUrbanization;$UnemploymentRatePercentage:=avg($UnemploymentRatePercentage);" type="AGGREGATE"/>
+<Node dbConnection="JDBC0" guiName="DatabaseReader" guiX="72" guiY="-78" id="DATABASE_READER" type="DB_INPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[SELECT Period, NCHSUrbanization, UnemploymentRatePercentage 
+FROM MOVD.UnemploymentStat INNER JOIN JHCountyStat Using(FipsCode)
+WHERE Period >= "2020-01-01"
+ORDER BY NCHSUrbanization, Period, UnemploymentRatePercentage ]]></attr>
+</Node>
+<Node existingSheetsActions="REMOVE_SHEETS" fileURL="${DATAOUT_DIR}/unemployment_by_county_classification.xlsx" guiName="SpreadsheetDataWriter" guiX="641" guiY="-19" id="SPREADSHEET_DATA_WRITER" sheet="Sheet0" type="SPREADSHEET_WRITER" writeMode="OVERWRITE_SHEET_IN_MEMORY">
+<attr name="mapping"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mapping>
+    <globalAttributes>
+        <orientation>VERTICAL</orientation>
+        <step>1</step>
+        <writeHeader>true</writeHeader>
+    </globalAttributes>
+    <defaultSkip>1</defaultSkip>
+    <headerGroups>
+        <headerGroup skip="1">
+            <cloverField>NCHSUrbanization</cloverField>
+            <headerRanges>
+                <headerRange begin="A1"/>
+            </headerRanges>
+        </headerGroup>
+        <headerGroup skip="1">
+            <cloverField>Period</cloverField>
+            <headerRanges>
+                <headerRange begin="B1"/>
+            </headerRanges>
+        </headerGroup>
+        <headerGroup skip="1">
+            <cloverField>UnemploymentRatePercentage</cloverField>
+            <headerRanges>
+                <headerRange begin="C1"/>
+            </headerRanges>
+        </headerGroup>
+    </headerGroups>
+</mapping>
+]]></attr>
+</Node>
+<Edge fromNode="AGGREGATE:0" guiBendpoints="" guiRouter="Manhattan" id="Edge8" inPort="Port 0 (input)" metadata="Metadata4" outPort="Port 0 (out)" toNode="SPREADSHEET_DATA_WRITER:0"/>
+<Edge fromNode="DATABASE_READER:0" guiBendpoints="" guiRouter="Manhattan" id="Edge6" inPort="Port 0 (in)" metadata="Metadata4" outPort="Port 0 (out)" toNode="AGGREGATE:0"/>
+</Phase>
+</Graph>

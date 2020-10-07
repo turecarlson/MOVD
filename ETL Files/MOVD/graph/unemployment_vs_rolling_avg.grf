@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Graph author="markj" created="Wed Jul 15 18:51:25 EDT 2020" guiVersion="5.6.2.13" id="1594854962870" licenseCode="Unlicensed" name="unemployment_vs_sickness" showComponentDetails="true">
+<Global>
+<Metadata id="Metadata6">
+<Record fieldDelimiter="," name="CovidData" previewAttachmentCharset="UTF-8" recordDelimiter="\r\n" type="delimited">
+<Field name="Rolling_Avg" type="number"/>
+<Field delimiter="," name="Date" type="date"/>
+</Record>
+</Metadata>
+<Metadata id="joined">
+<Record fieldDelimiter="," name="fileout" previewAttachmentCharset="UTF-8" recordDelimiter="\r\n" type="delimited">
+<Field name="Date" trim="true" type="date"/>
+<Field length="12" name="UnemploymentRate" scale="2" trim="true" type="decimal"/>
+<Field delimiter="," name="CovidCases" trim="true" type="integer"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata2">
+<Record fieldDelimiter=";" name="jhcovidstat" recordDelimiter="\n" type="delimited">
+<Field name="CovidStatKey_pk" size="11" type="integer"/>
+<Field name="CountyUID" size="8" type="string"/>
+<Field name="CountyName" size="45" type="string"/>
+<Field name="State" size="45" type="string"/>
+<Field format="yyyy-MM-dd" name="Date" size="10" type="date"/>
+<Field name="TotalCountyPopulation" size="12" type="number"/>
+<Field name="CumulativeCases" size="11" type="integer"/>
+<Field name="CumulativeCasesPer100000" size="12" type="number"/>
+<Field name="CumulativeDeaths" size="11" type="integer"/>
+<Field name="CumulativeDeathsPer100000" size="12" type="number"/>
+<Field name="NewCases" size="11" type="integer"/>
+<Field name="NewDeaths" size="11" type="integer"/>
+<Field name="NewCasesPer100000" size="12" type="number"/>
+<Field name="NewDeathsPer100000" size="45" type="string"/>
+<Field name="NewCases7DayRollingAverage" size="12" type="number"/>
+<Field name="NewDeaths7DayRollingAverage" size="12" type="number"/>
+<Field name="JHCountyStat_FipsCode" size="45" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata4">
+<Record fieldDelimiter="|" name="joined" previewAttachmentCharset="UTF-8" recordDelimiter="\r\n" type="delimited">
+<Field name="Date" trim="true" type="date"/>
+<Field length="12" name="UnemploymentRate" scale="2" trim="true" type="decimal"/>
+<Field name="Rolling_Avg" trim="true" type="number"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata1">
+<Record fieldDelimiter="|" name="recordName1" recordDelimiter="\r\n" type="delimited">
+<Field name="field1" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata0">
+<Record fieldDelimiter="," label="Unemployment" name="unemployment" recordDelimiter="\r\n" type="delimited">
+<Field name="FipsCode" type="string"/>
+<Field name="Date" type="date"/>
+<Field name="LaborForce" type="integer"/>
+<Field name="Employed" type="integer"/>
+<Field name="Unemployed" type="integer"/>
+<Field name="UnemploymentRate" type="number"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata5">
+<Record fieldDelimiter="," name="UnemploymentData" previewAttachmentCharset="UTF-8" recordDelimiter="\r\n" type="delimited">
+<Field delimiter="," name="Period" type="date"/>
+<Field delimiter="," name="USA_Unemployment_Rate" type="decimal"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata3">
+<Record fieldDelimiter=";" name="unemploymentstat" recordDelimiter="\n" type="delimited">
+<Field name="UnemploymentPK" size="11" type="integer"/>
+<Field name="FipsCode" size="45" type="string"/>
+<Field format="yyyy-MM-dd" name="Period" size="10" type="date"/>
+<Field name="LaborForce" size="16383" type="string"/>
+<Field name="Employed" size="11" type="integer"/>
+<Field name="Unemployed" size="11" type="integer"/>
+<Field name="UnemploymentRatePercentage" size="22" type="number"/>
+</Record>
+</Metadata>
+<Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/movd" id="JDBC0" jdbcSpecific="MYSQL" name="MOVD" password="Mark6912" type="JDBC" user="root"/>
+<Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/movd" id="JDBC1" jdbcSpecific="MYSQL" name="MOVD" password="Mark6912" type="JDBC" user="root"/>
+<Connection database="MYSQL" dbURL="jdbc:mysql://localhost:3306/movd?useSSL=false" id="JDBC2" jdbcSpecific="MYSQL" name="MOVD no SSL" password="Mark6912" type="JDBC" user="root"/>
+<GraphParameters>
+<GraphParameterFile fileURL="workspace.prm"/>
+</GraphParameters>
+<Dictionary/>
+</Global>
+<Phase number="0">
+<Node dataPolicy="controlled" dbConnection="JDBC2" guiName="Covid Reader" guiX="55" guiY="138" id="COVID_READER" printStatements="false" type="DB_INPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[SELECT avg(NewCases7DayRollingAverage), jhcovidstat.Date FROM movd.jhcovidstat group by date;]]></attr>
+</Node>
+<Node guiName="ExtHashJoin" guiX="314" guiY="83" id="EXT_HASH_JOIN" joinKey="$Period=$Date" joinType="inner" type="EXT_HASH_JOIN">
+<attr name="transform"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.UnemploymentRate = $in.0.USA_Unemployment_Rate;
+	$out.0.Rolling_Avg = $in.1.Rolling_Avg;
+	$out.0.Date = $in.0.Period;
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node dataPolicy="controlled" dbConnection="JDBC2" guiName="Unemployment Reader" guiX="55" guiY="26" id="UNEMPLOYMENT_READER" printStatements="false" type="DB_INPUT_TABLE">
+<attr name="sqlQuery"><![CDATA[SELECT Period, avg(UnemploymentRatePercentage) AS USA_Unemployment_Rate FROM movd.unemploymentstat Where Period BETWEEN '2020-01-01' AND '2020-07-01' group by Period;]]></attr>
+</Node>
+<Edge fromNode="COVID_READER:0" guiBendpoints="" guiRouter="Manhattan" id="Edge5" inPort="Port 1 (slave)" metadata="Metadata6" outPort="Port 0 (out)" toNode="EXT_HASH_JOIN:1"/>
+<Edge fromNode="EXT_HASH_JOIN:0" guiBendpoints="" guiRouter="Manhattan" id="Edge0" inPort="Port 0 (input)" metadata="Metadata4" outPort="Port 0 (out)" toNode="SPREADSHEET_DATA_WRITER:0"/>
+<Edge fromNode="UNEMPLOYMENT_READER:0" guiBendpoints="" guiRouter="Manhattan" id="Edge4" inPort="Port 0 (driver)" metadata="Metadata5" outPort="Port 0 (out)" toNode="EXT_HASH_JOIN:0"/>
+</Phase>
+<Phase number="1">
+<Node existingSheetsActions="DO_NOTHING" fileURL="C:/Users/markj/CloverDX/workspace/unemployment_vs_rolling_avg.xlsx" guiName="SpreadsheetDataWriter" guiX="488" guiY="83" id="SPREADSHEET_DATA_WRITER" type="SPREADSHEET_WRITER" writeMode="OVERWRITE_SHEET_IN_MEMORY">
+<attr name="mapping"><![CDATA[<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mapping>
+    <globalAttributes>
+        <orientation>VERTICAL</orientation>
+        <step>2</step>
+        <writeHeader>true</writeHeader>
+    </globalAttributes>
+    <defaultSkip>2</defaultSkip>
+    <headerGroups>
+        <headerGroup skip="2">
+            <cloverField>Date</cloverField>
+            <headerRanges>
+                <headerRange begin="A1"/>
+            </headerRanges>
+        </headerGroup>
+        <headerGroup skip="2">
+            <cloverField>UnemploymentRate</cloverField>
+            <headerRanges>
+                <headerRange begin="B1"/>
+            </headerRanges>
+        </headerGroup>
+        <headerGroup skip="2">
+            <cloverField>Rolling_Avg</cloverField>
+            <headerRanges>
+                <headerRange begin="C1"/>
+            </headerRanges>
+        </headerGroup>
+    </headerGroups>
+</mapping>
+]]></attr>
+</Node>
+</Phase>
+</Graph>
